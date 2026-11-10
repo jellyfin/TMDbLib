@@ -43,6 +43,12 @@
     <PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All"/>
   </ItemGroup>
 
+  <!-- Microsoft.SourceLink.GitHub 11.x drags in System.IO.Hashing 11.x (used only by its build task, never by our code,
+       and not flowed to consumers), whose buildTransitive targets warn on net8.0. Remove when dropping net8.0. -->
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
+    <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
+  </PropertyGroup>
+
   <!-- Set copying files etc. to timeout faster -->
   <PropertyGroup>
     <CopyRetryCount>2</CopyRetryCount>

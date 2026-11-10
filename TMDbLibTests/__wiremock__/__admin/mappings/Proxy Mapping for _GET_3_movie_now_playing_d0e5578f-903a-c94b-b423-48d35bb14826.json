@@ -17,19 +17,6 @@
       "GET"
     ],
     "HttpVersion": "1.1",
-    "Headers": [
-      {
-        "Name": "Accept-Encoding",
-        "Matchers": [
-          {
-            "Name": "WildcardMatcher",
-            "Pattern": "gzip, deflate, br",
-            "IgnoreCase": true
-          }
-        ],
-        "IgnoreCase": true
-      }
-    ],
     "Params": [
       {
         "Name": "page",
@@ -47,168 +34,26 @@
     "StatusCode": 200,
     "BodyAsJson": {
       "dates": {
-        "maximum": "2026-08-12",
-        "minimum": "2026-07-01"
+        "maximum": "2026-11-11",
+        "minimum": "2026-09-30"
       },
       "page": 2,
       "results": [
         {
           "adult": false,
-          "backdrop_path": "/ebcOSaZLxdCMHDjJJQzx5PiEyzl.jpg",
+          "backdrop_path": "/7RsPdXLDNugDIlwXPVeeprNfMx.jpg",
           "genre_ids": [
             27,
-            878,
-            53
+            14,
+            9648
           ],
-          "id": 1307118,
-          "title": "Soulm8te",
+          "id": 1232569,
+          "title": "Pinocchio: Unstrung",
           "original_language": "en",
-          "original_title": "Soulm8te",
-          "overview": "After a ruthless tech giant acquires a small robotics company, a grieving engineer is tasked with testing their new AI companion. But when he attempts to reprogram her to be a truly sentient soulmate, she develops needs of her own\u2014unleashing a relentless spree of precision-engineered mayhem.",
+          "original_title": "Pinocchio: Unstrung",
+          "overview": "Influenced by a sinister Cricket and created by Geppetto, Pinocchio launches a violent crusade to carve himself into a real boy like his brother James, one piece at a time.",
           "popularity": 0.0,
-          "poster_path": "/bNErActDctl6cdUGw9pnjSCmyhQ.jpg",
-          "release_date": "2026-07-31",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/9XwQphZxNJgGASfjL58mhIkJJpf.jpg",
-          "genre_ids": [
-            28,
-            80,
-            53
-          ],
-          "id": 1280738,
-          "title": "The Furious",
-          "original_language": "zh",
-          "original_title": "\u706B\u906E\u773C",
-          "overview": "After a criminal network kidnaps Wang Wei\u0027s daughter and the corrupt police refuse to assist him, Wei sets out on his own to locate her. Navin, a tenacious journalist whose wife has mysteriously vanished, is his only ally. In this explosive martial arts showdown, the unlikely duo fights the kidnappers ruthlessly driven by a furious vengeance.",
-          "popularity": 0.0,
-          "poster_path": "/zP19YO60jwEsfKd5Qf1UvA5uJu8.jpg",
-          "release_date": "2026-06-10",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/szKv713FcUXx6hcfdY369vtkmzr.jpg",
-          "genre_ids": [
-            27,
-            53
-          ],
-          "id": 1127384,
-          "title": "Deep Water",
-          "original_language": "en",
-          "original_title": "Deep Water",
-          "overview": "A group of international passengers on a flight from Los Angeles to Shanghai is forced to make an emergency landing in shark-infested waters. The terrified group is forced to work together and overcome their differences if they hope to escape their sinking plane and the frenzy of sharks drawn to the wreckage.",
-          "popularity": 0.0,
-          "poster_path": "/kjcuS7xaRyqRjVaVcH4t0qHshuX.jpg",
-          "release_date": "2026-04-30",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/hL5EIk48251OXlbIbRJq3yaBHk8.jpg",
-          "genre_ids": [
-            35,
-            80
-          ],
-          "id": 949838,
-          "title": "72 HOURS",
-          "original_language": "en",
-          "original_title": "72 HOURS",
-          "overview": "To save his career, a 40-year-old ad exec joins a crew of twentysomethings for a wild Miami bachelor party after they mistakenly add him to a group chat.",
-          "popularity": 0.0,
-          "poster_path": "/9Bu1PW2R1XayqRqnl0aDOgMcrdS.jpg",
-          "release_date": "2026-07-20",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/5XZqtQNB3XAnn7kFgU0XsSHbevV.jpg",
-          "genre_ids": [
-            18
-          ],
-          "id": 1728704,
-          "title": "Siping",
-          "original_language": "tl",
-          "original_title": "Siping",
-          "overview": "A gripping story about a woman wagered in a high-stakes card game. But the stakes get even hotter when she\u2019s won by the man who\u2019s long been obsessed with her.",
-          "popularity": 0.0,
-          "poster_path": "/wNzRyplxryB8s6jb8Be5dYAKZb5.jpg",
-          "release_date": "2026-07-10",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/qaMQOtAZ6K4RneNDa1yDlJv1V6J.jpg",
-          "genre_ids": [
-            53,
-            27
-          ],
-          "id": 1430698,
-          "title": "The Bay",
-          "original_language": "en",
-          "original_title": "The Bay",
-          "overview": "Best friends Emma and Lani, attending a destination wedding in Thailand, find themselves trapped on a sinking tour boat in the heart of a tiger shark sanctuary.",
-          "popularity": 0.0,
-          "poster_path": "/8QQUI4J2zLv6f96TOjbz9dcg8bc.jpg",
-          "release_date": "2026-07-02",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/hS4FcOM5y71FurkBQgDLTBxmWZh.jpg",
-          "genre_ids": [
-            878,
-            27,
-            53
-          ],
-          "id": 1469342,
-          "title": "Her Private Hell",
-          "original_language": "en",
-          "original_title": "Her Private Hell",
-          "overview": "When a mysterious mist engulfs a futuristic metropolis, unleashing a deadly and elusive entity, a troubled young woman searches for her father. Her quest collides with an American GI on a harrowing odyssey to rescue his daughter from Hell.",
-          "popularity": 0.0,
-          "poster_path": "/kiFacg75KVjy0AM3S4QmbPas8zL.jpg",
-          "release_date": "2026-07-23",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/z8mTDyKdAWjKsD0vwa7e9LTSY1j.jpg",
-          "genre_ids": [
-            53,
-            80,
-            18
-          ],
-          "id": 1487861,
-          "title": "Elize: Shadows of a Woman",
-          "original_language": "pt",
-          "original_title": "Elize: Sombras de uma Mulher",
-          "overview": "In this retelling of a real case, a former escort discovers her wealthy husband\u0027s infidelity and struggles to cope as betrayal poisons their marriage.",
-          "popularity": 0.0,
-          "poster_path": "/l3wevYWTpiZSUEM5B0Q8c21ALAD.jpg",
+          "poster_path": "/hJNdizFlxOW89edX3Rzr6OliSFI.jpg",
           "release_date": "2026-07-22",
           "softcore": false,
           "video": false,
@@ -217,19 +62,20 @@
         },
         {
           "adult": false,
-          "backdrop_path": "/ikyzq678qnHtRY8ZiQJzK4hiOyW.jpg",
+          "backdrop_path": "/uL4cIrNi2uaUnWIOQQ28EVnkETG.jpg",
           "genre_ids": [
+            27,
             53,
-            27
+            878
           ],
-          "id": 1382832,
-          "title": "Hungry",
+          "id": 1400940,
+          "title": "Clayface",
           "original_language": "en",
-          "original_title": "Hungry",
-          "overview": "A group of holidaymakers must fight for their lives against a rampaging hippo on the loose after becoming lost in the Louisiana swamplands.",
+          "original_title": "Clayface",
+          "overview": "Matt Hagen\u0027s meteoric rise from Gotham street kid to Hollywood leading man is tragically cut short when a local crime boss\u0027s actions leave him horribly disfigured. Abandoned by his team and with nothing left, Matt seeks out a cutting edge treatment that miraculously returns him to his former self\u2026 but also unexpectedly affects his grip on reality, spiraling him down a destructive path of all-consuming revenge.",
           "popularity": 0.0,
-          "poster_path": "/4uNhvGxBDiO0mU5UhxuXBsJwKF3.jpg",
-          "release_date": "2026-06-03",
+          "poster_path": "/9l1NuFjel2j89hiuiJbsxfblqjy.jpg",
+          "release_date": "2026-10-19",
           "softcore": false,
           "video": false,
           "vote_average": 0.0,
@@ -237,21 +83,78 @@
         },
         {
           "adult": false,
-          "backdrop_path": "/qlfqDJ9Piv5ufzYA8j2319mwKZU.jpg",
+          "backdrop_path": "/5lTZyuBTNOfawsfPT8Q0cIg6qAF.jpg",
           "genre_ids": [
-            10770,
-            10751,
-            14,
+            27,
+            53
+          ],
+          "id": 1339713,
+          "title": "Obsession",
+          "original_language": "en",
+          "original_title": "Obsession",
+          "overview": "After breaking the mysterious \u0022One Wish Willow\u0022 to win his crush\u0027s heart, a hopeless romantic finds himself getting exactly what he asked for but soon discovers that some desires come at a dark, sinister price.",
+          "popularity": 0.0,
+          "poster_path": "/bRwnj8WEKBCvmfeUNOukJPwB43K.jpg",
+          "release_date": "2026-05-13",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/cpNMIRCrDl0sxDL1tHBzfWi0UZC.jpg",
+          "genre_ids": [
+            18
+          ],
+          "id": 1780005,
+          "title": "Surviving Hurricane Otis",
+          "original_language": "es",
+          "original_title": "Contra el hurac\u00E1n",
+          "overview": "Two estranged brothers struggle to survive Hurricane Otis in Acapulco, where their bond and courage turn adversity into hope.",
+          "popularity": 0.0,
+          "poster_path": "/chZa8Jd9kSDj11bekGjwwotFPEw.jpg",
+          "release_date": "2026-10-23",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/hXRw0AVY8avc0koUXj2rMY6q2N8.jpg",
+          "genre_ids": [
+            27
+          ],
+          "id": 1474226,
+          "title": "Evil Dress",
+          "original_language": "es",
+          "original_title": "El vestido",
+          "overview": "After a difficult divorce, Alicia moves into an old house with her daughter Carla, unaware that it hides a past of recurrent tragedy. As Carla senses perturbing presences, Alicia begins to doubt her own sanity. A blue dress connects Carla to the ghost of a girl from the past, triggering terrifying events. Mother and daughter will try to escape the house, but the house won\u2019t let them get away so easily.",
+          "popularity": 0.0,
+          "poster_path": "/voXT2JWo6XTohm4rFLygJkik8Ja.jpg",
+          "release_date": "2026-02-13",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/jdJsnhHfkIi3J7jwfiCFT4gXNx5.jpg",
+          "genre_ids": [
+            28,
+            35,
             12
           ],
-          "id": 1318621,
-          "title": "Descendants: Wicked Wonderland",
+          "id": 1148365,
+          "title": "Matchbox the Movie",
           "original_language": "en",
-          "original_title": "Descendants: Wicked Wonderland",
-          "overview": "Now that the Queen of Hearts is nice and Cinderella is safe, things seem perfect for Red and Chloe\u2026 But little do they know that changing the past created a new villain \u2014 Maddox Hatter. When Maddox captures the Queen of Hearts, Red and Chloe must work alongside Red\u2019s new sister Pink, Luisa Madrigal\u2019s son Luis, and Maddox\u2019s son Max to save her and Wonderland.",
+          "original_title": "Matchbox the Movie",
+          "overview": "When a group of former childhood friends reconnect, their reunion takes a wild turn as they stumble upon a dangerous international plot\u2014and must save the world.",
           "popularity": 0.0,
-          "poster_path": "/xdhLAADGSse8KCrsDLBuM5b68Cg.jpg",
-          "release_date": "2026-07-16",
+          "poster_path": "/aHhHRz6nOpwkqJs5ASeRGAdK2dt.jpg",
+          "release_date": "2026-10-05",
           "softcore": false,
           "video": false,
           "vote_average": 0.0,
@@ -259,183 +162,20 @@
         },
         {
           "adult": false,
-          "backdrop_path": "/cLFbDVfhllIMybpo2fkGNzehiQG.jpg",
+          "backdrop_path": "/3uLA0ujne91bkzFStZICCYeqhnt.jpg",
           "genre_ids": [
-            12,
-            53,
-            878
-          ],
-          "id": 840464,
-          "title": "Greenland 2: Migration",
-          "original_language": "en",
-          "original_title": "Greenland 2: Migration",
-          "overview": "Having found the safety of the Greenland bunker after the comet Clarke decimated the Earth, the Garrity family must now risk everything to embark on a perilous journey across the wasteland of Europe to find a new home.",
-          "popularity": 0.0,
-          "poster_path": "/z2tqCJLsw6uEJ8nJV8BsQXGa3dr.jpg",
-          "release_date": "2026-01-07",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/ddrLCUT8hqSlEICTTbdlFYB5q4a.jpg",
-          "genre_ids": [
-            28,
-            35
-          ],
-          "id": 1307247,
-          "title": "OK! Madam: Bon Voyage",
-          "original_language": "ko",
-          "original_title": "\uC624\uCF00\uC774 \uB9C8\uB2F4 2",
-          "overview": "Six years after the Hawaii airplane hijacking, Mi-yeong finds herself struggling with her rebellious teenage daughter, Nari, and her unemployed husband, Seok-hwan. When Hyun-min, a flight attendant she met during the hijacking, invites her family to his wedding aboard a luxury cruise ship, Mi-yeong eagerly proposes a family holiday. Met with indifference from her husband and daughter, she decides to embark alone, joining Hyun-min\u0027s family and Ji-hoon, a charming magician. However, on the eve of the wedding, the celebration turns deadly when armed assailants seize the ship. After Seok-hwan and Nari are kidnapped and brought aboard, Mi-yeong discovers that she is the target of a much larger plot.",
-          "popularity": 0.0,
-          "poster_path": "/xDbrWXB9yb5aEdt4peVy8OWNP2Y.jpg",
-          "release_date": "2026-08-12",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/tlm8UkiQsitc8rSuIAscQDCnP8d.jpg",
-          "genre_ids": [
-            28,
-            878
-          ],
-          "id": 603,
-          "title": "The Matrix",
-          "original_language": "en",
-          "original_title": "The Matrix",
-          "overview": "Set in the 22nd century, The Matrix tells the story of a computer hacker who joins a group of underground insurgents fighting the vast and powerful computers who now rule the earth.",
-          "popularity": 0.0,
-          "poster_path": "/dXNAPwY7VrqMAo51EKhhCJfaGb5.jpg",
-          "release_date": "1999-03-31",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/kXXveIklCvTpJOGu16dszmZrcwD.jpg",
-          "genre_ids": [
-            36,
-            18
-          ],
-          "id": 1305672,
-          "title": "I Know Who You Are",
-          "original_language": "zh",
-          "original_title": "\u6293\u7279\u52A1",
-          "overview": "On 1949 October 1, the day of the founding ceremony of the People\u0027s Republic of China, Xiao Dali enters the city and is reorganized as the director of the public security police station. He finds that primary school teacher Feng Jingbo is full of doubts. With the high vigilance of a soldier and the sense of responsibility of a public security official, Dali insists on partnering with Feng and becomes his neighbor. He then spends his whole life carrying out a nearly four-decade pursuit without regrets.",
-          "popularity": 0.0,
-          "poster_path": "/dzS3PxisVd9y9BrLPiFfA2MvcI8.jpg",
-          "release_date": "2026-06-19",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/ffdqHMWkh1h9MABwIfbfRJhgFW6.jpg",
-          "genre_ids": [
-            28,
-            53,
-            878
-          ],
-          "id": 218,
-          "title": "The Terminator",
-          "original_language": "en",
-          "original_title": "The Terminator",
-          "overview": "In the post-apocalyptic future, reigning tyrannical supercomputers teleport a cyborg assassin known as the \u0022Terminator\u0022 back to 1984 to kill Sarah Connor, whose unborn son is destined to lead insurgents against 21st century mechanical hegemony. Meanwhile, the human-resistance movement dispatches a lone warrior to safeguard Sarah. Can he stop the virtually indestructible killing machine?",
-          "popularity": 0.0,
-          "poster_path": "/qvktm0BHcnmDpul4Hz01GIazWPr.jpg",
-          "release_date": "1984-10-26",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/6cJUqJYfRu5HqLKPmG5NVUMOjuD.jpg",
-          "genre_ids": [
-            18,
-            10749
-          ],
-          "id": 1497463,
-          "title": "All That We Never Were",
-          "original_language": "es",
-          "original_title": "Todo lo que nunca fuimos",
-          "overview": "19-year-old Leah navigates a coming-of-age journey in the wake of a tragic car accident that claims her parents. Relocated to a coastal town under the care of her brother\u2019s best friend Axel, Leah grapples with grief, haunting nightmares and a fractured sense of self.",
-          "popularity": 0.0,
-          "poster_path": "/zqxIT48mWFsC4NSjGEHAcp1pjEo.jpg",
-          "release_date": "2026-06-04",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/J1UgJwRxDQS92kw75KgeVFZMHf.jpg",
-          "genre_ids": [
-            18,
             35,
-            28
-          ],
-          "id": 1491920,
-          "title": "Kung Fu Soccer",
-          "original_language": "zh",
-          "original_title": "\u529F\u592B\u5973\u8DB3",
-          "overview": "The \u0022Supreme Invincible Cup\u0022 is about to begin, and a host of top teams are about to engage in an unprecedented showdown! But the Kung Fu Women\u0027s Soccer Team has been dealt a hellish script right from the start?! Their opponents are all highly skilled, and external pressure is mounting. The schemes on the field are one after another... Can they use their kung fu to turn the tide on the green field?",
-          "popularity": 0.0,
-          "poster_path": "/6QgJQrClh9ej357yzLWgCxrjAmJ.jpg",
-          "release_date": "2026-07-11",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/v3lNH2gCojWYXVuXcT9FZLBxcSq.jpg",
-          "genre_ids": [
-            28,
-            18
-          ],
-          "id": 1235877,
-          "title": "Jana Nayagan",
-          "original_language": "ta",
-          "original_title": "\u0B9C\u0BA9 \u0BA8\u0BBE\u0BAF\u0B95\u0BA9\u0BCD",
-          "overview": "A clash of ideologies. One stands for the people, the other feeds on control. Their paths collided once before. Years later, a child\u2019s silent fear ignites the past, drawing a former police officer into a battle far bigger than personal revenge.",
-          "popularity": 0.0,
-          "poster_path": "/jt8pfSIdi47YpFMMWVRr8w5u2S0.jpg",
-          "release_date": "2026-07-22",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/b9q9VmbXDvJmTziRqkwdEmFdwhr.jpg",
-          "genre_ids": [
-            878,
-            9648,
+            80,
             53
           ],
-          "id": 1101383,
-          "title": "The End of Oak Street",
+          "id": 891621,
+          "title": "Wild Horse Nine",
           "original_language": "en",
-          "original_title": "The End of Oak Street",
-          "overview": "After a mysterious cosmic event rips Oak Street from suburbia and transports their neighborhood to someplace unknown, the Platt family soon discovers that their very survival depends on them sticking together as they navigate their now unrecognizable surroundings.",
+          "original_title": "Wild Horse Nine",
+          "overview": "Shortly before the 1973 Chilean coup, CIA agents Chris and Lee are dispatched from Santiago to Easter Island by their bureau chief, MJ. Amongst the Island\u0027s iconic statues, and as the longtime partners wrestle with their dark pasts and present conspiracies, Chris\u0027s newfound bond with a pair of rebellious students threatens to send everyone\u2019s trip to this remote paradise sideways.",
           "popularity": 0.0,
-          "poster_path": "/3SifFCwwFzXdU1Ew0nA4Z92Bs15.jpg",
-          "release_date": "2026-08-12",
+          "poster_path": "/dNJFRtVg3xLQ7dbNIQ55cmmIniD.jpg",
+          "release_date": "2026-10-30",
           "softcore": false,
           "video": false,
           "vote_average": 0.0,
@@ -443,27 +183,276 @@
         },
         {
           "adult": false,
-          "backdrop_path": "/7FivR6OVr56calRq8UyZjmPsVE2.jpg",
+          "backdrop_path": "/dSfrsjhqC6lYe7LYDYnzWeXZmEl.jpg",
+          "genre_ids": [
+            14,
+            16,
+            10751
+          ],
+          "id": 9479,
+          "title": "The Nightmare Before Christmas",
+          "original_language": "en",
+          "original_title": "The Nightmare Before Christmas",
+          "overview": "Tired of scaring humans every October 31 with the same old bag of tricks, Jack Skellington, the spindly Pumpkin King of Halloween Town, kidnaps Santa Claus and plans to deliver shrunken heads and other ghoulish gifts to children on Christmas morning in his place. But, as the holiday approaches, Jack\u0027s rag-doll girlfriend Sally tries to foil his well-meaning yet misguided plans.",
+          "popularity": 0.0,
+          "poster_path": "/oQffRNjK8e19rF7xVYEN8ew0j7b.jpg",
+          "release_date": "1993-10-09",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/oHBhHoNe59VH6bUMazDtJmWOFSS.jpg",
+          "genre_ids": [
+            878,
+            27,
+            28
+          ],
+          "id": 940721,
+          "title": "Godzilla Minus One",
+          "original_language": "ja",
+          "original_title": "\u30B4\u30B8\u30E9-1.0",
+          "overview": "In postwar Japan, Godzilla brings new devastation to an already scorched landscape. With no military intervention or government help in sight, the survivors must join together in the face of despair and fight back against an unrelenting horror.",
+          "popularity": 0.0,
+          "poster_path": "/2E2WTX0TJEflAged6kzErwqX1kt.jpg",
+          "release_date": "2023-11-03",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ggqvhSdAASrseKuMlzk51sbvbE8.jpg",
           "genre_ids": [
             28,
-            10752
+            53
           ],
-          "id": 1594914,
-          "title": "Lucky Strike",
+          "id": 1562642,
+          "title": "Ghost Soldier",
           "original_language": "en",
-          "original_title": "Lucky Strike",
-          "overview": "A wounded American soldier fights to survive behind enemy lines during WWII\u0027s Battle of the Bulge against the Germans, relying on his instinct, spy craft and a hand-radio to evade capture and find his way back to his unit.",
+          "original_title": "Ghost Soldier",
+          "overview": "Henry \u201CFitz\u201D Fitzgerald has spent years living quietly off the grid, hiding from a past few people know anything about. But when a powerful foreign corporation moves into his hometown to seize his neighbors\u2019 land for a massive payday, Fitz is forced to reveal who he really is: a former Special Forces soldier and advanced weapons developer. Armed with experimental technology, lethal combat skills, and an unwavering code of justice, Fitz wages a one-man war against an enemy that never saw him coming.",
           "popularity": 0.0,
-          "poster_path": "/kzRAd7mj39ZY3FGNrDdZjqx56tn.jpg",
-          "release_date": "2026-06-26",
+          "poster_path": "/8Y4oJ5iUs3hgPcDB3SIEmsNYjZk.jpg",
+          "release_date": "2026-11-06",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ayJsUQ4bEG6yY0UB6lMboiaDfYE.jpg",
+          "genre_ids": [
+            27,
+            53
+          ],
+          "id": 1376400,
+          "title": "Crawlers",
+          "original_language": "en",
+          "original_title": "Crawlers",
+          "overview": "Tenants at Paradiso Palms apartments fight a deadly spider invasion while the cunning building manager might be their only hope for survival.",
+          "popularity": 0.0,
+          "poster_path": "/lNXeEpg4yLSRwXwOeR5lbPgwbqL.jpg",
+          "release_date": "2026-09-24",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/cNICUho5uiAGkfCAQq1ihyaMla4.jpg",
+          "genre_ids": [
+            16,
+            12,
+            14,
+            35,
+            10751
+          ],
+          "id": 1465063,
+          "title": "Forgotten Island",
+          "original_language": "en",
+          "original_title": "Forgotten Island",
+          "overview": "While celebrating their last night together, high school graduates and best friends Jo and Raissa stumble upon a mysterious portal that transports them to the fantastical island of Nakali. When they discover that the memories of their entire friendship are the price for returning home, Jo and Raissa must race to find a way to leave the island before they forget each other forever.",
+          "popularity": 0.0,
+          "poster_path": "/myd1K3gefdNAWFsGNRDdMeiK9Qg.jpg",
+          "release_date": "2026-09-10",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/rueyXwlewVPAP5NkqCUJx4RjhqB.jpg",
+          "genre_ids": [
+            35,
+            12,
+            10751,
+            16
+          ],
+          "id": 1204680,
+          "title": "Coyote vs. Acme",
+          "original_language": "en",
+          "original_title": "Coyote vs. Acme",
+          "overview": "After Acme products fail him one too many times in his dogged pursuit of the Roadrunner, Wile E. Coyote decides to hire a billboard lawyer to sue the Acme Corporation.",
+          "popularity": 0.0,
+          "poster_path": "/kYDCl2y0VPvhT5eYWbMRInPoB03.jpg",
+          "release_date": "2026-08-20",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/9y9o686DsQg0KzPtERzcW7Cf8IE.jpg",
+          "genre_ids": [
+            16,
+            14,
+            12,
+            10751,
+            35
+          ],
+          "id": 1117898,
+          "title": "The Cat in the Hat",
+          "original_language": "en",
+          "original_title": "The Cat in the Hat",
+          "overview": "Assigned his toughest mission yet, the Cat must cheer up siblings Gabby and Sebastian as they adjust to life in a new town. Known for pushing boundaries, this agent of chaos must prove himself or risk losing his magical hat forever.",
+          "popularity": 0.0,
+          "poster_path": "/mWN6knIVJ2o7eGwSm7mOgSCwNUc.jpg",
+          "release_date": "2026-10-31",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/mxrT9YpOPuLq2PpSehAuCGCqu8r.jpg",
+          "genre_ids": [
+            14,
+            18,
+            35
+          ],
+          "id": 1327835,
+          "title": "Mookuthi Amman 2",
+          "original_language": "ta",
+          "original_title": "\u0BAE\u0BC2\u0B95\u0BCD\u0B95\u0BC1\u0BA4\u0BCD\u0BA4\u0BBF \u0B85\u0BAE\u0BCD\u0BAE\u0BA9\u0BCD 2",
+          "overview": "A queen sacrifices herself to protect her son, the prince, from invading enemies.Mookuthi Amman returns to protect the child and confronts a mysterious woman who embodies a new and dangerous evil.",
+          "popularity": 0.0,
+          "poster_path": "/dNNzsstJeQxnESyH0hZcLGblLMz.jpg",
+          "release_date": "2026-11-06",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/8I4YFWgi9IZW4VUi398A0BqLnm.jpg",
+          "genre_ids": [
+            53,
+            80
+          ],
+          "id": 1453407,
+          "title": "Gajab Raat",
+          "original_language": "hi",
+          "original_title": "\u0917\u093C\u091C\u093C\u092C \u0930\u093E\u0924",
+          "overview": "A corrupt, troubled cop\u0027s night spirals out of control when a reluctant act of mercy toward an injured girl pulls him into a deadly web of crime.",
+          "popularity": 0.0,
+          "poster_path": "/e4N7M52cBbyi24xLga8yI6yt1u1.jpg",
+          "release_date": "2026-10-23",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ncm7djsVTHQQMX2HEbEVxMUFchG.jpg",
+          "genre_ids": [
+            27
+          ],
+          "id": 1400837,
+          "title": "Other Mommy",
+          "original_language": "en",
+          "original_title": "Other Mommy",
+          "overview": "Young Bela forms a relationship with a sinister entity in her home that looks uncannily like her own mother, drawing her into a terrifying and increasingly dark world.",
+          "popularity": 0.0,
+          "poster_path": "/fGRNCssTRrhYZxNzykGGCoMsAVq.jpg",
+          "release_date": "2026-10-07",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/nhIL3O4W9h5V5JbNQm7yjoDk3So.jpg",
+          "genre_ids": [
+            99
+          ],
+          "id": 1765072,
+          "title": "You Can See Everything",
+          "original_language": "en",
+          "original_title": "You Can See Everything",
+          "overview": "Thirty-four days before she\u0027s sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
+          "popularity": 0.0,
+          "poster_path": "/Ap8QwmKfSjYbWC4XIP8w9pdn72O.jpg",
+          "release_date": "2026-10-16",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/qRN8eqYwG6HPSy0i3fKzuLrUOhp.jpg",
+          "genre_ids": [
+            28,
+            14,
+            35
+          ],
+          "id": 1153576,
+          "title": "Street Fighter",
+          "original_language": "en",
+          "original_title": "Street Fighter",
+          "overview": "In 1993, estranged Street Fighters Ryu and Ken Masters are thrown back into combat when the mysterious Chun-Li recruits them for the next World Warrior Tournament: a brutal clash of fists, fate, and fury. But behind this battle royale lies a deadly conspiracy that forces them to face off against each other and the demons of their past. And if they don\u0027t, it\u0027s GAME OVER!",
+          "popularity": 0.0,
+          "poster_path": "/8nP4lF51Ea861YfHEEqhZBLYv3e.jpg",
+          "release_date": "2026-10-13",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/k0BY5D4Ya6NHhsvNYMmaabpvUtS.jpg",
+          "genre_ids": [
+            18
+          ],
+          "id": 1483525,
+          "title": "Possible Love",
+          "original_language": "ko",
+          "original_title": "\uAC00\uB2A5\uD55C \uC0AC\uB791",
+          "overview": "Working-class An Mi Ok and Choi Ho Seok, who have been together since middle school and are the parents of a taciturn 10-year-old, are still reckoning with the fallout from Ho Seok\u2019s firing from his factory job after a violently suppressed labor union strike. The well-off Lee Ye Ji, a documentary filmmaker, with her businessman husband, Sang-woo, has decided to make a movie about job layoffs and wants to make Mi-Ok and Ho-Seok her main camera subjects.",
+          "popularity": 0.0,
+          "poster_path": "/1ERGPNiKtnEcsvJS1ywsmqmcIDO.jpg",
+          "release_date": "2026-09-23",
           "softcore": false,
           "video": false,
           "vote_average": 0.0,
           "vote_count": 0
         }
       ],
-      "total_pages": 189,
-      "total_results": 3766
+      "total_pages": 392,
+      "total_results": 7827
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",

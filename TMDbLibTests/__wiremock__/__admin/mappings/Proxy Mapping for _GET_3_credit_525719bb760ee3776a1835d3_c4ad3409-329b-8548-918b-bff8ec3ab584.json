@@ -16,20 +16,7 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1",
-    "Headers": [
-      {
-        "Name": "Accept-Encoding",
-        "Matchers": [
-          {
-            "Name": "WildcardMatcher",
-            "Pattern": "gzip, deflate, br",
-            "IgnoreCase": true
-          }
-        ],
-        "IgnoreCase": true
-      }
-    ]
+    "HttpVersion": "1.1"
   },
   "Response": {
     "StatusCode": 200,
@@ -72,7 +59,7 @@
             "episode_number": 7,
             "episode_type": "standard",
             "production_code": "59508",
-            "runtime": 49,
+            "runtime": 46,
             "season_number": 1,
             "show_id": 1908,
             "still_path": "/zJZDnnNGO0ciOQ9SUdEGLLCE4r0.jpg"

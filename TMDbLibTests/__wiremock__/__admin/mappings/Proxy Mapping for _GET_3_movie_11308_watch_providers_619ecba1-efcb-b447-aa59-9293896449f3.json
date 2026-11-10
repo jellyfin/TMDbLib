@@ -1,0 +1,613 @@
+{
+  "Guid": "619ecba1-efcb-b447-aa59-9293896449f3",
+  "Title": "Proxy Mapping for GET /3/movie/11308/watch/providers",
+  "Description": "Proxy Mapping for GET /3/movie/11308/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/movie/11308/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 11308,
+      "results": {
+        "AT": {
+          "link": "https://www.themoviedb.org/movie/11308-the-hotel-new-hampshire/watch?locale=AT",
+          "ads": [
+            {
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/sFttgm39WC1HxP2qZvlDzh2Gk9O.png",
+              "provider_id": 28,
+              "provider_name": "Netzkino",
+              "display_priority": 12
+            }
+          ]
+        },
+        "AU": {
+          "link": "https://www.themoviedb.org/movie/11308-the-hotel-new-hampshire/watch?locale=AU",
+          "ads": [
+            {
+              "logo_path": "/9dEuvA8wg5TSeFBZlPxSVxFdimJ.png",
+              "provider_id": 73,
+              "provider_name": "Tubi TV",
+              "display_priority": 27
+            }
+          ]
+        },
+        "BE": {
+          "link": "https://www.themoviedb.org/movie/11308-the-hotel-new-hampshire/watch?locale=BE",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/blAEhvx3XX8sV0fFVFk88FFjubs.png",
+              "provider_id": 538,
+              "provider_name": "Plex",
+              "display_priority": 35
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
+            }
+          ]
+        },
+        "CA": {
+          "link": "https://www.themoviedb.org/movie/11308-the-hotel-new-hampshire/watch?locale=CA",
+          "ads": [
+            {
+              "logo_path": "/9dEuvA8wg5TSeFBZlPxSVxFdimJ.png",
+              "provider_id": 73,
+              "provider_name": "Tubi TV",
+              "display_priority": 21
+            }
+          ]
+        },
+        "CH": {
+          "link": "https://www.themoviedb.org/movie/11308-the-hotel-new-hampshire/watch?locale=CH",
+          "ads": [
+            {
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/sFttgm39WC1HxP2qZvlDzh2Gk9O.png",
+              "provider_id": 28,
+              "provider_name": "Netzkino",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/blAEhvx3XX8sV0fFVFk88FFjubs.png",
+              "provider_id": 538,
+              "provider_name": "Plex",
+              "display_priority": 44
+            }
+          ]
+        },
+        "CM": {
+          "link": "https://www.themoviedb.org/movie/11308-the-hotel-new-hampshire/watch?locale=CM",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "DE": {
+          "link": "https://www.themoviedb.org/movie/11308-the-hotel-new-hampshire/watch?locale=DE",
+          "ads": [
+            {
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 24
+            },
+            {
+              "logo_path": "/sFttgm39WC1HxP2qZvlDzh2Gk9O.png",
+              "provider_id": 28,
+              "provider_name": "Netzkino",
+              "display_priority": 31
+            }
+          ]
+        },
+        "DK": {
+          "link": "https://www.themoviedb.org/movie/11308-the-hotel-new-hampshire/watch?locale=DK",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "ES": {
+          "link": "https://www.themoviedb.org/movie/11308-the-hotel-new-hampshire/watch?locale=ES",
+          "flatrate": [
+            {
+              "logo_path": "/7OEtlOKTmjTXh40eHUES11Oc1i7.png",
+              "provider_id": 149,
+              "provider_name": "Movistar Plus\u002B Ficci\u00F3n Total ",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/pQ3G3Ts5SWjy3Ds4Y6QZWoZFAKJ.png",
+              "provider_id": 63,
+              "provider_name": "Filmin",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/mA94ERBAHIp5OHy95vbx9szM4Uv.png",
+              "provider_id": 393,
+              "provider_name": "FlixOl\u00E9",
+              "display_priority": 17
+            },
+            {
+              "logo_path": "/jyWWSYr5UHP1H4u22JldBVUrYAK.png",
+              "provider_id": 684,
+              "provider_name": "FlixOl\u00E9 Amazon Channel",
+              "display_priority": 41
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 34
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 34
+            }
+          ]
+        },
+        "FI": {
+          "link": "https://www.themoviedb.org/movie/11308-the-hotel-new-hampshire/watch?locale=FI",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "FR": {
+          "link": "https://www.themoviedb.org/movie/11308-the-hotel-new-hampshire/watch?locale=FR",
+          "rent": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 34
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/blAEhvx3XX8sV0fFVFk88FFjubs.png",
+              "provider_id": 538,
+              "provider_name": "Plex",
+              "display_priority": 23
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 34
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/g8P4BJ2Wrya0VkbGUxBoUqpXtSs.png",
+              "provider_id": 1967,
+              "provider_name": "Molotov TV",
+              "display_priority": 30
+            },
+            {
+              "logo_path": "/tpwTT1FpWqLLhxUfAuDavIXDDfI.png",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 82
+            }
+          ]
+        },
+        "GB": {
+          "link": "https://www.themoviedb.org/movie/11308-the-hotel-new-hampshire/watch?locale=GB",
+          "rent": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 10
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 10
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/tpwTT1FpWqLLhxUfAuDavIXDDfI.png",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 98
+            }
+          ]
+        },
+        "GG": {
+          "link": "https://www.themoviedb.org/movie/11308-the-hotel-new-hampshire/watch?locale=GG",
+          "rent": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 82
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 82
+            }
+          ]
+        },
+        "GH": {
+          "link": "https://www.themoviedb.org/movie/11308-the-hotel-new-hampshire/watch?locale=GH",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "IE": {
+          "link": "https://www.themoviedb.org/movie/11308-the-hotel-new-hampshire/watch?locale=IE",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "IS": {
+          "link": "https://www.themoviedb.org/movie/11308-the-hotel-new-hampshire/watch?locale=IS",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "IT": {
+          "link": "https://www.themoviedb.org/movie/11308-the-hotel-new-hampshire/watch?locale=IT",
+          "rent": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 35
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/kQWl83Duzyuv0V5k8dqDWxRDdxw.png",
+              "provider_id": 2747,
+              "provider_name": "The Film Club Amazon Channel",
+              "display_priority": 103
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 35
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/blAEhvx3XX8sV0fFVFk88FFjubs.png",
+              "provider_id": 538,
+              "provider_name": "Plex",
+              "display_priority": 26
+            }
+          ]
+        },
+        "KE": {
+          "link": "https://www.themoviedb.org/movie/11308-the-hotel-new-hampshire/watch?locale=KE",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "LU": {
+          "link": "https://www.themoviedb.org/movie/11308-the-hotel-new-hampshire/watch?locale=LU",
+          "ads": [
+            {
+              "logo_path": "/blAEhvx3XX8sV0fFVFk88FFjubs.png",
+              "provider_id": 538,
+              "provider_name": "Plex",
+              "display_priority": 11
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "MC": {
+          "link": "https://www.themoviedb.org/movie/11308-the-hotel-new-hampshire/watch?locale=MC",
+          "ads": [
+            {
+              "logo_path": "/blAEhvx3XX8sV0fFVFk88FFjubs.png",
+              "provider_id": 538,
+              "provider_name": "Plex",
+              "display_priority": 25
+            }
+          ]
+        },
+        "MW": {
+          "link": "https://www.themoviedb.org/movie/11308-the-hotel-new-hampshire/watch?locale=MW",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 0
+            }
+          ]
+        },
+        "NG": {
+          "link": "https://www.themoviedb.org/movie/11308-the-hotel-new-hampshire/watch?locale=NG",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "NO": {
+          "link": "https://www.themoviedb.org/movie/11308-the-hotel-new-hampshire/watch?locale=NO",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "NZ": {
+          "link": "https://www.themoviedb.org/movie/11308-the-hotel-new-hampshire/watch?locale=NZ",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "SE": {
+          "link": "https://www.themoviedb.org/movie/11308-the-hotel-new-hampshire/watch?locale=SE",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "SM": {
+          "link": "https://www.themoviedb.org/movie/11308-the-hotel-new-hampshire/watch?locale=SM",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "UG": {
+          "link": "https://www.themoviedb.org/movie/11308-the-hotel-new-hampshire/watch?locale=UG",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/movie/11308-the-hotel-new-hampshire/watch?locale=US",
+          "rent": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/wpOt6x0dRxTrIzuBosto4LGd7E9.png",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 41
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/9dEuvA8wg5TSeFBZlPxSVxFdimJ.png",
+              "provider_id": 73,
+              "provider_name": "Tubi TV",
+              "display_priority": 346
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/wpOt6x0dRxTrIzuBosto4LGd7E9.png",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 41
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/3wF8xISfVlcrc8X3jaa3uMUFGAr.png",
+              "provider_id": 257,
+              "provider_name": "fuboTV",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/gk7O3l9qHttE9F3hgDNnhbhlOs7.png",
+              "provider_id": 583,
+              "provider_name": "MGM\u002B Amazon Channel",
+              "display_priority": 17
+            },
+            {
+              "logo_path": "/mfbhzQwmQKjm7bLZPF5CTeu3Ilc.png",
+              "provider_id": 2383,
+              "provider_name": "Philo",
+              "display_priority": 21
+            },
+            {
+              "logo_path": "/surh9i8VYeeq9186fKHnUg5Q5dg.png",
+              "provider_id": 636,
+              "provider_name": "MGM Plus Roku Premium Channel",
+              "display_priority": 36
+            },
+            {
+              "logo_path": "/q63Uzpu7JAs566vA2G23Lk7LcID.png",
+              "provider_id": 34,
+              "provider_name": "MGM Plus",
+              "display_priority": 53
+            }
+          ]
+        },
+        "VA": {
+          "link": "https://www.themoviedb.org/movie/11308-the-hotel-new-hampshire/watch?locale=VA",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 0
+            }
+          ]
+        },
+        "ZA": {
+          "link": "https://www.themoviedb.org/movie/11308-the-hotel-new-hampshire/watch?locale=ZA",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty"
+    }
+  }
+}

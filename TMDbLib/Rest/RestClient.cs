@@ -56,7 +56,10 @@ internal sealed class RestClient : IDisposable
 
     public int MaxRetryCount
     {
-        get => _maxRetryCount;
+        get
+        {
+            return _maxRetryCount;
+        }
 
         set
         {

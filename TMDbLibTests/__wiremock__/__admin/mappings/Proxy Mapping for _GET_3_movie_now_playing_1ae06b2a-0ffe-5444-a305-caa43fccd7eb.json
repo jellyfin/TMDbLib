@@ -17,19 +17,6 @@
       "GET"
     ],
     "HttpVersion": "1.1",
-    "Headers": [
-      {
-        "Name": "Accept-Encoding",
-        "Matchers": [
-          {
-            "Name": "WildcardMatcher",
-            "Pattern": "gzip, deflate, br",
-            "IgnoreCase": true
-          }
-        ],
-        "IgnoreCase": true
-      }
-    ],
     "Params": [
       {
         "Name": "language",
@@ -47,27 +34,27 @@
     "StatusCode": 200,
     "BodyAsJson": {
       "dates": {
-        "maximum": "2026-08-12",
-        "minimum": "2026-07-01"
+        "maximum": "2026-11-11",
+        "minimum": "2026-09-30"
       },
       "page": 1,
       "results": [
         {
           "adult": false,
-          "backdrop_path": "/qeQJx07rK2xm8SD2sJxFKhE7gs0.jpg",
+          "backdrop_path": "/3icyRAqgakNcQn6aDVz9libFmBA.jpg",
           "genre_ids": [
+            27,
             878,
-            28,
             12
           ],
-          "id": 969681,
-          "title": "Spider-Man: Brand New Day",
+          "id": 1423191,
+          "title": "Resident Evil",
           "original_language": "en",
-          "original_title": "Spider-Man: Brand New Day",
-          "overview": "Vier Jahre sind seit den Ereignissen von \u201ENo Way Home\u201C vergangen. Peter ist nun erwachsen und lebt f\u00FCr sich allein, nachdem er sich freiwillig aus dem Leben und den Erinnerungen derer, die er liebt, ausgel\u00F6scht hat. Er bek\u00E4mpft Verbrechen in einem New York, das ihn und seinen Namen nicht mehr kennt, und widmet sich ganz dem Schutz seiner Stadt: Spider-Man in Vollzeit. Doch mit den steigenden Anforderungen l\u00F6st der Druck eine \u00FCberraschende k\u00F6rperliche Ver\u00E4nderung aus, die seine Existenz bedroht \u2013 gerade als eine seltsame neue Art von Verbrechen eine der m\u00E4chtigsten Bedrohungen hervorbringt, denen er je gegen\u00FCberstand.",
+          "original_title": "Resident Evil",
+          "overview": "F\u00FCr Kurierfahrer Bryan beginnt der Tag mit einem Routineauftrag: Er soll ein biomedizinisches Paket an seinen Bestimmungsort bringen. Doch schon kurz nach der \u00DCbernahme der Lieferung ger\u00E4t der Einsatz au\u00DFer Kontrolle. Aus der vermeintlich gew\u00F6hnlichen Fahrt entwickelt sich innerhalb weniger Stunden ein Albtraum, aus dem es kein Entkommen zu geben scheint. Mit jeder Station nehmen die Ereignisse eine bedrohlichere Wendung, w\u00E4hrend Bryan immer tiefer in eine Situation hineingezogen wird, deren Ausma\u00DF er zun\u00E4chst nicht begreift. Die geheimnisvolle Fracht l\u00F6st eine Kette unvorhersehbarer Geschehnisse aus und macht die Nacht zu einem erbitterten Kampf ums \u00DCberleben. Je weiter der Transport voranschreitet, desto mehr verschwimmen die Grenzen zwischen Realit\u00E4t und Horror.",
           "popularity": 0.0,
-          "poster_path": "/mFD3aitQ9rVM6u01xWDL2vYCKLE.jpg",
-          "release_date": "2026-07-29",
+          "poster_path": "/8L9S1bFMQWu9AY4Hd93A1o4yYOv.jpg",
+          "release_date": "2026-09-16",
           "softcore": false,
           "video": false,
           "vote_average": 0.0,
@@ -75,19 +62,39 @@
         },
         {
           "adult": false,
-          "backdrop_path": "/RMXG8myu1aGlNUsRjtxzmpdMK0.jpg",
+          "backdrop_path": "/6uVRPFflyJpo8Cx872olmlGTWla.jpg",
           "genre_ids": [
             12,
-            28,
-            14
+            53
           ],
-          "id": 1368337,
-          "title": "Die Odyssee",
+          "id": 1263337,
+          "title": "Eiserne Wildnis \u2013 Heart of the Beast",
           "original_language": "en",
-          "original_title": "The Odyssey",
-          "overview": "Folgt Odysseus, dem legend\u00E4ren griechischen K\u00F6nig von Ithaka, auf seiner langen und gef\u00E4hrlichen Heimreise nach dem Trojanischen Krieg und schildert seine Begegnungen mit mythischen Wesen wie dem Zyklopen Polyphem, den Sirenen und der Hexeng\u00F6ttin Circe, w\u00E4hrend er versucht, wieder mit seiner Frau Penelope zusammenzukommen.",
+          "original_title": "Heart of the Beast",
+          "overview": "Ein ehemaliger Soldat der Army Special Forces und sein pensionierter Kampfhund k\u00E4mpfen ums \u00DCberleben, nachdem sie tief in der gnadenlosen Wildnis Alaskas einen verheerenden Flugzeugabsturz erlitten haben. Das Duo muss sich durch das raue Gel\u00E4nde k\u00E4mpfen, um in die Zivilisation zur\u00FCckzukehren, w\u00E4hrend es gegen die Elemente und seine eigenen inneren D\u00E4monen ank\u00E4mpft.",
           "popularity": 0.0,
-          "poster_path": "/4E8Ji8jTcWNncl9PdUCauoj2qh9.jpg",
+          "poster_path": "/83uiRdaHBBtgDF0fuHVrr6mVFSZ.jpg",
+          "release_date": "2026-09-19",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/j96rurZqmBjyY37Fncl3IB0qJNe.jpg",
+          "genre_ids": [
+            878,
+            9648,
+            28
+          ],
+          "id": 1058424,
+          "title": "Hope",
+          "original_language": "ko",
+          "original_title": "\uD638\uD504",
+          "overview": "Nachdem s\u00E4mtliche Verst\u00E4rkungskr\u00E4fte abgezogen wurden, um Waldbr\u00E4nde einzud\u00E4mmen, und die Kommunikation vollst\u00E4ndig zusammengebrochen ist, k\u00E4mpfen der Leiter des Polizeipostens von Hope, Bum-seok, und die Polizistin Sung-ae darum, ein Dorf voller \u00E4lterer Menschen zu sch\u00FCtzen. W\u00E4hrenddessen brechen Sung-ki und weitere Menschen aus dem Dorf in die umliegenden Berge auf, um eine mysteri\u00F6se Bestie aufzusp\u00FCren \u2013 doch schon bald werden sie selbst zur Beute. Was aus Unwissenheit beginnt, setzt eine Katastrophe in Gang, die sich durch menschliche Konflikte zu einer Trag\u00F6die kosmischen Ausma\u00DFes entwickelt.",
+          "popularity": 0.0,
+          "poster_path": "/bRPrdyif9z2BYW2yNhZX0P8V9L5.jpg",
           "release_date": "2026-07-15",
           "softcore": false,
           "video": false,
@@ -96,334 +103,20 @@
         },
         {
           "adult": false,
-          "backdrop_path": "/14QbnygCuTO0vl7CAFmPf1fgZfV.jpg",
-          "genre_ids": [
-            28,
-            12,
-            878
-          ],
-          "id": 634649,
-          "title": "Spider-Man: No Way Home",
-          "original_language": "en",
-          "original_title": "Spider-Man: No Way Home",
-          "overview": "Peter Parker ist demaskiert und kann sein normales Leben nicht mehr von den hohen Eins\u00E4tzen als Superheld trennen. Als er Doctor Strange um Hilfe bittet, wird die Lage noch gef\u00E4hrlicher und er muss entdecken, was es wirklich bedeutet, Spider-Man zu sein.",
-          "popularity": 0.0,
-          "poster_path": "/iNKf4D0AzOj9GLq8ZyG3WZaqibL.jpg",
-          "release_date": "2021-12-15",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/4X2YSe8PaYbsBqX3TDmmIU4vOju.jpg",
-          "genre_ids": [
-            28,
-            12,
-            878
-          ],
-          "id": 1081003,
-          "title": "Supergirl",
-          "original_language": "en",
-          "original_title": "Supergirl",
-          "overview": "Kara Zor-El \u2013 alias Supergirl \u2013 sieht sich mit einem unerwarteten und skrupellosen Gegner konfrontiert. Widerwillig tut sie sich mit einem ungew\u00F6hnlichen Verb\u00FCndeten zusammen und begibt sich auf eine spektakul\u00E4re Reise durch das Universum, um Gerechtigkeit zu erlangen und Vergeltung zu \u00FCben.",
-          "popularity": 0.0,
-          "poster_path": "/6OLneCCOm4pPhfTPa2R9WU31knt.jpg",
-          "release_date": "2026-06-24",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/rZfmzpixLKLR3Hg2u0WgC7XLFl8.jpg",
-          "genre_ids": [
-            27,
-            53
-          ],
-          "id": 1339713,
-          "title": "Obsession \u2013 Du sollst mich lieben",
-          "original_language": "en",
-          "original_title": "Obsession",
-          "overview": "Als der hoffnungslose Romantiker Bear einen magischen Gegenstand nutzt, damit sein Crush endlich Gef\u00FChle f\u00FCr ihn entwickelt, muss er feststellen, dass manche W\u00FCnsche einen finsteren, unheimlichen Tribut fordern.",
-          "popularity": 0.0,
-          "poster_path": "/1bAhSRf3BVOCI9zNzTLrsJA1LAq.jpg",
-          "release_date": "2026-05-13",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/lh3BDkmWJh998n4fQcHYcVi7dpm.jpg",
-          "genre_ids": [
-            12,
-            18,
-            28
-          ],
-          "id": 1284465,
-          "title": "The Death of Robin Hood",
-          "original_language": "en",
-          "original_title": "The Death of Robin Hood",
-          "overview": "W\u00E4hrend er nach einem Leben voller Verbrechen und Mord mit seiner Vergangenheit ringt, findet sich Robin Hood schwer verwundet nach einer Schlacht wieder, die er f\u00FCr seine letzte hielt. In den H\u00E4nden einer geheimnisvollen Frau bietet sich ihm eine Chance auf Erl\u00F6sung.",
-          "popularity": 0.0,
-          "poster_path": "/dpcDnatuJlRUldshZkZoqdJDijg.jpg",
-          "release_date": "2026-06-18",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/rOIaKlAX0SeNC25dFbM0y1mFsH6.jpg",
-          "genre_ids": [
-            12,
-            14,
-            28
-          ],
-          "id": 1698863,
-          "title": "The Odyssey",
-          "original_language": "en",
-          "original_title": "The Odyssey",
-          "overview": "",
-          "popularity": 0.0,
-          "poster_path": "/xBHCRB7zLIW41w8QskfwJhm32YF.jpg",
-          "release_date": "2026-07-03",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/8sSKdEmlmqF4kJUd28SqthXC4yZ.jpg",
-          "genre_ids": [
-            16,
-            10751,
-            35,
-            12
-          ],
-          "id": 1084244,
-          "title": "Toy Story 5",
-          "original_language": "en",
-          "original_title": "Toy Story 5",
-          "overview": "Die Aufgaben von Buzz, Woody, Jessie und Co. werden immer schwieriger, wenn sie es mit einer ganz neuen Bedrohung der Spielzeit zu tun bekommen: der Technik.",
-          "popularity": 0.0,
-          "poster_path": "/3UMLeXTv33YNAFh7q0Dy1llmHik.jpg",
-          "release_date": "2026-06-17",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/se8LfmZYFiNerF6U7zMUKePV0vE.jpg",
-          "genre_ids": [
-            27,
-            53
-          ],
-          "id": 1481343,
-          "title": "The Devil\u0027s Mouth - Der Teufelsschlund",
-          "original_language": "en",
-          "original_title": "The Devil\u0027s Mouth",
-          "overview": "F\u00FCnf Freunde suchen in Thailand ein letztes gro\u00DFes Abenteuer und beschlie\u00DFen, die Devil\u0027s-Mouth-H\u00F6hlen zu erkunden. Schon bald erkennen sie, dass etwas in den Tiefen der H\u00F6hlen Jagd auf sie macht... und es ist schnell, lautlos und t\u00F6dlich. In der erdr\u00FCckenden Finsternis schwindet das Vertrauen, Panik macht sich breit und jede falsche Bewegung f\u00FChrt zu einem Kampf ums \u00DCberleben.",
-          "popularity": 0.0,
-          "poster_path": "/hRM5XAiMvwoAGhyrFou7P42jb0J.jpg",
-          "release_date": "2026-07-29",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/c6BPbkO5Npt1OdwttAxCFo06wtH.jpg",
-          "genre_ids": [
-            10751,
-            14,
-            35,
-            12
-          ],
-          "id": 1108427,
-          "title": "Vaiana",
-          "original_language": "en",
-          "original_title": "Moana",
-          "overview": "\u201EVAIANA\u201C enth\u00E4lt Sequenzen, die sich auf photosensitive Menschen oder Menschen mit photosensitiver Epilepsie auswirken k\u00F6nnten. In der Realverfilmung des Oscar\u00AE-nominierten Animationsabenteuers folgt Vaiana dem Ruf des Ozeans und wagt sich zum ersten Mal \u00FCber das Riff ihrer Heimatinsel Motunui hinaus. Gemeinsam mit dem ber\u00FChmt-ber\u00FCchtigten Halbgott Maui begibt sie sich auf eine abenteuerliche Reise \u00FCber die Weiten des Meeres, um die Zukunft ihres Volkes zu sichern.",
-          "popularity": 0.0,
-          "poster_path": "/x1QRMN8Mgci1Z121zFp3PwcEIwW.jpg",
-          "release_date": "2026-07-08",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/kkcwhgSFd81QDlXo8ytrpHPQjhy.jpg",
-          "genre_ids": [
-            12,
-            16,
-            35,
-            10751,
-            14
-          ],
-          "id": 1315772,
-          "title": "Minions \u0026 Monster",
-          "original_language": "en",
-          "original_title": "Minions \u0026 Monsters",
-          "overview": "MINIONS \u0026 MONSTER erz\u00E4hlt die abgefahrene, aberwitzige und nat\u00FCrlich absolut wahre Geschichte der Minions und wie sie Hollywood erobern, Filmstars werden, alles verlieren, Monster auf die Welt loslassen und sich dann heldenhaft daranmachen, den Planeten vor genau dem Chaos zu retten, das sie selbst angerichtet haben.",
-          "popularity": 0.0,
-          "poster_path": "/6jtBUoqgOSElz1v5QahkrWCYXm1.jpg",
-          "release_date": "2026-06-24",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/dqmMWNWfLnExDRpMtIMqI97GQFR.jpg",
-          "genre_ids": [
-            27,
-            9648,
-            878
-          ],
-          "id": 1083381,
-          "title": "Backrooms",
-          "original_language": "en",
-          "original_title": "Backrooms",
-          "overview": "Kahle, verschachtelte B\u00FCroflure, endlose beige-gelbe W\u00E4nde, ein unaufh\u00F6rliches, unertr\u00E4glich lautes Surren von Leuchtstoffr\u00F6hren: Die \u201EBackrooms\u201C beschreiben eine neue Art von Albtraum, eine menschenleere Parallelwelt sich wiederholender, fensterloser Stockwerke, die unsere Realit\u00E4t auf den ersten Blick spiegelt und sich ihr doch mit jedem Schritt weiter entzieht. Verst\u00F6rend verlassen wirken die labyrinthischen R\u00E4ume, doch allein ist man dort nicht...",
-          "popularity": 0.0,
-          "poster_path": "/mJiLDE6gu1u6ZPgLR22vmkP64u2.jpg",
-          "release_date": "2026-05-27",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/ezbrL1dMymKQZw7mDEWa2ZTzN7d.jpg",
-          "genre_ids": [
-            16,
-            28,
-            12,
-            14
-          ],
-          "id": 980431,
-          "title": "Avatar Aang: Der Herr der Elemente",
-          "original_language": "en",
-          "original_title": "Avatar Aang: The Last Airbender",
-          "overview": "Der Avatar Aang, der letzte Luftb\u00E4ndiger der Welt, erf\u00E4hrt von einer uralten Kraft, die seine Kultur vor dem Aussterben bewahren k\u00F6nnte. Gemeinsam mit seinen Freunden begibt er sich auf eine weltweite Suche, um diese Kraft zu finden, bevor sie in die falschen H\u00E4nde ger\u00E4t und den m\u00FChsam erk\u00E4mpften Frieden gef\u00E4hrdet.",
-          "popularity": 0.0,
-          "poster_path": "/4smK8w48NDDSL6rUnHFKW6sV9VY.jpg",
-          "release_date": "2026-07-24",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/jDvxsBemt2Iyslg7qn2WMzgxz23.jpg",
-          "genre_ids": [
-            28,
-            27,
-            878
-          ],
-          "id": 1375646,
-          "title": "\uAD70\uCCB4",
-          "original_language": "ko",
-          "original_title": "\uAD70\uCCB4",
-          "overview": "",
-          "popularity": 0.0,
-          "poster_path": "/thK6glS5pklrlijsgSN6Hw9GLQK.jpg",
-          "release_date": "2026-05-21",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/biwEwIkjZhMUfXzz59bpeDzwYB6.jpg",
-          "genre_ids": [
-            27,
-            53
-          ],
-          "id": 1212763,
-          "title": "Evil Dead Burn",
-          "original_language": "en",
-          "original_title": "Evil Dead Burn",
-          "overview": "Nach dem Tod ihres Mannes sucht eine Frau Trost bei ihren Schwiegereltern auf deren abgelegenem Familienanwesen. Als sich jedoch einer nach dem anderen in Deadites verwandelt, wodurch das Beisammensein zu einem Familientreffen aus der H\u00F6lle wird, muss sie feststellen, dass die Versprechen, die sie zu Lebzeiten gegeben hat, selbst im Tod weiterleben.",
-          "popularity": 0.0,
-          "poster_path": "/fn0frXHFsRQ5XaHsLpQKAgOA8Dk.jpg",
-          "release_date": "2026-07-07",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/xWBiXclrRmTggQHMRsIn84YHavs.jpg",
-          "genre_ids": [
-            35
-          ],
-          "id": 1273221,
-          "title": "Scary Movie 6",
-          "original_language": "en",
-          "original_title": "Scary Movie",
-          "overview": "Sechsundzwanzig Jahre nachdem sie einem verd\u00E4chtig vertrauten maskierten Killer (\u201EGhostface\u0022) entkommen sind, geraten die Core Four erneut ins Visier des M\u00F6rders \u2013 und kein Horror-Franchise ist mehr sicher.",
-          "popularity": 0.0,
-          "poster_path": "/5udDsOLWcXDt3hUTD7FpJLGDBmW.jpg",
-          "release_date": "2026-06-03",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/7y8zWGEjs7tresw4Hzkkf4TdkcL.jpg",
-          "genre_ids": [
-            27,
-            10749
-          ],
-          "id": 1564614,
-          "title": "Leviticus",
-          "original_language": "en",
-          "original_title": "Leviticus",
-          "overview": "",
-          "popularity": 0.0,
-          "poster_path": "/gnAsZvBygplNpp8PtjoTEYv3VPB.jpg",
-          "release_date": "2026-06-17",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/dk68ykaNd3HdrDJyPJqEGsgvag7.jpg",
+          "backdrop_path": "/o3XwuDUj0n8qnK91p6q8LKfr6rj.jpg",
           "genre_ids": [
             28,
             53,
-            80
+            27
           ],
-          "id": 1630409,
-          "title": "\u0E04\u0E19\u0E40\u0E14\u0E37\u0E2D\u0E14\u0E17\u0E27\u0E07\u0E41\u0E04\u0E49\u0E19",
-          "original_language": "th",
-          "original_title": "\u0E04\u0E19\u0E40\u0E14\u0E37\u0E2D\u0E14\u0E17\u0E27\u0E07\u0E41\u0E04\u0E49\u0E19",
-          "overview": "",
+          "id": 1507696,
+          "title": "Apokalypse Z - Neue Welt",
+          "original_language": "es",
+          "original_title": "Apocalipsis Z: Nuevo mundo",
+          "overview": "Nach dem Ausbruch des TSJ-Virus sind die Kanarischen Inseln zum letzten Zufluchtsort Europas geworden. Als sich eine Spezialeinheit auf das spanische Festland begibt, um dringend ben\u00F6tigte Vorr\u00E4te zu beschaffen, schlie\u00DFt sich Roberto der Mission mit eigenen Absichten an. Was als riskanter Versorgungseinsatz beginnt, entwickelt sich zu einem Kampf ums \u00DCberleben, bei dem die Gruppe auf Horden Infizierter trifft und ihre unterschiedlichen Interessen zunehmend zum Problem werden. Zwischen Misstrauen und der st\u00E4ndigen Gefahr m\u00FCssen Roberto und seine Begleiter entscheiden, wie weit sie gehen wollen, um sich selbst und andere zu sch\u00FCtzen.",
           "popularity": 0.0,
-          "poster_path": "/2h4ikWt6TddvIAhMdS3WGVXhaRf.jpg",
-          "release_date": "2026-07-20",
+          "poster_path": "/cetKHC0wHV7xtwJmC1azDqB7jH8.jpg",
+          "release_date": "2026-10-09",
           "softcore": false,
           "video": false,
           "vote_average": 0.0,
@@ -431,20 +124,123 @@
         },
         {
           "adult": false,
-          "backdrop_path": "/ebcOSaZLxdCMHDjJJQzx5PiEyzl.jpg",
+          "backdrop_path": "/8vky6e0D4dSZMlxHWXBIRRFP1Pb.jpg",
+          "genre_ids": [
+            18,
+            27,
+            9648
+          ],
+          "id": 1813355,
+          "title": "A Story of Derry",
+          "original_language": "en",
+          "original_title": "A Story of Derry",
+          "overview": "Hunderte von Jahren vor Pennywise wagen sich drei Jugendliche in den Western Wood \u2026 wo sie auf einen furchterregenden, uralten Geist treffen.",
+          "popularity": 0.0,
+          "poster_path": "/5YGp8j1h8K4IvxWdQXueQLs7rV7.jpg",
+          "release_date": "2026-10-31",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/oqrYIDH4tvfEzPe1yqT4jzmAWHQ.jpg",
+          "genre_ids": [
+            878,
+            27,
+            28
+          ],
+          "id": 1381071,
+          "title": "Godzilla Minus Zero",
+          "original_language": "ja",
+          "original_title": "\u30B4\u30B8\u30E9-0.0",
+          "overview": "Der Krieg hat Japan auf Null reduziert, und Godzilla hat es ins Minus gest\u00FCrzt. Zwei Jahre sind seitdem vergangen und das Land k\u00E4mpft immer noch immer verzweifelt darum, sich wieder zu erholen und endlich in den normalen Alltag zur\u00FCckzufinden. Gerade als es der Menschheit gelang, an einem hart erk\u00E4mpften Frieden festzuhalten, schl\u00E4gt eine neue Bedrohung zu und vernichtet die Hoffnung im Handumdrehen. Ein drittes Mal wird es nicht geben. Hier endet alles.",
+          "popularity": 0.0,
+          "poster_path": "/hZviv9gguqHGw4GK8gS5d5bDhA4.jpg",
+          "release_date": "2026-11-03",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/bySCyjQXNPgsnLTlgJpSMnRazPD.jpg",
+          "genre_ids": [
+            28,
+            53
+          ],
+          "id": 1294189,
+          "title": "The Mongoose",
+          "original_language": "en",
+          "original_title": "The Mongoose",
+          "overview": "Ein f\u00E4lschlicherweise beschuldigter Kriegsheld, der nichts zu verlieren hat, f\u00FChrt die Polizei auf eine epische, im Fernsehen \u00FCbertragene Verfolgungsjagd, unterst\u00FCtzt von Mitgliedern seines ehemaligen Bataillons der Spezialeinheiten der Armee und von einem faszinierten Publikum, das seine sichere Flucht anfeuert, genau beobachtet.",
+          "popularity": 0.0,
+          "poster_path": "/nNMAZ9d83p5xjgPDVMoTMbxXjrc.jpg",
+          "release_date": "2026-10-29",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/cKetrF2dAnQ0AMV5i4BMOs41I5P.jpg",
+          "genre_ids": [
+            9648,
+            53
+          ],
+          "id": 1283515,
+          "title": "Verity \u2013 Dunkle Geheimnisse",
+          "original_language": "en",
+          "original_title": "Verity",
+          "overview": "Die erfolglose Schriftstellerin Lowen Ashleigh zieht auf das abgelegene Anwesen der Crawfords, um dort als Ghostwriterin f\u00FCr Verity Crawford zu arbeiten. Nachdem Lowen auf scheinbar erschreckende autobiografische Aufzeichnungen von Verity st\u00F6\u00DFt, ringt sie mit den verst\u00F6renden und verst\u00F6renden Gest\u00E4ndnissen \u00FCber Veritys Ehemann Jeremy und findet es schwer, Fiktion von Realit\u00E4t, Manipulation von Anziehung und Gelegenheit von Besessenheit zu unterscheiden.",
+          "popularity": 0.0,
+          "poster_path": "/oKgMCvf2EOIlOYOCHv0KJQXSZT4.jpg",
+          "release_date": "2026-09-30",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/prbMZ3DPf8taS6JYQd6igPnm2mA.jpg",
+          "genre_ids": [
+            14,
+            28,
+            12
+          ],
+          "id": 656908,
+          "title": "Ramayana: Rise of a Legend",
+          "original_language": "hi",
+          "original_title": "\u0930\u093E\u092E\u093E\u092F\u0923\u092E\u094D",
+          "overview": "In einem Zeitalter der G\u00F6tter und K\u00F6nige h\u00E4ngt das Schicksal der Welten am seidenen Faden. Rama, ein Prinz, dessen Leben von Pflicht, Selbstlosigkeit und unersch\u00FCtterlicher Rechtschaffenheit bestimmt wird, muss sich dem unsterblichen Ravana stellen, getrieben von Stolz und Rache und m\u00E4chtig genug den Kosmos zu zerst\u00F6ren.",
+          "popularity": 0.0,
+          "poster_path": "/gOWnXaBxqT6k2y40hKfYU6c0Ym.jpg",
+          "release_date": "2026-11-05",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/9nU0FKNefmhbgi2xXlvZchZsqwm.jpg",
           "genre_ids": [
             27,
-            878,
-            53
+            53,
+            28
           ],
-          "id": 1307118,
-          "title": "Soulm8te",
+          "id": 1244523,
+          "title": "Beware Boi\u00FAna",
           "original_language": "en",
-          "original_title": "Soulm8te",
-          "overview": "Ein Mann erwirbt einen k\u00FCnstlich intelligenten Androiden, um mit dem Verlust seiner k\u00FCrzlich verstorbenen Frau fertig zu werden. Bei dem Versuch, einen wirklich empfindungsf\u00E4higen Partner zu schaffen, verwandelt er jedoch versehentlich einen harmlosen Lovebot in einen t\u00F6dlichen Seelenverwandten.",
+          "original_title": "Beware Boi\u00FAna",
+          "overview": "Tief im Amazonasgebiet verwandelt sich eine medizinische Mission in einen Kampf ums \u00DCberleben, als Boi\u00FAna, ein riesiges urzeitliches Raubtier, erwacht, um ihr Revier zur\u00FCckzuerobern. Im Dschungel, wo die Natur die absolute Macht hat, entscheidet sie, wer lebt und wer stirbt.",
           "popularity": 0.0,
-          "poster_path": "/bNErActDctl6cdUGw9pnjSCmyhQ.jpg",
-          "release_date": "2026-07-31",
+          "poster_path": "/3YTPvYoCRIU9PJGdxEmz6xbNrmV.jpg",
+          "release_date": "2026-10-01",
           "softcore": false,
           "video": false,
           "vote_average": 0.0,
@@ -452,26 +248,213 @@
         },
         {
           "adult": false,
-          "backdrop_path": "/wPSOPYy2fV62GjeXpVdKyweZGZu.jpg",
+          "backdrop_path": "/4pYKqctQvvdyhuGjiK4szH9jEv9.jpg",
+          "genre_ids": [
+            27,
+            28,
+            10752,
+            14,
+            53
+          ],
+          "id": 1657630,
+          "title": "Operation Black Jungle",
+          "original_language": "es",
+          "original_title": "El despertar",
+          "overview": "Eine milit\u00E4rische Eliteeinheit st\u00F6\u00DFt bei einem Einsatz im s\u00FCdamerikanischen Dschungel auf eine t\u00F6dliche \u00FCbernat\u00FCrliche Macht. Dabei offenbart sich die Existenz einer uralten Pr\u00E4senz, die jeden das Leben kostet, der es wagt, in ihr Gebiet einzudringen.",
+          "popularity": 0.0,
+          "poster_path": "/w3YJx1PPPC6aiVKusxfc9QA0uYS.jpg",
+          "release_date": "2026-10-29",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/bDsmYvrzto7xrEwqDpLC3SPhn9A.jpg",
+          "genre_ids": [
+            18,
+            10752
+          ],
+          "id": 1422041,
+          "title": "La bola negra",
+          "original_language": "es",
+          "original_title": "La bola negra",
+          "overview": "Drei Leben, drei miteinander verwobene Schicksale, ein gemeinsames Erbe: Die Jahre 1932, 1937 und 2017 umspannend, erz\u00E4hlt LA BOLA NEGRA eine Geschichte von Begehren, Schmerz und der Sehnsucht von Sebasti\u00E1n, Rafael und Alberto, deren Lebenswege untrennbar miteinander verbunden sind. Inspiriert von einem der letzten, unvollendeten Werke Federico Garc\u00EDa Lorcas, spannt der Film einen Bogen von der Vorkriegszeit Spaniens bis in die Gegenwart.",
+          "popularity": 0.0,
+          "poster_path": "/t1azKLExwUxKj6v6m2L535evuRa.jpg",
+          "release_date": "2026-09-25",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/hbz4aeVsjnKb2HRoFbbr46Egh8y.jpg",
+          "genre_ids": [
+            10749,
+            53
+          ],
+          "id": 1596275,
+          "title": "Drive \u2013 The Pretenders",
+          "original_language": "de",
+          "original_title": "Drive \u2013 The Pretenders",
+          "overview": "Eine junge Rennwagen-Mechanikerin t\u00E4uscht eine Verlobung mit dem skandaltr\u00E4chtigsten Racing-Star der Szene vor \u2013 offiziell f\u00FCr seinen Ruf, insgeheim f\u00FCr ihre eigene Chance am Steuer. Doch bald droht die L\u00FCge alles zu zerst\u00F6ren, auch das, was l\u00E4ngst mehr ist als nur ein Spiel.",
+          "popularity": 0.0,
+          "poster_path": "/o1amTBOej7F2wdrTSKzGE6eG2CT.jpg",
+          "release_date": "2026-10-27",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/nGau0KBOaRILSK5MqFcuTfv7GMl.jpg",
           "genre_ids": [
             53
           ],
-          "id": 1727780,
-          "title": "Borderline",
+          "id": 1101412,
+          "title": "Fall 2: Deadpoint",
           "original_language": "en",
-          "original_title": "Borderline",
-          "overview": "",
+          "original_title": "Fall 2: Deadpoint",
+          "overview": "W\u00E4hrend eines gef\u00E4hrlichen Aufstiegs am thail\u00E4ndischen Mount Kwan sitzen zwei Kletterer in schwindelerregender H\u00F6he fest; dort machen die enorme Tiefe, die v\u00F6llige Ausgesetztheit und die schier aussichtslosen Umst\u00E4nde jeden Augenblick zu einem Kampf ums \u00DCberleben.",
           "popularity": 0.0,
-          "poster_path": "/sAA2mjpYJFAKydtzG4P4aHC4mZk.jpg",
-          "release_date": "2026-07-17",
+          "poster_path": "/fgSm5ylwiXbIHn8UbUXDjk9RRu4.jpg",
+          "release_date": "2026-09-01",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/sMmG82PtjK8A9rVc34gwKQtCm3A.jpg",
+          "genre_ids": [
+            27,
+            35,
+            14
+          ],
+          "id": 1514026,
+          "title": "Buddy",
+          "original_language": "en",
+          "original_title": "Buddy",
+          "overview": "Alle lieben Buddy. Oder m\u00FCssen es zumindest, denn wenn das orange Einhorn w\u00FCtend wird, verwandelt sich seine quietschbunte Kindersendung schnell in blutiges Chaos. In der k\u00FCnstlich perfekten Studiowelt im Stil der 80er und 90er leben Kinder neben sprechenden Gegenst\u00E4nden, singen, tanzen und lernen Lektionen \u00FCber Freundschaft und Zusammenhalt. Doch als Josh keine Lust auf Buddys Geburtstagsparty hat, bekommt die fr\u00F6hliche Fassade schnell Risse und Josh einen t\u00F6dlichen Axthieb verpasst. Folge f\u00FCr Folge eskaliert die Lage, denn gegen Buddys Zorn gibt es keine p\u00E4dagogisch wertvolle L\u00F6sung",
+          "popularity": 0.0,
+          "poster_path": "/1BdZbNvl1SfrrX8J9X5tQzN6Ivu.jpg",
+          "release_date": "2026-08-27",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/hhQT0TySg3LXCE8BEPpfPJ5zJA2.jpg",
+          "genre_ids": [
+            35,
+            18
+          ],
+          "id": 1570488,
+          "title": "Winstead \u2013 Ein Hund feiert Weihnachten",
+          "original_language": "en",
+          "original_title": "A Dog\u0027s Perfect Christmas",
+          "overview": "Als Familie Goss von einem medizinischen Notfall ersch\u00FCttert wird, unternimmt der entschlossene Hund Winstead alles, um seine Menschen vor Heiligabend wieder zusammenzubringen.",
+          "popularity": 0.0,
+          "poster_path": "/hEXgLJwyLjA5mfikYqa6dfKoPEq.jpg",
+          "release_date": "2026-11-04",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/dJTWIecL2vxsCRl5G0lRhPsfrhc.jpg",
+          "genre_ids": [
+            28,
+            53
+          ],
+          "id": 1228834,
+          "title": "The Fix",
+          "original_language": "en",
+          "original_title": "The Fix",
+          "overview": "Desillusioniert durch das Ende des Krieges in Afghanistan, machte sich eine Gruppe von in Ungnade gefallenen, vom Krieg zerrissenen Ex-CIA-Aktivisten nach Teheran, um eine lebensver\u00E4ndernde Rechnung zu f\u00E4llen.",
+          "popularity": 0.0,
+          "poster_path": "/jlP8XDjZN89GrpM3je5Uf8Grqx8.jpg",
+          "release_date": "2026-09-10",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/uI3kWI7kGW5E0F8WduewgQYPt34.jpg",
+          "genre_ids": [
+            53,
+            18,
+            80
+          ],
+          "id": 1571955,
+          "title": "Auf Kollisionskurs",
+          "original_language": "es",
+          "original_title": "Colisi\u00F3n",
+          "overview": "W\u00E4hrend der spanischen Wirtschaftskrise ver\u00FCbt eine Bande 2013 einen Bankraub mitten in Madrid. Nachdem der \u00E4ltere Pedro in Verkleidung die Vorhut gebildet und den Direktor Ernesto unter einem Vorwand dazu gebracht hat, ihn au\u00DFerhalb der regul\u00E4ren \u00D6ffnungszeiten hereinzulassen, dr\u00E4ngen sich Carla und Tom\u00E1s in die Filiale, sorgen mit einem Taser daf\u00FCr, dass Ernesto bewusstlos wird und pl\u00FCndern die Schlie\u00DFf\u00E4cher. Drau\u00DFen bemerkt aber eine Zeugin, dass irgendetwas nicht stimmt und alarmiert die Polizei. Das Trio entkommt mit Hilfe von Fluchtwagenfahrer Ra\u00FAl, doch w\u00E4hrend der Fahrt kommt es zum Streit und einem fatalen Crash. Alle vier k\u00F6nnen zwar entkommen, doch zwischen den Beteiligten entwickelt sich ein Katz-und-Maus-Spiel aus T\u00E4uschung und Angst, w\u00E4hrend ein Kommissar die Spuren verfolgt und der Bande deutlich n\u00E4her ist, als er es erahnt.",
+          "popularity": 0.0,
+          "poster_path": "/kUKRy03AVq10EXKvb6DcLLohC2O.jpg",
+          "release_date": "2026-10-30",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/sEsMwSDUWGIx9EfNxzM6KzVSsSQ.jpg",
+          "genre_ids": [
+            53,
+            18,
+            80
+          ],
+          "id": 1375441,
+          "title": "Primetime",
+          "original_language": "en",
+          "original_title": "Primetime",
+          "overview": "Im Jahr 2006 macht sich Chris Hansen, der Moderator von \u201ETo Catch a Predator\u201C, daran, Fernsehgeschichte zu schreiben.",
+          "popularity": 0.0,
+          "poster_path": "/iVtbZFH8QwcPB3U1xYDi9s9laOn.jpg",
+          "release_date": "2026-09-23",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/sl5NJ1vtyhP9Vr88bB4blULsJYp.jpg",
+          "genre_ids": [
+            16,
+            12,
+            14
+          ],
+          "id": 791523,
+          "title": "Wildwood",
+          "original_language": "en",
+          "original_title": "Wildwood",
+          "overview": "Nachdem ihr kleiner Bruder von einem Schwarm Kr\u00E4hen entf\u00FChrt worden ist, begibt sich die 12-j\u00E4hrige Prue auf eine abenteuerliche Rettungsmission in die \u201EUndurchdringliche Wildnis\u201C \u2013 einen verzauberten Wald, der sich am Rande von Portland, Oregon, verbirgt. Gemeinsam mit ihrem tollpatschigen Mitsch\u00FCler Curtis betritt sie eine Welt voller sprechender Tiere, Magie und uralter M\u00E4chte. Als die beiden in einen Konflikt geraten, der das Gleichgewicht des Waldes bedroht, entdeckt Prue eine innere St\u00E4rke, von der sie niemals geahnt h\u00E4tte, dass sie in ihr steckt. Wenn sie ihren Bruder retten und das Schicksal von Wildwood ver\u00E4ndern will, muss sie alles aufs Spiel setzen.",
+          "popularity": 0.0,
+          "poster_path": "/oYkGlrvG7QNqrLtss4Q3Bpr1Np6.jpg",
+          "release_date": "2026-10-19",
           "softcore": false,
           "video": false,
           "vote_average": 0.0,
           "vote_count": 0
         }
       ],
-      "total_pages": 190,
-      "total_results": 3791
+      "total_pages": 392,
+      "total_results": 7826
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",

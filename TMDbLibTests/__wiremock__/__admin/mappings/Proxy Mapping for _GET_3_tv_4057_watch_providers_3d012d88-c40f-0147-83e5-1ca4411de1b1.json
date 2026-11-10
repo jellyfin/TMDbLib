@@ -16,20 +16,7 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1",
-    "Headers": [
-      {
-        "Name": "Accept-Encoding",
-        "Matchers": [
-          {
-            "Name": "WildcardMatcher",
-            "Pattern": "gzip, deflate, br",
-            "IgnoreCase": true
-          }
-        ],
-        "IgnoreCase": true
-      }
-    ]
+    "HttpVersion": "1.1"
   },
   "Response": {
     "StatusCode": 200,
@@ -40,28 +27,28 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=AR",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 4
             },
             {
-              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "logo_path": "/pkx3klJlwW5JdtaulvDx6hDNtch.png",
               "provider_id": 531,
               "provider_name": "Paramount Plus",
               "display_priority": 7
             },
             {
-              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "logo_path": "/xu4LyKTwasTbta1Z0qWtZG48yZ3.png",
               "provider_id": 1853,
-              "provider_name": "Paramount Plus Apple TV Channel ",
-              "display_priority": 33
+              "provider_name": "Paramount Plus Apple TV channel",
+              "display_priority": 32
             },
             {
-              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "logo_path": "/bxX0YVOCY7bI85BKRlJAAQ2EjUR.png",
               "provider_id": 582,
               "provider_name": "Paramount\u002B Amazon Channel",
-              "display_priority": 46
+              "display_priority": 45
             }
           ]
         },
@@ -69,121 +56,117 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=AT",
           "buy": [
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 5
             },
             {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 8
-            },
-            {
-              "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
+              "logo_path": "/mjB4eyswPoC0XeJPUd1W1oitOlh.png",
               "provider_id": 20,
               "provider_name": "maxdome Store",
-              "display_priority": 14
+              "display_priority": 15
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/fXtgvU410LTT6NjQ4ERdUzoUHQC.png",
+              "provider_id": 304,
+              "provider_name": "Joyn",
+              "display_priority": 68
             }
           ],
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
               "display_priority": 3
             },
             {
-              "logo_path": "/vDdk3LyjWkYlfCtkrhkjFKFK1Hg.jpg",
-              "provider_id": 29,
-              "provider_name": "Sky Go",
-              "display_priority": 9
-            },
-            {
-              "logo_path": "/67FAj8KvIiV5iZMJuPUdMrqMftw.jpg",
-              "provider_id": 321,
-              "provider_name": "Sky X",
-              "display_priority": 18
-            },
-            {
-              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "logo_path": "/pkx3klJlwW5JdtaulvDx6hDNtch.png",
               "provider_id": 531,
               "provider_name": "Paramount Plus",
-              "display_priority": 49
+              "display_priority": 47
             },
             {
-              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "logo_path": "/bxX0YVOCY7bI85BKRlJAAQ2EjUR.png",
               "provider_id": 582,
               "provider_name": "Paramount\u002B Amazon Channel",
-              "display_priority": 50
+              "display_priority": 48
             },
             {
-              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "logo_path": "/xu4LyKTwasTbta1Z0qWtZG48yZ3.png",
               "provider_id": 1853,
-              "provider_name": "Paramount Plus Apple TV Channel ",
-              "display_priority": 54
+              "provider_name": "Paramount Plus Apple TV channel",
+              "display_priority": 52
+            },
+            {
+              "logo_path": "/mjkfHoWsOku18fGjmYF5O1VXUrm.png",
+              "provider_id": 421,
+              "provider_name": "Joyn Plus",
+              "display_priority": 69
             }
           ]
         },
         "AU": {
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=AU",
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 13
-            },
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 14
-            },
-            {
-              "logo_path": "/9B7l9ZSos54kFrZbliVExt2z9C9.jpg",
-              "provider_id": 436,
-              "provider_name": "Fetch TV",
-              "display_priority": 31
-            }
-          ],
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
               "display_priority": 4
             },
             {
-              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "logo_path": "/pkx3klJlwW5JdtaulvDx6hDNtch.png",
               "provider_id": 531,
               "provider_name": "Paramount Plus",
-              "display_priority": 8
-            },
-            {
-              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
-              "provider_id": 582,
-              "provider_name": "Paramount\u002B Amazon Channel",
               "display_priority": 9
             },
             {
-              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "logo_path": "/bxX0YVOCY7bI85BKRlJAAQ2EjUR.png",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/xu4LyKTwasTbta1Z0qWtZG48yZ3.png",
               "provider_id": 1853,
-              "provider_name": "Paramount Plus Apple TV Channel ",
+              "provider_name": "Paramount Plus Apple TV channel",
               "display_priority": 53
             },
             {
-              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "logo_path": "/4N4BMd0Mm0kHAmF7RZgL5lW3cwc.png",
               "provider_id": 2303,
               "provider_name": "Paramount Plus Premium",
               "display_priority": 81
             },
             {
-              "logo_path": "/rl6zez5rCeyelt1I46JRYk6B9Ed.jpg",
+              "logo_path": "/ylBHMFuVsJqQ8JUzmfmPsEn97Ez.png",
               "provider_id": 2304,
               "provider_name": "Paramount Plus Basic with Ads",
               "display_priority": 82
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/hFTUerTxMwrM9RIo9z48qxCsi7z.png",
+              "provider_id": 436,
+              "provider_name": "Fetch TV",
+              "display_priority": 32
             }
           ]
         },
@@ -191,10 +174,18 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=BE",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 4
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/lnnW6BXeL8iyXzlYK4U6oITaA7K.png",
+              "provider_id": 572,
+              "provider_name": "RTL Play",
+              "display_priority": 24
             }
           ]
         },
@@ -202,10 +193,10 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=BG",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 4
             }
           ]
         },
@@ -213,22 +204,22 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=BO",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 4
             },
             {
-              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "logo_path": "/pkx3klJlwW5JdtaulvDx6hDNtch.png",
               "provider_id": 531,
               "provider_name": "Paramount Plus",
-              "display_priority": 6
+              "display_priority": 7
             },
             {
-              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "logo_path": "/xu4LyKTwasTbta1Z0qWtZG48yZ3.png",
               "provider_id": 1853,
-              "provider_name": "Paramount Plus Apple TV Channel ",
-              "display_priority": 30
+              "provider_name": "Paramount Plus Apple TV channel",
+              "display_priority": 29
             }
           ]
         },
@@ -236,40 +227,40 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=BR",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 4
             },
             {
-              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "logo_path": "/pkx3klJlwW5JdtaulvDx6hDNtch.png",
               "provider_id": 531,
               "provider_name": "Paramount Plus",
-              "display_priority": 7
+              "display_priority": 8
             },
             {
-              "logo_path": "/7EpFKOCMrlo3bjsyBMrec64c7Wb.jpg",
+              "logo_path": "/olzQMHt2SX7iNy8WDMR299hVFcL.png",
               "provider_id": 484,
               "provider_name": "Claro tv\u002B",
               "display_priority": 21
             },
             {
-              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "logo_path": "/bxX0YVOCY7bI85BKRlJAAQ2EjUR.png",
               "provider_id": 582,
               "provider_name": "Paramount\u002B Amazon Channel",
               "display_priority": 36
             },
             {
-              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "logo_path": "/xu4LyKTwasTbta1Z0qWtZG48yZ3.png",
               "provider_id": 1853,
-              "provider_name": "Paramount Plus Apple TV Channel ",
-              "display_priority": 43
+              "provider_name": "Paramount Plus Apple TV channel",
+              "display_priority": 42
             },
             {
-              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "logo_path": "/4N4BMd0Mm0kHAmF7RZgL5lW3cwc.png",
               "provider_id": 2303,
               "provider_name": "Paramount Plus Premium",
-              "display_priority": 71
+              "display_priority": 69
             }
           ]
         },
@@ -277,65 +268,65 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=BZ",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 4
             }
           ]
         },
         "CA": {
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=CA",
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 7
-            }
-          ],
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 2
+              "display_priority": 3
             },
             {
-              "logo_path": "/ewOptMVIYcOadMGGJz8DJueH2bH.jpg",
-              "provider_id": 230,
-              "provider_name": "Crave",
-              "display_priority": 6
-            },
-            {
-              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "logo_path": "/pkx3klJlwW5JdtaulvDx6hDNtch.png",
               "provider_id": 531,
               "provider_name": "Paramount Plus",
               "display_priority": 10
             },
             {
-              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "logo_path": "/bxX0YVOCY7bI85BKRlJAAQ2EjUR.png",
               "provider_id": 582,
               "provider_name": "Paramount\u002B Amazon Channel",
-              "display_priority": 12
+              "display_priority": 13
             },
             {
-              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "logo_path": "/a2o4bE63LR71m8jHrkx9BnBucN0.png",
+              "provider_id": 230,
+              "provider_name": "Crave",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/xu4LyKTwasTbta1Z0qWtZG48yZ3.png",
               "provider_id": 1853,
-              "provider_name": "Paramount Plus Apple TV Channel ",
-              "display_priority": 95
+              "provider_name": "Paramount Plus Apple TV channel",
+              "display_priority": 93
             },
             {
-              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "logo_path": "/4N4BMd0Mm0kHAmF7RZgL5lW3cwc.png",
               "provider_id": 2303,
               "provider_name": "Paramount Plus Premium",
-              "display_priority": 121
+              "display_priority": 119
             },
             {
-              "logo_path": "/rl6zez5rCeyelt1I46JRYk6B9Ed.jpg",
+              "logo_path": "/ylBHMFuVsJqQ8JUzmfmPsEn97Ez.png",
               "provider_id": 2304,
               "provider_name": "Paramount Plus Basic with Ads",
-              "display_priority": 122
+              "display_priority": 120
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 7
             }
           ]
         },
@@ -343,42 +334,30 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=CH",
           "buy": [
             {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 7
-            },
-            {
-              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "logo_path": "/nNkZ1JKe6vNhzti14KiKEUWHE6H.png",
               "provider_id": 130,
               "provider_name": "Sky Store",
-              "display_priority": 15
+              "display_priority": 14
             }
           ],
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
               "display_priority": 3
             },
             {
-              "logo_path": "/l5SFTF3l9l1KSgZJM7foAppUenz.jpg",
-              "provider_id": 622,
-              "provider_name": "UPC TV",
-              "display_priority": 32
-            },
-            {
-              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "logo_path": "/pkx3klJlwW5JdtaulvDx6hDNtch.png",
               "provider_id": 531,
               "provider_name": "Paramount Plus",
-              "display_priority": 42
+              "display_priority": 40
             },
             {
-              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "logo_path": "/xu4LyKTwasTbta1Z0qWtZG48yZ3.png",
               "provider_id": 1853,
-              "provider_name": "Paramount Plus Apple TV Channel ",
-              "display_priority": 44
+              "provider_name": "Paramount Plus Apple TV channel",
+              "display_priority": 42
             }
           ]
         },
@@ -386,28 +365,28 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=CL",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 4
             },
             {
-              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "logo_path": "/pkx3klJlwW5JdtaulvDx6hDNtch.png",
               "provider_id": 531,
               "provider_name": "Paramount Plus",
               "display_priority": 7
             },
             {
-              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "logo_path": "/xu4LyKTwasTbta1Z0qWtZG48yZ3.png",
               "provider_id": 1853,
-              "provider_name": "Paramount Plus Apple TV Channel ",
-              "display_priority": 30
+              "provider_name": "Paramount Plus Apple TV channel",
+              "display_priority": 29
             },
             {
-              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "logo_path": "/bxX0YVOCY7bI85BKRlJAAQ2EjUR.png",
               "provider_id": 582,
               "provider_name": "Paramount\u002B Amazon Channel",
-              "display_priority": 41
+              "display_priority": 40
             }
           ]
         },
@@ -415,28 +394,28 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=CO",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 4
             },
             {
-              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "logo_path": "/pkx3klJlwW5JdtaulvDx6hDNtch.png",
               "provider_id": 531,
               "provider_name": "Paramount Plus",
               "display_priority": 8
             },
             {
-              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "logo_path": "/xu4LyKTwasTbta1Z0qWtZG48yZ3.png",
               "provider_id": 1853,
-              "provider_name": "Paramount Plus Apple TV Channel ",
-              "display_priority": 31
+              "provider_name": "Paramount Plus Apple TV channel",
+              "display_priority": 30
             },
             {
-              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "logo_path": "/bxX0YVOCY7bI85BKRlJAAQ2EjUR.png",
               "provider_id": 582,
               "provider_name": "Paramount\u002B Amazon Channel",
-              "display_priority": 42
+              "display_priority": 41
             }
           ]
         },
@@ -444,22 +423,22 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=CR",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 4
             },
             {
-              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "logo_path": "/pkx3klJlwW5JdtaulvDx6hDNtch.png",
               "provider_id": 531,
               "provider_name": "Paramount Plus",
-              "display_priority": 7
+              "display_priority": 8
             },
             {
-              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "logo_path": "/xu4LyKTwasTbta1Z0qWtZG48yZ3.png",
               "provider_id": 1853,
-              "provider_name": "Paramount Plus Apple TV Channel ",
-              "display_priority": 31
+              "provider_name": "Paramount Plus Apple TV channel",
+              "display_priority": 30
             }
           ]
         },
@@ -467,101 +446,97 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=CZ",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 4
             },
             {
-              "logo_path": "/489t5n9o1KhH7voGNQkrXT7vBKV.jpg",
+              "logo_path": "/gzlCSbeTdiLJNxdZuMKNhW8X7cy.png",
               "provider_id": 1939,
               "provider_name": "Lepsi TV",
-              "display_priority": 27
+              "display_priority": 26
             }
           ]
         },
         "DE": {
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=DE",
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 3
-            },
-            {
-              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
-              "provider_id": 531,
-              "provider_name": "Paramount Plus",
-              "display_priority": 9
-            },
-            {
-              "logo_path": "/9r5zFWuYnwjzO1JrNjSbLQwUc3P.jpg",
-              "provider_id": 30,
-              "provider_name": "WOW",
-              "display_priority": 14
-            },
-            {
-              "logo_path": "/vDdk3LyjWkYlfCtkrhkjFKFK1Hg.jpg",
-              "provider_id": 29,
-              "provider_name": "Sky Go",
-              "display_priority": 15
-            },
-            {
-              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
-              "provider_id": 582,
-              "provider_name": "Paramount\u002B Amazon Channel",
-              "display_priority": 86
-            },
-            {
-              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
-              "provider_id": 1853,
-              "provider_name": "Paramount Plus Apple TV Channel ",
-              "display_priority": 90
-            },
-            {
-              "logo_path": "/qqTyjCCJuuARytrY7rNRAKka1VF.jpg",
-              "provider_id": 2412,
-              "provider_name": "Magenta TV\u002B",
-              "display_priority": 192
-            }
-          ],
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 5
+              "display_priority": 6
             },
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 8
             },
             {
-              "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
-              "provider_id": 20,
-              "provider_name": "maxdome Store",
-              "display_priority": 18
-            },
-            {
-              "logo_path": "/nCsFBTEmlCMc5NA4fwPuluTz6AO.jpg",
+              "logo_path": "/f1uWfExJA6DSAvuTL0YJ9Kyftfg.png",
               "provider_id": 178,
               "provider_name": "MagentaTV",
-              "display_priority": 23
+              "display_priority": 17
             },
             {
-              "logo_path": "/dKh2TJ9lTWV0UIcDQGMnMyQ8AIN.jpg",
+              "logo_path": "/mjB4eyswPoC0XeJPUd1W1oitOlh.png",
+              "provider_id": 20,
+              "provider_name": "maxdome Store",
+              "display_priority": 20
+            },
+            {
+              "logo_path": "/kWgg0b4wHDr4pwSyOXVK8nAsNKB.png",
               "provider_id": 1993,
               "provider_name": "Videoload",
-              "display_priority": 104
+              "display_priority": 105
             },
             {
-              "logo_path": "/xo4zowa5gbKT4z65ZathH6H4Cdg.jpg",
+              "logo_path": "/iUGee0WhY5ZSBZZuCunNt0K7au2.png",
               "provider_id": 2209,
               "provider_name": "Freenet meinVOD",
-              "display_priority": 128
+              "display_priority": 127
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/pkx3klJlwW5JdtaulvDx6hDNtch.png",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/bxX0YVOCY7bI85BKRlJAAQ2EjUR.png",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/mjkfHoWsOku18fGjmYF5O1VXUrm.png",
+              "provider_id": 421,
+              "provider_name": "Joyn Plus",
+              "display_priority": 41
+            },
+            {
+              "logo_path": "/xu4LyKTwasTbta1Z0qWtZG48yZ3.png",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV channel",
+              "display_priority": 91
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/fXtgvU410LTT6NjQ4ERdUzoUHQC.png",
+              "provider_id": 304,
+              "provider_name": "Joyn",
+              "display_priority": 13
             }
           ]
         },
@@ -569,10 +544,10 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=DK",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 4
             }
           ]
         },
@@ -580,21 +555,21 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=DO",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 4
             },
             {
-              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "logo_path": "/pkx3klJlwW5JdtaulvDx6hDNtch.png",
               "provider_id": 531,
               "provider_name": "Paramount Plus",
               "display_priority": 25
             },
             {
-              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "logo_path": "/xu4LyKTwasTbta1Z0qWtZG48yZ3.png",
               "provider_id": 1853,
-              "provider_name": "Paramount Plus Apple TV Channel ",
+              "provider_name": "Paramount Plus Apple TV channel",
               "display_priority": 29
             }
           ]
@@ -603,22 +578,22 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=EC",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 4
             },
             {
-              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "logo_path": "/pkx3klJlwW5JdtaulvDx6hDNtch.png",
               "provider_id": 531,
               "provider_name": "Paramount Plus",
-              "display_priority": 5
+              "display_priority": 6
             },
             {
-              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "logo_path": "/xu4LyKTwasTbta1Z0qWtZG48yZ3.png",
               "provider_id": 1853,
-              "provider_name": "Paramount Plus Apple TV Channel ",
-              "display_priority": 30
+              "provider_name": "Paramount Plus Apple TV channel",
+              "display_priority": 29
             }
           ]
         },
@@ -626,25 +601,25 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=ES",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
               "display_priority": 3
             },
             {
-              "logo_path": "/jse4MOi92Jgetym7nbXFZZBI6LK.jpg",
+              "logo_path": "/53JKjrhdG4z8DQ4pfdbHoAgPWeO.png",
               "provider_id": 2241,
               "provider_name": "Movistar Plus\u002B",
               "display_priority": 5
             },
             {
-              "logo_path": "/f6TRLB3H4jDpFEZ0z2KWSSvu1SB.jpg",
+              "logo_path": "/7OEtlOKTmjTXh40eHUES11Oc1i7.png",
               "provider_id": 149,
               "provider_name": "Movistar Plus\u002B Ficci\u00F3n Total ",
               "display_priority": 7
             },
             {
-              "logo_path": "/8VhN4PeHU7yfMNoWK0DnwdS1HlS.jpg",
+              "logo_path": "/o1Z73d95pgJMpS3iCfRDtK5XJgp.png",
               "provider_id": 1838,
               "provider_name": "Tivify",
               "display_priority": 53
@@ -655,85 +630,79 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=FI",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 4
             }
           ]
         },
         "FR": {
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=FR",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/j5w5U61YwOM6Adiaa5zuEVqrpP8.png",
+              "provider_id": 1754,
+              "provider_name": "TF1\u002B",
+              "display_priority": 46
+            },
+            {
+              "logo_path": "/pkx3klJlwW5JdtaulvDx6hDNtch.png",
+              "provider_id": 531,
+              "provider_name": "Paramount Plus",
+              "display_priority": 50
+            },
+            {
+              "logo_path": "/9yt7CjnySiiOtRFknNWCz3gSyXz.png",
+              "provider_id": 193,
+              "provider_name": "SFR Play",
+              "display_priority": 52
+            },
+            {
+              "logo_path": "/bxX0YVOCY7bI85BKRlJAAQ2EjUR.png",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 53
+            },
+            {
+              "logo_path": "/xu4LyKTwasTbta1Z0qWtZG48yZ3.png",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV channel",
+              "display_priority": 55
+            },
+            {
+              "logo_path": "/4N4BMd0Mm0kHAmF7RZgL5lW3cwc.png",
+              "provider_id": 2303,
+              "provider_name": "Paramount Plus Premium",
+              "display_priority": 75
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/j5w5U61YwOM6Adiaa5zuEVqrpP8.png",
+              "provider_id": 1754,
+              "provider_name": "TF1\u002B",
+              "display_priority": 46
+            }
+          ],
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
               "display_priority": 6
             },
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 36
-            }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
-              "provider_id": 337,
-              "provider_name": "Disney Plus",
-              "display_priority": 4
-            },
-            {
-              "logo_path": "/8qSG9LtUhBQIWy2Fr6fzeW7gBdd.jpg",
-              "provider_id": 1967,
-              "provider_name": "Molotov TV",
-              "display_priority": 32
-            },
-            {
-              "logo_path": "/blrBF9R2ONYu04ifGkYEb3k779N.jpg",
-              "provider_id": 1754,
-              "provider_name": "TF1\u002B",
-              "display_priority": 49
-            },
-            {
-              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
-              "provider_id": 531,
-              "provider_name": "Paramount Plus",
-              "display_priority": 53
-            },
-            {
-              "logo_path": "/vo4tm5HBLpctihoSX6bTIG0VB9d.jpg",
-              "provider_id": 193,
-              "provider_name": "SFR Play",
-              "display_priority": 55
-            },
-            {
-              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
-              "provider_id": 582,
-              "provider_name": "Paramount\u002B Amazon Channel",
-              "display_priority": 56
-            },
-            {
-              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
-              "provider_id": 1853,
-              "provider_name": "Paramount Plus Apple TV Channel ",
-              "display_priority": 58
-            },
-            {
-              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
-              "provider_id": 2303,
-              "provider_name": "Paramount Plus Premium",
-              "display_priority": 80
-            }
-          ],
-          "ads": [
-            {
-              "logo_path": "/blrBF9R2ONYu04ifGkYEb3k779N.jpg",
-              "provider_id": 1754,
-              "provider_name": "TF1\u002B",
-              "display_priority": 49
+              "display_priority": 34
             }
           ]
         },
@@ -741,57 +710,57 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=GB",
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 5
+              "display_priority": 6
             },
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 8
+              "display_priority": 10
             },
             {
-              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "logo_path": "/nNkZ1JKe6vNhzti14KiKEUWHE6H.png",
               "provider_id": 130,
               "provider_name": "Sky Store",
-              "display_priority": 18
+              "display_priority": 20
             }
           ],
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 4
             },
             {
-              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "logo_path": "/pkx3klJlwW5JdtaulvDx6hDNtch.png",
               "provider_id": 531,
               "provider_name": "Paramount Plus",
-              "display_priority": 9
+              "display_priority": 11
             },
             {
-              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "logo_path": "/bxX0YVOCY7bI85BKRlJAAQ2EjUR.png",
               "provider_id": 582,
               "provider_name": "Paramount\u002B Amazon Channel",
               "display_priority": 75
             },
             {
-              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "logo_path": "/xu4LyKTwasTbta1Z0qWtZG48yZ3.png",
               "provider_id": 1853,
-              "provider_name": "Paramount Plus Apple TV Channel ",
+              "provider_name": "Paramount Plus Apple TV channel",
               "display_priority": 87
             },
             {
-              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "logo_path": "/4N4BMd0Mm0kHAmF7RZgL5lW3cwc.png",
               "provider_id": 2303,
               "provider_name": "Paramount Plus Premium",
               "display_priority": 119
             },
             {
-              "logo_path": "/rl6zez5rCeyelt1I46JRYk6B9Ed.jpg",
+              "logo_path": "/ylBHMFuVsJqQ8JUzmfmPsEn97Ez.png",
               "provider_id": 2304,
               "provider_name": "Paramount Plus Basic with Ads",
               "display_priority": 120
@@ -800,20 +769,20 @@
         },
         "GG": {
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=GG",
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 82
+            }
+          ],
           "flatrate": [
             {
-              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "logo_path": "/bxX0YVOCY7bI85BKRlJAAQ2EjUR.png",
               "provider_id": 582,
               "provider_name": "Paramount\u002B Amazon Channel",
               "display_priority": 64
-            }
-          ],
-          "buy": [
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 83
             }
           ]
         },
@@ -821,10 +790,10 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=GR",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 4
             }
           ]
         },
@@ -832,22 +801,22 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=GT",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 4
             },
             {
-              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "logo_path": "/pkx3klJlwW5JdtaulvDx6hDNtch.png",
               "provider_id": 531,
               "provider_name": "Paramount Plus",
-              "display_priority": 6
+              "display_priority": 7
             },
             {
-              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "logo_path": "/xu4LyKTwasTbta1Z0qWtZG48yZ3.png",
               "provider_id": 1853,
-              "provider_name": "Paramount Plus Apple TV Channel ",
-              "display_priority": 31
+              "provider_name": "Paramount Plus Apple TV channel",
+              "display_priority": 30
             }
           ]
         },
@@ -855,10 +824,10 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=HK",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 4
             }
           ]
         },
@@ -866,10 +835,10 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=HN",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 4
             }
           ]
         },
@@ -877,10 +846,10 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=HR",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 2
+              "display_priority": 3
             }
           ]
         },
@@ -888,10 +857,10 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=HU",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 4
             }
           ]
         },
@@ -899,10 +868,10 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=ID",
           "flatrate": [
             {
-              "logo_path": "/tHtNW975SmVydaBULhEaOqPTmo8.jpg",
+              "logo_path": "/ruMrSFMJBMUpzjUL3dHD647qyEF.png",
               "provider_id": 122,
               "provider_name": "Disney\u002B",
-              "display_priority": 3
+              "display_priority": 4
             }
           ]
         },
@@ -910,37 +879,37 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=IE",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
               "display_priority": 3
             },
             {
-              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "logo_path": "/pkx3klJlwW5JdtaulvDx6hDNtch.png",
               "provider_id": 531,
               "provider_name": "Paramount Plus",
               "display_priority": 7
             },
             {
-              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "logo_path": "/xu4LyKTwasTbta1Z0qWtZG48yZ3.png",
               "provider_id": 1853,
-              "provider_name": "Paramount Plus Apple TV Channel ",
+              "provider_name": "Paramount Plus Apple TV channel",
               "display_priority": 40
             },
             {
-              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "logo_path": "/4N4BMd0Mm0kHAmF7RZgL5lW3cwc.png",
               "provider_id": 2303,
               "provider_name": "Paramount Plus Premium",
               "display_priority": 45
             },
             {
-              "logo_path": "/rl6zez5rCeyelt1I46JRYk6B9Ed.jpg",
+              "logo_path": "/ylBHMFuVsJqQ8JUzmfmPsEn97Ez.png",
               "provider_id": 2304,
               "provider_name": "Paramount Plus Basic with Ads",
               "display_priority": 46
             },
             {
-              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "logo_path": "/bxX0YVOCY7bI85BKRlJAAQ2EjUR.png",
               "provider_id": 582,
               "provider_name": "Paramount\u002B Amazon Channel",
               "display_priority": 57
@@ -948,7 +917,7 @@
           ],
           "buy": [
             {
-              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "logo_path": "/nNkZ1JKe6vNhzti14KiKEUWHE6H.png",
               "provider_id": 130,
               "provider_name": "Sky Store",
               "display_priority": 10
@@ -959,27 +928,27 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=IT",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
               "display_priority": 3
             },
             {
-              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "logo_path": "/pkx3klJlwW5JdtaulvDx6hDNtch.png",
               "provider_id": 531,
               "provider_name": "Paramount Plus",
-              "display_priority": 8
+              "display_priority": 7
             },
             {
-              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "logo_path": "/bxX0YVOCY7bI85BKRlJAAQ2EjUR.png",
               "provider_id": 582,
               "provider_name": "Paramount\u002B Amazon Channel",
               "display_priority": 51
             },
             {
-              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "logo_path": "/xu4LyKTwasTbta1Z0qWtZG48yZ3.png",
               "provider_id": 1853,
-              "provider_name": "Paramount Plus Apple TV Channel ",
+              "provider_name": "Paramount Plus Apple TV channel",
               "display_priority": 54
             }
           ]
@@ -988,49 +957,43 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=JM",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 2
+              "display_priority": 3
             }
           ]
         },
         "JP": {
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=JP",
-          "buy": [
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 7
-            },
-            {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 9
-            }
-          ],
           "rent": [
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 7
+              "display_priority": 8
             },
             {
-              "logo_path": "/9EWAEok40O0HVhV0MYJmlE4LhGy.jpg",
+              "logo_path": "/m0tkTiV5TN7NWfazDEYc8NoVXSd.png",
               "provider_id": 2683,
               "provider_name": "FOD",
-              "display_priority": 80
+              "display_priority": 79
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 8
             }
           ],
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 4
             }
           ]
         },
@@ -1038,10 +1001,10 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=KR",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 4
             }
           ]
         },
@@ -1049,10 +1012,10 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=LC",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 2
+              "display_priority": 3
             }
           ]
         },
@@ -1060,10 +1023,10 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=LI",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 2
+              "display_priority": 3
             }
           ]
         },
@@ -1071,10 +1034,10 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=LU",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 4
             }
           ]
         },
@@ -1082,31 +1045,31 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=MX",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 4
             },
             {
-              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "logo_path": "/pkx3klJlwW5JdtaulvDx6hDNtch.png",
               "provider_id": 531,
               "provider_name": "Paramount Plus",
-              "display_priority": 9
+              "display_priority": 10
             },
             {
-              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
+              "logo_path": "/bxX0YVOCY7bI85BKRlJAAQ2EjUR.png",
               "provider_id": 582,
               "provider_name": "Paramount\u002B Amazon Channel",
               "display_priority": 18
             },
             {
-              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "logo_path": "/xu4LyKTwasTbta1Z0qWtZG48yZ3.png",
               "provider_id": 1853,
-              "provider_name": "Paramount Plus Apple TV Channel ",
+              "provider_name": "Paramount Plus Apple TV channel",
               "display_priority": 20
             },
             {
-              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
+              "logo_path": "/4N4BMd0Mm0kHAmF7RZgL5lW3cwc.png",
               "provider_id": 2303,
               "provider_name": "Paramount Plus Premium",
               "display_priority": 62
@@ -1117,10 +1080,10 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=MY",
           "flatrate": [
             {
-              "logo_path": "/tHtNW975SmVydaBULhEaOqPTmo8.jpg",
+              "logo_path": "/ruMrSFMJBMUpzjUL3dHD647qyEF.png",
               "provider_id": 122,
               "provider_name": "Disney\u002B",
-              "display_priority": 3
+              "display_priority": 4
             }
           ]
         },
@@ -1128,22 +1091,22 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=NI",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 4
             },
             {
-              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "logo_path": "/xu4LyKTwasTbta1Z0qWtZG48yZ3.png",
               "provider_id": 1853,
-              "provider_name": "Paramount Plus Apple TV Channel ",
-              "display_priority": 11
+              "provider_name": "Paramount Plus Apple TV channel",
+              "display_priority": 10
             },
             {
-              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "logo_path": "/pkx3klJlwW5JdtaulvDx6hDNtch.png",
               "provider_id": 531,
               "provider_name": "Paramount Plus",
-              "display_priority": 13
+              "display_priority": 12
             }
           ]
         },
@@ -1151,10 +1114,10 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=NL",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 5
             }
           ]
         },
@@ -1162,10 +1125,10 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=NO",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 4
             }
           ]
         },
@@ -1173,7 +1136,7 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=NZ",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
               "display_priority": 3
@@ -1184,19 +1147,19 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=PA",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 4
             },
             {
-              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "logo_path": "/xu4LyKTwasTbta1Z0qWtZG48yZ3.png",
               "provider_id": 1853,
-              "provider_name": "Paramount Plus Apple TV Channel ",
+              "provider_name": "Paramount Plus Apple TV channel",
               "display_priority": 29
             },
             {
-              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "logo_path": "/pkx3klJlwW5JdtaulvDx6hDNtch.png",
               "provider_id": 531,
               "provider_name": "Paramount Plus",
               "display_priority": 30
@@ -1207,21 +1170,21 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=PE",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 5
             },
             {
-              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "logo_path": "/pkx3klJlwW5JdtaulvDx6hDNtch.png",
               "provider_id": 531,
               "provider_name": "Paramount Plus",
-              "display_priority": 7
+              "display_priority": 8
             },
             {
-              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "logo_path": "/xu4LyKTwasTbta1Z0qWtZG48yZ3.png",
               "provider_id": 1853,
-              "provider_name": "Paramount Plus Apple TV Channel ",
+              "provider_name": "Paramount Plus Apple TV channel",
               "display_priority": 31
             }
           ]
@@ -1230,10 +1193,10 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=PL",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 4
             }
           ]
         },
@@ -1241,10 +1204,10 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=PT",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 4
             }
           ]
         },
@@ -1252,22 +1215,22 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=PY",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 4
             },
             {
-              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "logo_path": "/pkx3klJlwW5JdtaulvDx6hDNtch.png",
               "provider_id": 531,
               "provider_name": "Paramount Plus",
-              "display_priority": 5
+              "display_priority": 6
             },
             {
-              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "logo_path": "/xu4LyKTwasTbta1Z0qWtZG48yZ3.png",
               "provider_id": 1853,
-              "provider_name": "Paramount Plus Apple TV Channel ",
-              "display_priority": 29
+              "provider_name": "Paramount Plus Apple TV channel",
+              "display_priority": 28
             }
           ]
         },
@@ -1275,26 +1238,26 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=RO",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 2
+              "display_priority": 3
             }
           ]
         },
         "RU": {
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=RU",
-          "flatrate": [
+          "buy": [
             {
-              "logo_path": "/51wuCkUdkEQTUtB8TrtZzzxp3Tj.jpg",
+              "logo_path": "/oroIyNGCu4ltli1lI4m7em1IYE5.png",
               "provider_id": 117,
               "provider_name": "Kinopoisk",
               "display_priority": 21
             }
           ],
-          "buy": [
+          "flatrate": [
             {
-              "logo_path": "/51wuCkUdkEQTUtB8TrtZzzxp3Tj.jpg",
+              "logo_path": "/oroIyNGCu4ltli1lI4m7em1IYE5.png",
               "provider_id": 117,
               "provider_name": "Kinopoisk",
               "display_priority": 21
@@ -1305,10 +1268,10 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=SE",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 4
             }
           ]
         },
@@ -1316,10 +1279,10 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=SG",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 4
             }
           ]
         },
@@ -1327,10 +1290,10 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=SK",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 4
             }
           ]
         },
@@ -1338,10 +1301,10 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=SM",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 2
+              "display_priority": 3
             }
           ]
         },
@@ -1349,21 +1312,21 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=SV",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 4
             },
             {
-              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "logo_path": "/pkx3klJlwW5JdtaulvDx6hDNtch.png",
               "provider_id": 531,
               "provider_name": "Paramount Plus",
               "display_priority": 27
             },
             {
-              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "logo_path": "/xu4LyKTwasTbta1Z0qWtZG48yZ3.png",
               "provider_id": 1853,
-              "provider_name": "Paramount Plus Apple TV Channel ",
+              "provider_name": "Paramount Plus Apple TV channel",
               "display_priority": 30
             }
           ]
@@ -1372,10 +1335,10 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=TH",
           "flatrate": [
             {
-              "logo_path": "/tHtNW975SmVydaBULhEaOqPTmo8.jpg",
+              "logo_path": "/ruMrSFMJBMUpzjUL3dHD647qyEF.png",
               "provider_id": 122,
               "provider_name": "Disney\u002B",
-              "display_priority": 3
+              "display_priority": 4
             }
           ]
         },
@@ -1383,10 +1346,10 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=TR",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 2
+              "display_priority": 3
             }
           ]
         },
@@ -1394,10 +1357,10 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=TT",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 4
             }
           ]
         },
@@ -1405,101 +1368,109 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=TW",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 4
             }
           ]
         },
         "US": {
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=US",
-          "flatrate": [
+          "free": [
             {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 9,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 4
-            },
-            {
-              "logo_path": "/bxBlRPEPpMVDc4jMhSrTf2339DW.jpg",
-              "provider_id": 15,
-              "provider_name": "Hulu",
-              "display_priority": 6
-            },
-            {
-              "logo_path": "/fts6X10Jn4QT0X6ac3udKEn2tJA.jpg",
-              "provider_id": 2303,
-              "provider_name": "Paramount Plus Premium",
-              "display_priority": 14
-            },
-            {
-              "logo_path": "/5wym1C0jAvJeGirPdgVpcW0CCuy.jpg",
+              "logo_path": "/uPWQPyF4nqwtfPNmGcFcenU57HG.png",
               "provider_id": 2616,
               "provider_name": "Paramount Plus Essential",
-              "display_priority": 15
-            },
-            {
-              "logo_path": "/ptmbGSttkyzawLbxx9MElmxKuVo.jpg",
-              "provider_id": 2383,
-              "provider_name": "Philo",
-              "display_priority": 17
-            },
-            {
-              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
-              "provider_id": 1853,
-              "provider_name": "Paramount Plus Apple TV Channel ",
-              "display_priority": 23
-            },
-            {
-              "logo_path": "/hExO4PtimLIYn3kBOrzsejNv7cT.jpg",
-              "provider_id": 582,
-              "provider_name": "Paramount\u002B Amazon Channel",
-              "display_priority": 26
-            },
-            {
-              "logo_path": "/x9zOHTUkQzt3PgPVKbMH9CKBwLK.jpg",
-              "provider_id": 2528,
-              "provider_name": "YouTube TV",
-              "display_priority": 38
-            },
-            {
-              "logo_path": "/ywIoxSjoYJGUIbR6BfxUiCHdPi3.jpg",
-              "provider_id": 633,
-              "provider_name": "Paramount\u002B Roku Premium Channel",
-              "display_priority": 62
-            },
-            {
-              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
-              "provider_id": 2100,
-              "provider_name": "Amazon Prime Video with Ads",
-              "display_priority": 201
+              "display_priority": 19
             }
           ],
           "buy": [
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/aZRENwYILujqs0RVOZutTh0BVGV.png",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 24
+            },
+            {
+              "logo_path": "/wpOt6x0dRxTrIzuBosto4LGd7E9.png",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 41
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/44uAnmSqvA4yBOdbPWN8YgQHjWm.png",
+              "provider_id": 15,
+              "provider_name": "Hulu",
               "display_priority": 8
             },
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 9
+              "logo_path": "/4N4BMd0Mm0kHAmF7RZgL5lW3cwc.png",
+              "provider_id": 2303,
+              "provider_name": "Paramount Plus Premium",
+              "display_priority": 18
             },
             {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 20
+              "logo_path": "/uPWQPyF4nqwtfPNmGcFcenU57HG.png",
+              "provider_id": 2616,
+              "provider_name": "Paramount Plus Essential",
+              "display_priority": 19
             },
             {
-              "logo_path": "/oIXE9vJdkilIxCLAtlbtiqewgvn.jpg",
-              "provider_id": 7,
-              "provider_name": "Fandango At Home",
-              "display_priority": 37
+              "logo_path": "/mfbhzQwmQKjm7bLZPF5CTeu3Ilc.png",
+              "provider_id": 2383,
+              "provider_name": "Philo",
+              "display_priority": 21
+            },
+            {
+              "logo_path": "/xu4LyKTwasTbta1Z0qWtZG48yZ3.png",
+              "provider_id": 1853,
+              "provider_name": "Paramount Plus Apple TV channel",
+              "display_priority": 27
+            },
+            {
+              "logo_path": "/bxX0YVOCY7bI85BKRlJAAQ2EjUR.png",
+              "provider_id": 582,
+              "provider_name": "Paramount\u002B Amazon Channel",
+              "display_priority": 30
+            },
+            {
+              "logo_path": "/48bVXEIyCLSL9pZUQ7gB9ToyWto.png",
+              "provider_id": 2528,
+              "provider_name": "YouTube TV",
+              "display_priority": 42
+            },
+            {
+              "logo_path": "/tnZCMxbcKdxuVmjxefyXCaip7q3.png",
+              "provider_id": 633,
+              "provider_name": "Paramount\u002B Roku Premium Channel",
+              "display_priority": 66
+            },
+            {
+              "logo_path": "/tpwTT1FpWqLLhxUfAuDavIXDDfI.png",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 202
             }
           ]
         },
@@ -1507,16 +1478,16 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=UY",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 2
+              "display_priority": 3
             },
             {
-              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "logo_path": "/pkx3klJlwW5JdtaulvDx6hDNtch.png",
               "provider_id": 531,
               "provider_name": "Paramount Plus",
-              "display_priority": 3
+              "display_priority": 4
             }
           ]
         },
@@ -1524,22 +1495,22 @@
           "link": "https://www.themoviedb.org/tv/4057-criminal-minds/watch?locale=VE",
           "flatrate": [
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 4
             },
             {
-              "logo_path": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
+              "logo_path": "/pkx3klJlwW5JdtaulvDx6hDNtch.png",
               "provider_id": 531,
               "provider_name": "Paramount Plus",
               "display_priority": 7
             },
             {
-              "logo_path": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
+              "logo_path": "/xu4LyKTwasTbta1Z0qWtZG48yZ3.png",
               "provider_id": 1853,
-              "provider_name": "Paramount Plus Apple TV Channel ",
-              "display_priority": 27
+              "provider_name": "Paramount Plus Apple TV channel",
+              "display_priority": 26
             }
           ]
         }

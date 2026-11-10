@@ -17,19 +17,6 @@
       "GET"
     ],
     "HttpVersion": "1.1",
-    "Headers": [
-      {
-        "Name": "Accept-Encoding",
-        "Matchers": [
-          {
-            "Name": "WildcardMatcher",
-            "Pattern": "gzip, deflate, br",
-            "IgnoreCase": true
-          }
-        ],
-        "IgnoreCase": true
-      }
-    ],
     "Params": [
       {
         "Name": "page",
@@ -60,180 +47,19 @@
       "results": [
         {
           "adult": false,
-          "backdrop_path": "/biwEwIkjZhMUfXzz59bpeDzwYB6.jpg",
-          "genre_ids": [
-            27,
-            53
-          ],
-          "id": 1212763,
-          "title": "Evil Dead Burn",
-          "original_language": "en",
-          "original_title": "Evil Dead Burn",
-          "overview": "After her husband\u0027s abrupt death, Alice seeks solace with his remaining family \u2014 descendants of a leading researcher on demonic possession. As her in-laws transform one by one into creatures that feed on fear, she comes to discover that the vows she took in life survive even in death.",
-          "popularity": 0.0,
-          "poster_path": "/7JFVcU1uzv9zCfyMzLrsU04t8BU.jpg",
-          "release_date": "2026-07-07",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/xWBiXclrRmTggQHMRsIn84YHavs.jpg",
-          "genre_ids": [
-            35
-          ],
-          "id": 1273221,
-          "title": "Scary Movie",
-          "original_language": "en",
-          "original_title": "Scary Movie",
-          "overview": "Twenty-six years after outrunning a suspiciously familiar masked killer, the Core Four are back in the killer\u0027s crosshairs and no horror movie IP is safe.",
-          "popularity": 0.0,
-          "poster_path": "/znHT8peERZRWG1ME3r0Db0EV8k8.jpg",
-          "release_date": "2026-06-03",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/7y8zWGEjs7tresw4Hzkkf4TdkcL.jpg",
-          "genre_ids": [
-            27,
-            10749
-          ],
-          "id": 1564614,
-          "title": "Leviticus",
-          "original_language": "en",
-          "original_title": "Leviticus",
-          "overview": "Two teenage boys must escape a violent entity that takes the form of the person they desire most:  each other.",
-          "popularity": 0.0,
-          "poster_path": "/gnAsZvBygplNpp8PtjoTEYv3VPB.jpg",
-          "release_date": "2026-06-17",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/1RgPyOhN4DRs225BGTlHJqCudII.jpg",
-          "genre_ids": [
-            16,
-            28,
-            14
-          ],
-          "id": 1311031,
-          "title": "Demon Slayer: Kimetsu no Yaiba Infinity Castle",
-          "original_language": "ja",
-          "original_title": "\u5287\u5834\u7248\u300C\u9B3C\u6EC5\u306E\u5203\u300D\u7121\u9650\u57CE\u7DE8 \u7B2C\u4E00\u7AE0 \u7317\u7AA9\u5EA7\u518D\u6765",
-          "overview": "The Demon Slayer Corps are drawn into the Infinity Castle, where Tanjiro, Nezuko, and the Hashira face terrifying Upper Rank demons in a desperate fight as the final battle against Muzan Kibutsuji begins.",
-          "popularity": 0.0,
-          "poster_path": "/fWVSwgjpT2D78VUh6X8UBd2rorW.jpg",
-          "release_date": "2025-07-18",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/8Tfys3mDZVp4tNoH2ktm06a0Tau.jpg",
-          "genre_ids": [
-            878,
-            12
-          ],
-          "id": 687163,
-          "title": "Project Hail Mary",
-          "original_language": "en",
-          "original_title": "Project Hail Mary",
-          "overview": "Science teacher Ryland Grace wakes up on a spaceship light years from home with no recollection of who he is or how he got there. As his memory returns, he begins to uncover his mission: solve the riddle of the mysterious substance causing the sun to die out. He must call on his scientific knowledge and unorthodox ideas to save everything on Earth from extinction.",
-          "popularity": 0.0,
-          "poster_path": "/yihdXomYb5kTeSivtFndMy5iDmf.jpg",
-          "release_date": "2026-03-15",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/dk68ykaNd3HdrDJyPJqEGsgvag7.jpg",
-          "genre_ids": [
-            28,
-            53,
-            80
-          ],
-          "id": 1630409,
-          "title": "The Debt Collector",
-          "original_language": "th",
-          "original_title": "\u0E04\u0E19\u0E40\u0E14\u0E37\u0E2D\u0E14\u0E17\u0E27\u0E07\u0E41\u0E04\u0E49\u0E19",
-          "overview": "Tormented by past mistakes and a terminal diagnosis, an ex-debt collector returns to the underworld to protect the victims of a violent organization.",
-          "popularity": 0.0,
-          "poster_path": "/qADBUb5ybrkRVGZEFF8Z4RuOwys.jpg",
-          "release_date": "2026-07-20",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/ebcOSaZLxdCMHDjJJQzx5PiEyzl.jpg",
-          "genre_ids": [
-            27,
-            878,
-            53
-          ],
-          "id": 1307118,
-          "title": "Soulm8te",
-          "original_language": "en",
-          "original_title": "Soulm8te",
-          "overview": "After a ruthless tech giant acquires a small robotics company, a grieving engineer is tasked with testing their new AI companion. But when he attempts to reprogram her to be a truly sentient soulmate, she develops needs of her own\u2014unleashing a relentless spree of precision-engineered mayhem.",
-          "popularity": 0.0,
-          "poster_path": "/bNErActDctl6cdUGw9pnjSCmyhQ.jpg",
-          "release_date": "2026-07-31",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/wPSOPYy2fV62GjeXpVdKyweZGZu.jpg",
-          "genre_ids": [
-            53
-          ],
-          "id": 1727780,
-          "title": "Borderline",
-          "original_language": "en",
-          "original_title": "Borderline",
-          "overview": "Convinced they are our secret saviors, rogue U.S. operatives abduct Mexican gang members and seed them across major American cities, unleashing criminal chaos, swaying voters by playing on nativist prejudices, and forcing law enforcement into a race to expose the plot as the escalating carnage threatens democracy itself.",
-          "popularity": 0.0,
-          "poster_path": "/sAA2mjpYJFAKydtzG4P4aHC4mZk.jpg",
-          "release_date": "2026-07-17",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/Af907x5h9W1wVis8XrSd7ynTWuy.jpg",
+          "backdrop_path": "/hhQT0TySg3LXCE8BEPpfPJ5zJA2.jpg",
           "genre_ids": [
             35,
             18
           ],
-          "id": 1314481,
-          "title": "The Devil Wears Prada 2",
+          "id": 1570488,
+          "title": "A Dog\u0027s Perfect Christmas",
           "original_language": "en",
-          "original_title": "The Devil Wears Prada 2",
-          "overview": "Andy Sachs returns to Runway as Miranda Priestly navigates a new media landscape and Runway\u0027s position within. The duo reconnect with former assistant Emily Charlton, now the head of a luxury brand that possesses funding which could ensure Runway\u0027s survival.",
+          "original_title": "A Dog\u0027s Perfect Christmas",
+          "overview": "When a medical emergency pulls the Goss family apart, determined dog Winstead will do all he can to bring his humans back together before Christmas Eve.",
           "popularity": 0.0,
-          "poster_path": "/xTI42pmsP5EDnvsNJPEDubwWBQO.jpg",
-          "release_date": "2026-04-29",
+          "poster_path": "/zvsNAohDHRWcGvbPSD7r3WojpKb.jpg",
+          "release_date": "2026-11-04",
           "softcore": false,
           "video": false,
           "vote_average": 0.0,
@@ -241,20 +67,20 @@
         },
         {
           "adult": false,
-          "backdrop_path": "/oV472EbPedkc5QzqolGc7sCgCnn.jpg",
+          "backdrop_path": "/sMmG82PtjK8A9rVc34gwKQtCm3A.jpg",
           "genre_ids": [
             27,
-            28,
-            53
+            35,
+            14
           ],
-          "id": 1110034,
-          "title": "Kraken",
-          "original_language": "no",
-          "original_title": "Kraken",
-          "overview": "A marine biologist is doing research on a fish farm when she encounters several strange occurrences. Along with the brutal deaths of two teenagers, all signs point to the deep fjord; can there be more to the depths than the eye can see?",
+          "id": 1514026,
+          "title": "Buddy",
+          "original_language": "en",
+          "original_title": "Buddy",
+          "overview": "Inside the colorful world of \u0022It\u0027s Buddy!\u0022, a group of children spend their days singing, dancing, and helping Buddy - bright orange unicorn - spread happiness. But when one child refuses to play along, Buddy is not pleased and cracks begin to appear in this seemingly perfect world.",
           "popularity": 0.0,
-          "poster_path": "/xdZ8k5s8DTwWyPBMIcflrYLgcAK.jpg",
-          "release_date": "2026-02-06",
+          "poster_path": "/1BdZbNvl1SfrrX8J9X5tQzN6Ivu.jpg",
+          "release_date": "2026-08-27",
           "softcore": false,
           "video": false,
           "vote_average": 0.0,
@@ -262,18 +88,60 @@
         },
         {
           "adult": false,
-          "backdrop_path": "/90Vx3KpCXR2D9iVdxJpkjeYBq9P.jpg",
+          "backdrop_path": "/uI3kWI7kGW5E0F8WduewgQYPt34.jpg",
+          "genre_ids": [
+            53,
+            18,
+            80
+          ],
+          "id": 1571955,
+          "title": "Collision Course",
+          "original_language": "es",
+          "original_title": "Colisi\u00F3n",
+          "overview": "Spain, 2013. After robbing a bank, a getaway crash reveals the hidden side of each thief, exposing betrayals and lies that began long before the heist.",
+          "popularity": 0.0,
+          "poster_path": "/s2eAK0uiODjlNUSIiOBwdp3at2u.jpg",
+          "release_date": "2026-10-30",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/7RsPdXLDNugDIlwXPVeeprNfMx.jpg",
+          "genre_ids": [
+            27,
+            14,
+            9648
+          ],
+          "id": 1232569,
+          "title": "Pinocchio: Unstrung",
+          "original_language": "en",
+          "original_title": "Pinocchio: Unstrung",
+          "overview": "Influenced by a sinister Cricket and created by Geppetto, Pinocchio launches a violent crusade to carve himself into a real boy like his brother James, one piece at a time.",
+          "popularity": 0.0,
+          "poster_path": "/hJNdizFlxOW89edX3Rzr6OliSFI.jpg",
+          "release_date": "2026-07-22",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/4ZeaWA6DzFVOjWTi70b9ZAaQktf.jpg",
           "genre_ids": [
             27
           ],
-          "id": 1510795,
-          "title": "Shake, Rattle \u0026 Roll: Evil Origins",
-          "original_language": "tl",
-          "original_title": "Shake, Rattle \u0026 Roll: Evil Origins",
-          "overview": "In 1775 during the Spanish colonial period in the Philippines, nuns attempts to survive the night after an unknown evil was set free in their cloister. Meanwhile in 2025, a group of friends attend a Halloween masquerade ball which was attacked by a serial killer. Fast forward to the future in 2050, a post-apocalytic Philippines is ruled by the aswang.",
+          "id": 1128204,
+          "title": "Feed",
+          "original_language": "en",
+          "original_title": "Feed",
+          "overview": "Five social media influencers spend a weekend at a forest retreat but inadvertently awaken and confront the world\u0027s first vampire.",
           "popularity": 0.0,
-          "poster_path": "/2ayOQIh18qhJRoajoAxxGuZXry2.jpg",
-          "release_date": "2026-06-05",
+          "poster_path": "/8AI6GBlESvZ4RWhreSWHfqg03HA.jpg",
+          "release_date": "2026-08-06",
           "softcore": false,
           "video": false,
           "vote_average": 0.0,
@@ -281,20 +149,19 @@
         },
         {
           "adult": false,
-          "backdrop_path": "/vamhMTvh9m9zFHDoR0v1nRtf6T4.jpg",
+          "backdrop_path": "/dJTWIecL2vxsCRl5G0lRhPsfrhc.jpg",
           "genre_ids": [
             28,
-            12,
-            878
+            53
           ],
-          "id": 429617,
-          "title": "Spider-Man: Far From Home",
+          "id": 1228834,
+          "title": "The Fix",
           "original_language": "en",
-          "original_title": "Spider-Man: Far From Home",
-          "overview": "Peter Parker and his friends go on a summer trip to Europe. However, they will hardly be able to rest - Peter will have to agree to help Nick Fury uncover the mystery of creatures that cause natural disasters and destruction throughout the continent.",
+          "original_title": "The Fix",
+          "overview": "Disillusioned by the end of the war in Afghanistan, a group of disgraced, war-torn ex-CIA operatives set out to Tehran to take down a life-changing score.",
           "popularity": 0.0,
-          "poster_path": "/4q2NNj4S5dG2RLF9CpXsej7yXl.jpg",
-          "release_date": "2019-06-28",
+          "poster_path": "/jlP8XDjZN89GrpM3je5Uf8Grqx8.jpg",
+          "release_date": "2026-09-10",
           "softcore": false,
           "video": false,
           "vote_average": 0.0,
@@ -302,18 +169,20 @@
         },
         {
           "adult": false,
-          "backdrop_path": "/1x9e0qWonw634NhIsRdvnneeqvN.jpg",
+          "backdrop_path": "/sEsMwSDUWGIx9EfNxzM6KzVSsSQ.jpg",
           "genre_ids": [
-            10749
+            53,
+            18,
+            80
           ],
-          "id": 1523145,
-          "title": "Your Heart Will Be Broken",
-          "original_language": "ru",
-          "original_title": "\u0422\u0432\u043E\u0451 \u0441\u0435\u0440\u0434\u0446\u0435 \u0431\u0443\u0434\u0435\u0442 \u0440\u0430\u0437\u0431\u0438\u0442\u043E",
-          "overview": "High school student Polina is saved from bullying at her new school and makes a deal with the main bully Bars: he must pretend to be her boyfriend and protect her, and she must do everything he says. During this game, the couple develops real feelings, but her family and classmates have reasons to separate the lovers.",
+          "id": 1375441,
+          "title": "Primetime",
+          "original_language": "en",
+          "original_title": "Primetime",
+          "overview": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history. When a high stakes operation goes fatally wrong, his veneered dream of fame curdles into a nightmare of performative justice.",
           "popularity": 0.0,
-          "poster_path": "/7wIBfBl2gejt6xHxNSK0reVIm7E.jpg",
-          "release_date": "2026-03-26",
+          "poster_path": "/lmrulvLbmaejTix1YaMxo1oGhH1.jpg",
+          "release_date": "2026-09-23",
           "softcore": false,
           "video": false,
           "vote_average": 0.0,
@@ -321,20 +190,121 @@
         },
         {
           "adult": false,
-          "backdrop_path": "/uOQtyMV2G9yJvc0s14zmLoRC5H9.jpg",
+          "backdrop_path": "/sl5NJ1vtyhP9Vr88bB4blULsJYp.jpg",
+          "genre_ids": [
+            16,
+            12,
+            14
+          ],
+          "id": 791523,
+          "title": "Wildwood",
+          "original_language": "en",
+          "original_title": "Wildwood",
+          "overview": "Prue and her classmate Curtis are drawn into a magical forest filled with enchanted creatures, loyal allies, and formidable adversaries as they embark on a desperate quest to rescue Prue\u0027s abducted baby brother from a murder of crows led by a mysterious woman named Alexandra.",
+          "popularity": 0.0,
+          "poster_path": "/snFM00mpNAfUzUtkdEW0uDEvXA0.jpg",
+          "release_date": "2026-10-19",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/cpNMIRCrDl0sxDL1tHBzfWi0UZC.jpg",
+          "genre_ids": [
+            18
+          ],
+          "id": 1780005,
+          "title": "Surviving Hurricane Otis",
+          "original_language": "es",
+          "original_title": "Contra el hurac\u00E1n",
+          "overview": "Two estranged brothers struggle to survive Hurricane Otis in Acapulco, where their bond and courage turn adversity into hope.",
+          "popularity": 0.0,
+          "poster_path": "/chZa8Jd9kSDj11bekGjwwotFPEw.jpg",
+          "release_date": "2026-10-23",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/p40lmrdI4blcAPZQMTPaiy5v5Ym.jpg",
+          "genre_ids": [
+            27,
+            53
+          ],
+          "id": 1291595,
+          "title": "Insidious: Out of the Further",
+          "original_language": "en",
+          "original_title": "Insidious: Out of the Further",
+          "overview": "Gemma, a young mother raising her daughter in the house she grew up in, discovers she can travel into The Further, where she possesses an ability to bring what lives there back to the real world.",
+          "popularity": 0.0,
+          "poster_path": "/4tTrW9dXCByS5wt2pXVWb58zNjz.jpg",
+          "release_date": "2026-08-19",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/jdJsnhHfkIi3J7jwfiCFT4gXNx5.jpg",
+          "genre_ids": [
+            28,
+            35,
+            12
+          ],
+          "id": 1148365,
+          "title": "Matchbox the Movie",
+          "original_language": "en",
+          "original_title": "Matchbox the Movie",
+          "overview": "When a group of former childhood friends reconnect, their reunion takes a wild turn as they stumble upon a dangerous international plot\u2014and must save the world.",
+          "popularity": 0.0,
+          "poster_path": "/aHhHRz6nOpwkqJs5ASeRGAdK2dt.jpg",
+          "release_date": "2026-10-05",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/5lTZyuBTNOfawsfPT8Q0cIg6qAF.jpg",
+          "genre_ids": [
+            27,
+            53
+          ],
+          "id": 1339713,
+          "title": "Obsession",
+          "original_language": "en",
+          "original_title": "Obsession",
+          "overview": "After breaking the mysterious \u0022One Wish Willow\u0022 to win his crush\u0027s heart, a hopeless romantic finds himself getting exactly what he asked for but soon discovers that some desires come at a dark, sinister price.",
+          "popularity": 0.0,
+          "poster_path": "/bRwnj8WEKBCvmfeUNOukJPwB43K.jpg",
+          "release_date": "2026-05-13",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/rObL4of4eFA8yWaN9pRFo9aOVNi.jpg",
           "genre_ids": [
             878,
             28,
-            14
+            12
           ],
-          "id": 1698856,
-          "title": "Master of the Universe",
+          "id": 1003596,
+          "title": "Avengers: Doomsday",
           "original_language": "en",
-          "original_title": "Master of the Universe",
-          "overview": "A young man must use his untapped powers to fight back against an evil alien and their army, who will stop at nothing to take over Earth and then the universe.",
+          "original_title": "Avengers: Doomsday",
+          "overview": "Beloved heroes from three distinct universes are set on a deadly collision course and face an existential threat unlike anything they\u0027ve ever encountered.",
           "popularity": 0.0,
-          "poster_path": "/a77OcLmarwiBJakOPPC36m58t4L.jpg",
-          "release_date": "2026-05-22",
+          "poster_path": "/9jlZ59UALLLOE279HMT19rP9XQs.jpg",
+          "release_date": "2026-12-16",
           "softcore": false,
           "video": false,
           "vote_average": 0.0,
@@ -342,38 +312,19 @@
         },
         {
           "adult": false,
-          "backdrop_path": "/yjK3ardrgdS8suZG8KMU82Q7U38.jpg",
+          "backdrop_path": "/iZLqwEwUViJdSkGVjePGhxYzbDb.jpg",
           "genre_ids": [
-            10749
+            878,
+            53
           ],
-          "id": 1285366,
-          "title": "Shape of My Heart",
-          "original_language": "ja",
-          "original_title": "\u611B\u306E\u306C\u304F\u3082\u308A",
-          "overview": "A romance about a man and a woman who, due to an unexpected event, end up switching bodies. Despite coming from completely different backgrounds and environments, the two try to overcome the various difficulties that arise from their body swap.",
-          "popularity": 0.0,
-          "poster_path": "/3r0O6BW9USoZ9mteCVyNKMQriRL.jpg",
-          "release_date": "2024-07-06",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/ufSwlnECLoUbBjPrFqEQcWBzHwc.jpg",
-          "genre_ids": [
-            10402,
-            18
-          ],
-          "id": 936075,
-          "title": "Michael",
+          "id": 755898,
+          "title": "War of the Worlds",
           "original_language": "en",
-          "original_title": "Michael",
-          "overview": "The story of Michael Jackson, one of the most influential artists the world has ever known, and his life beyond the music. His journey from the discovery of his extraordinary talent as the lead of the Jackson Five, to the visionary artist whose creative ambition fueled a relentless pursuit to become the biggest entertainer in the world, highlighting both his life off-stage and some of the most iconic performances from his early solo career.",
+          "original_title": "War of the Worlds",
+          "overview": "Will Radford is a top analyst for Homeland Security who tracks potential threats through a mass surveillance program, until one day an attack by an unknown entity leads him to question whether the government is hiding something from him... and from the rest of the world.",
           "popularity": 0.0,
-          "poster_path": "/zm0KAbOjlt9eR5y7vDiL2dEOwMl.jpg",
-          "release_date": "2026-04-22",
+          "poster_path": "/yvirUYrva23IudARHn3mMGVxWqM.jpg",
+          "release_date": "2025-07-29",
           "softcore": false,
           "video": false,
           "vote_average": 0.0,
@@ -381,59 +332,20 @@
         },
         {
           "adult": false,
-          "backdrop_path": "/oBter8Y5p2ZFUwWgQ1T9pulGFTJ.jpg",
-          "genre_ids": [
-            9648,
-            18
-          ],
-          "id": 1668364,
-          "title": "Desire",
-          "original_language": "es",
-          "original_title": "Deseo",
-          "overview": "Lucero\u2019s life appears immaculate: a wealthy household, a devoted husband, and two children who embody the promise of a perfect family. Yet beneath this surface simmers a quiet dissatisfaction. When Mat\u00EDas, a young swimming coach hired by her husband, enters their lives, Lucero finds herself pulled into a risky and consuming relationship. As secrecy, desire, and jealousy tighten their grip, the boundaries within the family begin to collapse, placing mother and daughter in a dangerous emotional triangle that threatens to shatter everything Lucero has built.",
-          "popularity": 0.0,
-          "poster_path": "/3bEqHqeaQlFykaLQ7N4gDkIvL5w.jpg",
-          "release_date": "2026-05-07",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/1ldfkNbf3joNG8mA6idXoEL1fZV.jpg",
-          "genre_ids": [
-            27
-          ],
-          "id": 1569947,
-          "title": "The Priest: Thanksgiving Massacre",
-          "original_language": "en",
-          "original_title": "The Priest: Thanksgiving Massacre",
-          "overview": "A family gather to spend Thanksgiving at an isolated cabin, unaware that the site has a horrific history of murder and cannibalism and that the Priest responsible did not rest in peace. Now they are on the menu for Thanksgiving dinner.",
-          "popularity": 0.0,
-          "poster_path": "/AiRySv62247N91mfCCAryACGNuv.jpg",
-          "release_date": "2025-08-08",
-          "softcore": false,
-          "video": false,
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/MJcERawyqGqJdPsOBc0C449hQ9.jpg",
+          "backdrop_path": "/ryA5uYC7mVZv9dEnAGvL9Iv8kVZ.jpg",
           "genre_ids": [
             28,
             12,
-            878
+            27
           ],
-          "id": 1228710,
-          "title": "The Mandalorian and Grogu",
+          "id": 1595325,
+          "title": "The Anacondas",
           "original_language": "en",
-          "original_title": "The Mandalorian and Grogu",
-          "overview": "The evil Empire has fallen, and Imperial warlords remain scattered throughout the galaxy. As the fledgling New Republic works to protect everything the Rebellion fought for, they have enlisted the help of legendary Mandalorian bounty hunter Din Djarin and his young apprentice Grogu.",
+          "original_title": "The Anacondas",
+          "overview": "Explorers in Mexico uncover the ruins of an ancient snake-worshiping civilization. Celebration turns to horror when they awaken an ever-growing anaconda, starved of human sacrifices for centuries. Now, the team must band together to survive.",
           "popularity": 0.0,
-          "poster_path": "/7GV5rrUJf0BRUhoh2cyFoeNthlQ.jpg",
-          "release_date": "2026-05-20",
+          "poster_path": "/yphysF14qWFvrIbFVg3vEnbudwT.jpg",
+          "release_date": "2025-12-19",
           "softcore": false,
           "video": false,
           "vote_average": 0.0,
@@ -441,28 +353,108 @@
         },
         {
           "adult": false,
-          "backdrop_path": "/9XwQphZxNJgGASfjL58mhIkJJpf.jpg",
+          "backdrop_path": "/uL4cIrNi2uaUnWIOQQ28EVnkETG.jpg",
+          "genre_ids": [
+            27,
+            53,
+            878
+          ],
+          "id": 1400940,
+          "title": "Clayface",
+          "original_language": "en",
+          "original_title": "Clayface",
+          "overview": "Matt Hagen\u0027s meteoric rise from Gotham street kid to Hollywood leading man is tragically cut short when a local crime boss\u0027s actions leave him horribly disfigured. Abandoned by his team and with nothing left, Matt seeks out a cutting edge treatment that miraculously returns him to his former self\u2026 but also unexpectedly affects his grip on reality, spiraling him down a destructive path of all-consuming revenge.",
+          "popularity": 0.0,
+          "poster_path": "/9l1NuFjel2j89hiuiJbsxfblqjy.jpg",
+          "release_date": "2026-10-19",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/dSfrsjhqC6lYe7LYDYnzWeXZmEl.jpg",
+          "genre_ids": [
+            14,
+            16,
+            10751
+          ],
+          "id": 9479,
+          "title": "The Nightmare Before Christmas",
+          "original_language": "en",
+          "original_title": "The Nightmare Before Christmas",
+          "overview": "Tired of scaring humans every October 31 with the same old bag of tricks, Jack Skellington, the spindly Pumpkin King of Halloween Town, kidnaps Santa Claus and plans to deliver shrunken heads and other ghoulish gifts to children on Christmas morning in his place. But, as the holiday approaches, Jack\u0027s rag-doll girlfriend Sally tries to foil his well-meaning yet misguided plans.",
+          "popularity": 0.0,
+          "poster_path": "/oQffRNjK8e19rF7xVYEN8ew0j7b.jpg",
+          "release_date": "1993-10-09",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/qDa0fqDqIBCovRp975RvtGPcuN3.jpg",
           "genre_ids": [
             28,
-            80,
             53
           ],
-          "id": 1280738,
-          "title": "The Furious",
-          "original_language": "zh",
-          "original_title": "\u706B\u906E\u773C",
-          "overview": "After a criminal network kidnaps Wang Wei\u0027s daughter and the corrupt police refuse to assist him, Wei sets out on his own to locate her. Navin, a tenacious journalist whose wife has mysteriously vanished, is his only ally. In this explosive martial arts showdown, the unlikely duo fights the kidnappers ruthlessly driven by a furious vengeance.",
+          "id": 1288445,
+          "title": "Mutiny",
+          "original_language": "en",
+          "original_title": "Mutiny",
+          "overview": "After witnessing his billionaire boss\u0027 murder and being framed for the crime, Cole Reed boards a cargo ship on a one-man crusade to avenge his boss\u0027 death only to discover an international conspiracy.",
           "popularity": 0.0,
-          "poster_path": "/zP19YO60jwEsfKd5Qf1UvA5uJu8.jpg",
-          "release_date": "2026-06-10",
+          "poster_path": "/pu2VxGlpGwffOx292w18b1tv96j.jpg",
+          "release_date": "2026-08-19",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/hXRw0AVY8avc0koUXj2rMY6q2N8.jpg",
+          "genre_ids": [
+            27
+          ],
+          "id": 1474226,
+          "title": "Evil Dress",
+          "original_language": "es",
+          "original_title": "El vestido",
+          "overview": "After a difficult divorce, Alicia moves into an old house with her daughter Carla, unaware that it hides a past of recurrent tragedy. As Carla senses perturbing presences, Alicia begins to doubt her own sanity. A blue dress connects Carla to the ghost of a girl from the past, triggering terrifying events. Mother and daughter will try to escape the house, but the house won\u2019t let them get away so easily.",
+          "popularity": 0.0,
+          "poster_path": "/voXT2JWo6XTohm4rFLygJkik8Ja.jpg",
+          "release_date": "2026-02-13",
+          "softcore": false,
+          "video": false,
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/ayJsUQ4bEG6yY0UB6lMboiaDfYE.jpg",
+          "genre_ids": [
+            27,
+            53
+          ],
+          "id": 1376400,
+          "title": "Crawlers",
+          "original_language": "en",
+          "original_title": "Crawlers",
+          "overview": "Tenants at Paradiso Palms apartments fight a deadly spider invasion while the cunning building manager might be their only hope for survival.",
+          "popularity": 0.0,
+          "poster_path": "/lNXeEpg4yLSRwXwOeR5lbPgwbqL.jpg",
+          "release_date": "2026-09-24",
           "softcore": false,
           "video": false,
           "vote_average": 0.0,
           "vote_count": 0
         }
       ],
-      "total_pages": 58329,
-      "total_results": 1166573
+      "total_pages": 1001,
+      "total_results": 20001
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",

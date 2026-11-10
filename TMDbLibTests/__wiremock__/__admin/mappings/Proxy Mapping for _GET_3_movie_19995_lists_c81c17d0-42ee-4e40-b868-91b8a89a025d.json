@@ -16,20 +16,7 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1",
-    "Headers": [
-      {
-        "Name": "Accept-Encoding",
-        "Matchers": [
-          {
-            "Name": "WildcardMatcher",
-            "Pattern": "gzip, deflate, br",
-            "IgnoreCase": true
-          }
-        ],
-        "IgnoreCase": true
-      }
-    ]
+    "HttpVersion": "1.1"
   },
   "Response": {
     "StatusCode": 200,
@@ -38,32 +25,65 @@
       "page": 1,
       "results": [
         {
-          "description": "What I\u0027ve Watched.",
+          "description": "",
           "favorite_count": 0,
-          "id": 1006,
-          "item_count": 872,
+          "id": 8714325,
+          "item_count": 311,
           "iso_639_1": "en",
           "iso_3166_1": "US",
           "list_type": "movie",
-          "name": "Movies",
-          "poster_path": "/vMUD0oL66LkV6aPrmC1hLSK6bxu.jpg"
+          "name": "Limelight Seen",
+          "poster_path": null
         },
         {
           "description": "",
           "favorite_count": 0,
-          "id": 8231799,
-          "item_count": 605,
+          "id": 8587023,
+          "item_count": 571,
           "iso_639_1": "en",
           "iso_3166_1": "US",
           "list_type": "movie",
-          "name": "Movies - English",
+          "name": "Movies Watched",
+          "poster_path": null
+        },
+        {
+          "description": "Movies and Tv Shows Shala and Markus watched in 2026",
+          "favorite_count": 0,
+          "id": 8581647,
+          "item_count": 21,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "S \u0026 M Watchlist 2026",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 8699871,
+          "item_count": 566,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "Limelight Seen",
+          "poster_path": null
+        },
+        {
+          "description": "Movies completed watching",
+          "favorite_count": 0,
+          "id": 112418,
+          "item_count": 1258,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "Completed Film liste",
           "poster_path": null
         },
         {
           "description": "",
           "favorite_count": 0,
           "id": 8665054,
-          "item_count": 5512,
+          "item_count": 5678,
           "iso_639_1": "en",
           "iso_3166_1": "US",
           "list_type": "movie",
@@ -74,7 +94,7 @@
           "description": "",
           "favorite_count": 0,
           "id": 8665052,
-          "item_count": 6664,
+          "item_count": 6898,
           "iso_639_1": "en",
           "iso_3166_1": "US",
           "list_type": "movie",
@@ -85,7 +105,7 @@
           "description": "",
           "favorite_count": 0,
           "id": 8672663,
-          "item_count": 3074,
+          "item_count": 3125,
           "iso_639_1": "en",
           "iso_3166_1": "US",
           "list_type": "movie",
@@ -93,21 +113,10 @@
           "poster_path": null
         },
         {
-          "description": "",
-          "favorite_count": 0,
-          "id": 8672662,
-          "item_count": 1406,
-          "iso_639_1": "en",
-          "iso_3166_1": "US",
-          "list_type": "movie",
-          "name": "Adventure Hindi Dubbed",
-          "poster_path": null
-        },
-        {
           "description": "Automated renaming to: Dual Audio Hindi Movies",
           "favorite_count": 0,
           "id": 8665064,
-          "item_count": 6770,
+          "item_count": 6865,
           "iso_639_1": "en",
           "iso_3166_1": "US",
           "list_type": "movie",
@@ -118,7 +127,7 @@
           "description": "Automated renaming to: Dual Audio Hindi Movies Above 7",
           "favorite_count": 0,
           "id": 8665066,
-          "item_count": 1269,
+          "item_count": 981,
           "iso_639_1": "en",
           "iso_3166_1": "US",
           "list_type": "movie",
@@ -128,138 +137,116 @@
         {
           "description": "",
           "favorite_count": 0,
-          "id": 8661773,
-          "item_count": 135,
+          "id": 8190952,
+          "item_count": 3335,
           "iso_639_1": "en",
           "iso_3166_1": "US",
           "list_type": "movie",
-          "name": "Radarr Library",
-          "poster_path": null
-        },
-        {
-          "description": "Curated list of Science Fiction on Hulu (US). Updated frequently. Last updated September 2, 2026.",
-          "favorite_count": 0,
-          "id": 8678691,
-          "item_count": 114,
-          "iso_639_1": "en",
-          "iso_3166_1": "US",
-          "list_type": "movie",
-          "name": "Hulu - Science Fiction Movies",
-          "poster_path": null
-        },
-        {
-          "description": "Curated list of Adventure on Hulu (US). Updated frequently. Last updated September 2, 2026.",
-          "favorite_count": 0,
-          "id": 8678677,
-          "item_count": 108,
-          "iso_639_1": "en",
-          "iso_3166_1": "US",
-          "list_type": "movie",
-          "name": "Hulu - Adventure Movies",
-          "poster_path": null
-        },
-        {
-          "description": "Curated list of Action on Hulu (US). Updated frequently. Last updated September 2, 2026.",
-          "favorite_count": 0,
-          "id": 8678676,
-          "item_count": 150,
-          "iso_639_1": "en",
-          "iso_3166_1": "US",
-          "list_type": "movie",
-          "name": "Hulu - Action Movies",
-          "poster_path": null
-        },
-        {
-          "description": "Curated list of Top Rated on Hulu (US). Updated frequently. Last updated September 2, 2026.",
-          "favorite_count": 0,
-          "id": 8678675,
-          "item_count": 150,
-          "iso_639_1": "en",
-          "iso_3166_1": "US",
-          "list_type": "movie",
-          "name": "Hulu - Top Rated Movies",
-          "poster_path": null
-        },
-        {
-          "description": "Curated list of Most Popular on Hulu (US). Updated frequently. Last updated September 2, 2026.",
-          "favorite_count": 0,
-          "id": 8678674,
-          "item_count": 150,
-          "iso_639_1": "en",
-          "iso_3166_1": "US",
-          "list_type": "movie",
-          "name": "Hulu - Popular Movies",
-          "poster_path": null
-        },
-        {
-          "description": "Curated list of Science Fiction on Disney\u002B (US). Updated frequently. Last updated September 2, 2026.",
-          "favorite_count": 0,
-          "id": 8678647,
-          "item_count": 136,
-          "iso_639_1": "en",
-          "iso_3166_1": "US",
-          "list_type": "movie",
-          "name": "Disney\u002B - Science Fiction Movies",
-          "poster_path": null
-        },
-        {
-          "description": "Curated list of Adventure on Disney\u002B (US). Updated frequently. Last updated September 2, 2026.",
-          "favorite_count": 0,
-          "id": 8678633,
-          "item_count": 150,
-          "iso_639_1": "en",
-          "iso_3166_1": "US",
-          "list_type": "movie",
-          "name": "Disney\u002B - Adventure Movies",
-          "poster_path": null
-        },
-        {
-          "description": "Curated list of Action on Disney\u002B (US). Updated frequently. Last updated September 2, 2026.",
-          "favorite_count": 0,
-          "id": 8678632,
-          "item_count": 150,
-          "iso_639_1": "en",
-          "iso_3166_1": "US",
-          "list_type": "movie",
-          "name": "Disney\u002B - Action Movies",
-          "poster_path": null
-        },
-        {
-          "description": "Curated list of Top Rated on Disney\u002B (US). Updated frequently. Last updated September 2, 2026.",
-          "favorite_count": 0,
-          "id": 8678631,
-          "item_count": 150,
-          "iso_639_1": "en",
-          "iso_3166_1": "US",
-          "list_type": "movie",
-          "name": "Disney\u002B - Top Rated Movies",
-          "poster_path": null
-        },
-        {
-          "description": "Curated list of Most Popular on Disney\u002B (US). Updated frequently. Last updated September 2, 2026.",
-          "favorite_count": 0,
-          "id": 8678630,
-          "item_count": 150,
-          "iso_639_1": "en",
-          "iso_3166_1": "US",
-          "list_type": "movie",
-          "name": "Disney\u002B - Popular Movies",
+          "name": "Movies",
           "poster_path": null
         },
         {
           "description": "",
           "favorite_count": 0,
-          "id": 8691271,
-          "item_count": 30,
+          "id": 8713718,
+          "item_count": 824,
           "iso_639_1": "en",
           "iso_3166_1": "US",
           "list_type": "movie",
-          "name": "Collection",
+          "name": "Limelight Seen",
+          "poster_path": null
+        },
+        {
+          "description": "UHD movies",
+          "favorite_count": 0,
+          "id": 8295008,
+          "item_count": 876,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "4K",
+          "poster_path": null
+        },
+        {
+          "description": "Things I\u0027ve watched over the years! :3",
+          "favorite_count": 0,
+          "id": 8636071,
+          "item_count": 923,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "Seen",
+          "poster_path": null
+        },
+        {
+          "description": "",
+          "favorite_count": 0,
+          "id": 137406,
+          "item_count": 1118,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "My Collection",
+          "poster_path": null
+        },
+        {
+          "description": "1001 Movies You Must See Before You Die (All editions 2003-2024).\nA cumulative list including films subsequently removed in later editions. Totaling 1,260 films as of Nov 2024.\n\n\u300A1001\u90E8\u6B7B\u524D\u5FC5\u770B\u7684\u7535\u5F71\u300B\uFF082003-2024 \u5168\u7248\u672C\u7D2F\u79EF\u7248\uFF09\uFF1A\n\u5305\u542B\u81EA2003\u5E74\u9996\u7248\u81F32024\u5E7411\u6708\u5FB7\u8BED\u7248\u4FEE\u8BA2\u7684\u6240\u6709\u5F71\u7247\u3002\u5373\u4F7F\u5728\u540E\u671F\u7248\u672C\u4E2D\u88AB\u5254\u9664\u7684\u7535\u5F71\u4E5F\u4E88\u4EE5\u4FDD\u7559\u3002\n\n*\u7247\u5355\u8BF4\u660E\uFF1A*\n\u672C\u7247\u5355\u53EA\u6536\u5F55\u7535\u5F71\uFF0C\u4EE5\u4E0B\u5267\u96C6\u6216\u8FF7\u4F60\u5267\u5728 TMDB \u6CA1\u6709\u5BF9\u5E94\u7684\u7535\u5F71\u6761\u76EE\uFF0C\u4E0D\u4E88\u6536\u5F55\uFF1A\n\u2022 The Sorrow and the Pity (1969)\n\u2022 Lovers Rock (2020)\n\n\u4EE5\u4E0B\u4F5C\u54C1\u5728 TMDB \u88AB\u62C6\u5206\u4E3A\u591A\u4E2A\u7535\u5F71\u6761\u76EE\uFF0C\u672C\u7247\u5355\u6309\u987A\u5E8F\u8FDE\u7EED\u6536\u5F55\uFF0C\u5E76\u6CBF\u7528\u540C\u4E00\u540D\u6B21\uFF1A\n\u2022 Dekalog (1989) \u2014 \u5C55\u5F00\u4E3A 10 \u90E8\n\n\n*(Updated via Automated ETL Pipeline: 2026-11-10 07:40:49 UTC\u002B8)*",
+          "favorite_count": 0,
+          "id": 8649029,
+          "item_count": 1279,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "1001 Movies You Must See Before You Die",
+          "poster_path": null
+        },
+        {
+          "description": "Letterboxd\u0027s official Top 250 Science Fiction Films, ranked by average member rating.\n\nLetterboxd \u5B98\u65B9 Top 250 \u79D1\u5E7B\u7247\u699C\u5355\uFF1A\n\u6839\u636E\u5E73\u53F0\u7528\u6237\u7684\u5E73\u5747\u8BC4\u5206\u6392\u5E8F\u7684\u79D1\u5E7B\u7247\u7CBE\u9009\u3002\n\n*(Updated via Automated ETL Pipeline: 2026-11-10 07:39:48 UTC\u002B8)*",
+          "favorite_count": 0,
+          "id": 8714330,
+          "item_count": 250,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "Letterboxd\u0027s Top 250 Science Fiction Films",
+          "poster_path": null
+        },
+        {
+          "description": "Letterboxd\u0027s official Top 250 films with the most fans.\n\nLetterboxd \u5B98\u65B9\u7C89\u4E1D\u6700\u591A Top 250 \u699C\u5355\uFF1A\n\u6309\u88AB\u5E73\u53F0\u7528\u6237\u6807\u8BB0\u4E3A\u4E2A\u4EBA\u4E3B\u9875\u2018\u6700\u7231\uFF08Favorites\uFF09\u2019\u7684\u6570\u91CF\u5BF9\u5267\u60C5\u957F\u7247\u8FDB\u884C\u6392\u5E8F\u7684\u699C\u5355\u3002\n\n*(Updated via Automated ETL Pipeline: 2026-11-10 07:37:54 UTC\u002B8)*",
+          "favorite_count": 0,
+          "id": 8649224,
+          "item_count": 250,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "Letterboxd\u0027s Top 250 Films with the Most Fans",
+          "poster_path": null
+        },
+        {
+          "description": "Golden Globe Best Drama\n\u91D1\u7403\u5956\u5386\u5C4A\u6700\u4F73\u5267\u60C5\u7247\u3002\n\n*(Updated via Automated ETL Pipeline: 2026-11-10 07:35:48 UTC\u002B8)*",
+          "favorite_count": 0,
+          "id": 8648849,
+          "item_count": 84,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "\u91D1\u7403\u5956\u6700\u4F73\u5267\u60C5\u7247",
+          "poster_path": null
+        },
+        {
+          "description": "They Shoot Pictures, Don\u0027t They? (TSPDT) - The 1,000 Greatest Films.\nA definitive meta-list aggregating thousands of critics\u0027 polls, historical rankings, and director top 10s to represent the ultimate critical consensus in cinema history.\n\nTSPDT \u5F71\u53F2\u6700\u4F1F\u5927\u76841000\u90E8\u7535\u5F71\uFF1A\n\u5168\u7403\u6700\u6743\u5A01\u7684\u7535\u5F71\u5143\u699C\u5355\uFF0C\u7531\u8BE5\u7F51\u7AD9\u6C47\u603B\u4E16\u754C\u5404\u5927\u7535\u5F71\u520A\u7269\u5386\u53F2\u8BC4\u9009\u7ED3\u679C\u53CA\u6570\u5343\u540D\u5F71\u8BC4\u4EBA\u3001\u5B66\u8005\u7684\u4E2A\u4EBA\u5341\u4F73\u699C\u5355\uFF0C\u901A\u8FC7\u7B97\u6CD5\u52A0\u6743\u8BA1\u7B97\u5F97\u51FA\u7684\u7EC8\u6781\u5171\u8BC6\u3002\n\n*\u7247\u5355\u8BF4\u660E\uFF1A*\n\u672C\u7247\u5355\u53EA\u6536\u5F55\u7EAF\u7535\u5F71\uFF0C\u4EE5\u4E0B\u5267\u96C6\u6216\u8FF7\u4F60\u5267\u4E0D\u4E88\u6536\u5F55\uFF1A\n\u2022 [#335] Berlin Alexanderplatz (1980)\n\u2022 [#514] Twin Peaks: The Return (2017)\n\u2022 [#614] Edvard Munch (1974)\n\u2022 [#703] The Sorrow and the Pity (1969)\n\u2022 [#890] Elephant (1989)\n\u2022 [#925] Heimat (1984)\n\u2022 [#968] Doomed Love (1978)\n\n\u4EE5\u4E0B\u4F5C\u54C1\u5728 TMDB \u88AB\u62C6\u5206\u4E3A\u591A\u4E2A\u72EC\u7ACB\u7535\u5F71\u6761\u76EE\uFF1B\u672C\u7247\u5355\u6309\u4F5C\u54C1/\u7AE0\u8282\u987A\u5E8F\u8FDE\u7EED\u6536\u5F55\uFF0C\u4E14\u6BCF\u4E2A\u5206\u62C6\u6761\u76EE\u5747\u6CBF\u7528\u540C\u4E00 TSPDT \u540D\u6B21\uFF1A\n\u2022 [#140] Histoire(s) du cin\u00E9ma (1988-98) \u2014 \u5C55\u5F00\u4E3A 8 \u90E8\u7535\u5F71\n\u2022 [#171] Dekalog (1989) \u2014 \u5C55\u5F00\u4E3A 10 \u90E8\u7535\u5F71\n\u2022 [#988] Olympia (1938) \u2014 \u5C55\u5F00\u4E3A 2 \u90E8\u7535\u5F71\n\n\n*(Updated via Automated ETL Pipeline: 2026-11-10 07:30:02 UTC\u002B8)*",
+          "favorite_count": 0,
+          "id": 8648821,
+          "item_count": 1010,
+          "iso_639_1": "en",
+          "iso_3166_1": "US",
+          "list_type": "movie",
+          "name": "TSPDT - 1000 Greatest Films",
           "poster_path": null
         }
       ],
-      "total_pages": 112,
-      "total_results": 2221
+      "total_pages": 117,
+      "total_results": 2327
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",

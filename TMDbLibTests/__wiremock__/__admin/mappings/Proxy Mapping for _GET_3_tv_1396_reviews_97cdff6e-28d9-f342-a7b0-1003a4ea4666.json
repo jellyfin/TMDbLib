@@ -17,19 +17,6 @@
       "GET"
     ],
     "HttpVersion": "1.1",
-    "Headers": [
-      {
-        "Name": "Accept-Encoding",
-        "Matchers": [
-          {
-            "Name": "WildcardMatcher",
-            "Pattern": "gzip, deflate, br",
-            "IgnoreCase": true
-          }
-        ],
-        "IgnoreCase": true
-      }
-    ],
     "Params": [
       {
         "Name": "page",
@@ -50,7 +37,7 @@
       "page": 2,
       "results": [],
       "total_pages": 1,
-      "total_results": 5
+      "total_results": 8
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",

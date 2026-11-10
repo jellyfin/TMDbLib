@@ -1,0 +1,871 @@
+{
+  "Guid": "5497f161-86aa-6844-8412-71b57177180c",
+  "Title": "Proxy Mapping for GET /3/tv/1877/watch/providers",
+  "Description": "Proxy Mapping for GET /3/tv/1877/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/1877/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 1877,
+      "results": {
+        "AR": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=AR",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "AT": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=AT",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 5
+            }
+          ]
+        },
+        "AU": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=AU",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 15
+            }
+          ]
+        },
+        "BE": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=BE",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "BG": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=BG",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "BO": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=BO",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "BR": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=BR",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "BZ": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=BZ",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "CA": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=CA",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 7
+            }
+          ]
+        },
+        "CH": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=CH",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "CL": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=CL",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "CO": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=CO",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "CR": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=CR",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "CZ": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=CZ",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "DE": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=DE",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 8
+            }
+          ]
+        },
+        "DK": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=DK",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/d9Kk5xDt4qotYFJyXhEg1m1NuWs.png",
+              "provider_id": 620,
+              "provider_name": "DRTV",
+              "display_priority": 28
+            }
+          ]
+        },
+        "DO": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=DO",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "EC": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=EC",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "ES": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=ES",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "FI": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=FI",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "FR": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=FR",
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 5
+            }
+          ]
+        },
+        "GB": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=GB",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 10
+            }
+          ]
+        },
+        "GG": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=GG",
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 82
+            }
+          ]
+        },
+        "GR": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=GR",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "GT": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=GT",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "HK": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=HK",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "HN": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=HN",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "HR": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=HR",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "HU": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=HU",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "ID": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=ID",
+          "flatrate": [
+            {
+              "logo_path": "/ruMrSFMJBMUpzjUL3dHD647qyEF.png",
+              "provider_id": 122,
+              "provider_name": "Disney\u002B",
+              "display_priority": 4
+            }
+          ]
+        },
+        "IE": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=IE",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "IN": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=IN",
+          "flatrate": [
+            {
+              "logo_path": "/ledoS6EgdjTNq8F1e6wubUQer18.png",
+              "provider_id": 2336,
+              "provider_name": "JioHotstar",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/9SVVjJ89csOM0xoeVVK8BryUf9a.png",
+              "provider_id": 614,
+              "provider_name": "VI movies and tv",
+              "display_priority": 36
+            }
+          ]
+        },
+        "IT": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=IT",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "JM": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=JM",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "JP": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=JP",
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 8
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "KR": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=KR",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "LC": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=LC",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "LI": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=LI",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "LU": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=LU",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "MX": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=MX",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "MY": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=MY",
+          "flatrate": [
+            {
+              "logo_path": "/ruMrSFMJBMUpzjUL3dHD647qyEF.png",
+              "provider_id": 122,
+              "provider_name": "Disney\u002B",
+              "display_priority": 4
+            }
+          ]
+        },
+        "NI": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=NI",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "NL": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=NL",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 5
+            }
+          ]
+        },
+        "NO": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=NO",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "NZ": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=NZ",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "PA": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=PA",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "PE": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=PE",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 5
+            }
+          ]
+        },
+        "PL": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=PL",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/en9BC8BR1Sm0lNdKhHkw5hWqvSH.png",
+              "provider_id": 2363,
+              "provider_name": "Polsat Box Go",
+              "display_priority": 46
+            }
+          ]
+        },
+        "PT": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=PT",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "PY": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=PY",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "RO": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=RO",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "RU": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=RU",
+          "flatrate": [
+            {
+              "logo_path": "/oroIyNGCu4ltli1lI4m7em1IYE5.png",
+              "provider_id": 117,
+              "provider_name": "Kinopoisk",
+              "display_priority": 21
+            }
+          ]
+        },
+        "SE": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=SE",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "SG": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=SG",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "SK": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=SK",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "SM": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=SM",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "SV": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=SV",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "TH": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=TH",
+          "flatrate": [
+            {
+              "logo_path": "/ruMrSFMJBMUpzjUL3dHD647qyEF.png",
+              "provider_id": 122,
+              "provider_name": "Disney\u002B",
+              "display_priority": 4
+            }
+          ]
+        },
+        "TR": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=TR",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "TT": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=TT",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "TW": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=TW",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=US",
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/aZRENwYILujqs0RVOZutTh0BVGV.png",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 24
+            },
+            {
+              "logo_path": "/wpOt6x0dRxTrIzuBosto4LGd7E9.png",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 41
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/3wF8xISfVlcrc8X3jaa3uMUFGAr.png",
+              "provider_id": 257,
+              "provider_name": "fuboTV",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/48bVXEIyCLSL9pZUQ7gB9ToyWto.png",
+              "provider_id": 2528,
+              "provider_name": "YouTube TV",
+              "display_priority": 42
+            },
+            {
+              "logo_path": "/3Zp05yizjTStDH4AhEBPzEsf9jv.png",
+              "provider_id": 508,
+              "provider_name": "DisneyNOW",
+              "display_priority": 125
+            }
+          ]
+        },
+        "UY": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=UY",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "VE": {
+          "link": "https://www.themoviedb.org/tv/1877-phineas-and-ferb/watch?locale=VE",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty"
+    }
+  }
+}

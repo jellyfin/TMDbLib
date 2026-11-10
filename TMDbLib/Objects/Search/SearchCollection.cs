@@ -46,7 +46,11 @@ public class SearchCollection : TmdbEntity
 
             return _name;
         }
-        set => _name = value;
+
+        set
+        {
+            _name = value;
+        }
     }
 
     /// <summary>
@@ -72,7 +76,11 @@ public class SearchCollection : TmdbEntity
 
             return _originalName;
         }
-        set => _originalName = value;
+
+        set
+        {
+            _originalName = value;
+        }
     }
 
     /// <summary>

@@ -1,0 +1,928 @@
+{
+  "Guid": "d76f33e5-cfcf-2342-bd37-9c506e8642d6",
+  "Title": "Proxy Mapping for GET /3/tv/1427/watch/providers",
+  "Description": "Proxy Mapping for GET /3/tv/1427/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/1427/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 1427,
+      "results": {
+        "AR": {
+          "link": "https://www.themoviedb.org/tv/1427-broadchurch/watch?locale=AR",
+          "ads": [
+            {
+              "logo_path": "/fN4czqaMQNLeF6sSSIjGbAWzvwK.png",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 25
+            }
+          ]
+        },
+        "AT": {
+          "link": "https://www.themoviedb.org/tv/1427-broadchurch/watch?locale=AT",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/tpwTT1FpWqLLhxUfAuDavIXDDfI.png",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 61
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 5
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/fN4czqaMQNLeF6sSSIjGbAWzvwK.png",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 36
+            },
+            {
+              "logo_path": "/fuVBtr57kxnYzOILZ38xqSmBeyR.png",
+              "provider_id": 613,
+              "provider_name": "Amazon Prime Video Free with Ads",
+              "display_priority": 54
+            },
+            {
+              "logo_path": "/46U3TOB3PhVDjA7qaFOuYSaGMiq.png",
+              "provider_id": 1898,
+              "provider_name": "Amazon MX Player",
+              "display_priority": 175
+            }
+          ]
+        },
+        "AU": {
+          "link": "https://www.themoviedb.org/tv/1427-broadchurch/watch?locale=AU",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/1Hzele1xJnA7xfQyWKNQnTnWAio.png",
+              "provider_id": 385,
+              "provider_name": "BINGE",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/qRZkZY5kgqXaLr4QFp7ON0wG5rB.png",
+              "provider_id": 134,
+              "provider_name": "Foxtel Now",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/r5LXOt96llVEmgwAQeheJuxUaMR.png",
+              "provider_id": 1852,
+              "provider_name": "Britbox Apple TV channel",
+              "display_priority": 56
+            },
+            {
+              "logo_path": "/tpwTT1FpWqLLhxUfAuDavIXDDfI.png",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 92
+            },
+            {
+              "logo_path": "/ugQHaBlSt4vnebuw7PVAvlh7mId.png",
+              "provider_id": 2804,
+              "provider_name": "Binge Amazon Channel",
+              "display_priority": 110
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/t0Rghe8mHePFrWfEnGVYiWlu6YF.png",
+              "provider_id": 82,
+              "provider_name": "10",
+              "display_priority": 24
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/hFTUerTxMwrM9RIo9z48qxCsi7z.png",
+              "provider_id": 436,
+              "provider_name": "Fetch TV",
+              "display_priority": 32
+            }
+          ]
+        },
+        "BM": {
+          "link": "https://www.themoviedb.org/tv/1427-broadchurch/watch?locale=BM",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            }
+          ]
+        },
+        "BO": {
+          "link": "https://www.themoviedb.org/tv/1427-broadchurch/watch?locale=BO",
+          "ads": [
+            {
+              "logo_path": "/fN4czqaMQNLeF6sSSIjGbAWzvwK.png",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 22
+            }
+          ]
+        },
+        "CA": {
+          "link": "https://www.themoviedb.org/tv/1427-broadchurch/watch?locale=CA",
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 7
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/9dEuvA8wg5TSeFBZlPxSVxFdimJ.png",
+              "provider_id": 73,
+              "provider_name": "Tubi TV",
+              "display_priority": 21
+            },
+            {
+              "logo_path": "/blAEhvx3XX8sV0fFVFk88FFjubs.png",
+              "provider_id": 538,
+              "provider_name": "Plex",
+              "display_priority": 81
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/aZASQOdPFvGnXiJ015OVGVJ9vt7.png",
+              "provider_id": 294,
+              "provider_name": "PBS Masterpiece Amazon Channel",
+              "display_priority": 23
+            },
+            {
+              "logo_path": "/tpwTT1FpWqLLhxUfAuDavIXDDfI.png",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 110
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/gtjNBzAoGgUtYzt0UKXmwG34WWL.png",
+              "provider_id": 212,
+              "provider_name": "Hoopla",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/mL90cPyENUIxe9tVDbveFer5qgw.png",
+              "provider_id": 525,
+              "provider_name": "Knowledge Network",
+              "display_priority": 55
+            }
+          ]
+        },
+        "CH": {
+          "link": "https://www.themoviedb.org/tv/1427-broadchurch/watch?locale=CH",
+          "ads": [
+            {
+              "logo_path": "/fN4czqaMQNLeF6sSSIjGbAWzvwK.png",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 32
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/omviag2i66PzB1VqDc48pbwTC8Z.png",
+              "provider_id": 150,
+              "provider_name": "blue TV",
+              "display_priority": 5
+            }
+          ]
+        },
+        "CL": {
+          "link": "https://www.themoviedb.org/tv/1427-broadchurch/watch?locale=CL",
+          "ads": [
+            {
+              "logo_path": "/fN4czqaMQNLeF6sSSIjGbAWzvwK.png",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 22
+            }
+          ]
+        },
+        "CO": {
+          "link": "https://www.themoviedb.org/tv/1427-broadchurch/watch?locale=CO",
+          "ads": [
+            {
+              "logo_path": "/fN4czqaMQNLeF6sSSIjGbAWzvwK.png",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 23
+            }
+          ]
+        },
+        "CR": {
+          "link": "https://www.themoviedb.org/tv/1427-broadchurch/watch?locale=CR",
+          "ads": [
+            {
+              "logo_path": "/fN4czqaMQNLeF6sSSIjGbAWzvwK.png",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 23
+            }
+          ]
+        },
+        "DE": {
+          "link": "https://www.themoviedb.org/tv/1427-broadchurch/watch?locale=DE",
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 8
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/fuVBtr57kxnYzOILZ38xqSmBeyR.png",
+              "provider_id": 613,
+              "provider_name": "Amazon Prime Video Free with Ads",
+              "display_priority": 18
+            },
+            {
+              "logo_path": "/fN4czqaMQNLeF6sSSIjGbAWzvwK.png",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 64
+            },
+            {
+              "logo_path": "/46U3TOB3PhVDjA7qaFOuYSaGMiq.png",
+              "provider_id": 1898,
+              "provider_name": "Amazon MX Player",
+              "display_priority": 242
+            }
+          ]
+        },
+        "DK": {
+          "link": "https://www.themoviedb.org/tv/1427-broadchurch/watch?locale=DK",
+          "buy": [
+            {
+              "logo_path": "/q8EUxAMcTw7qjdMKMcTPLl06gum.png",
+              "provider_id": 423,
+              "provider_name": "Blockbuster",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/fVuqy8kmzsULoJjc3ROOcurRH7S.png",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 16
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/fVuqy8kmzsULoJjc3ROOcurRH7S.png",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 16
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/c1J9PGGowXwW5AxAaZaGipeFu7U.png",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/hPIVVR7yvR0PrTe7eHR2I5nAFis.png",
+              "provider_id": 1961,
+              "provider_name": "Allente",
+              "display_priority": 37
+            }
+          ]
+        },
+        "DO": {
+          "link": "https://www.themoviedb.org/tv/1427-broadchurch/watch?locale=DO",
+          "ads": [
+            {
+              "logo_path": "/fN4czqaMQNLeF6sSSIjGbAWzvwK.png",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 21
+            }
+          ]
+        },
+        "EC": {
+          "link": "https://www.themoviedb.org/tv/1427-broadchurch/watch?locale=EC",
+          "ads": [
+            {
+              "logo_path": "/fN4czqaMQNLeF6sSSIjGbAWzvwK.png",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 22
+            }
+          ]
+        },
+        "ES": {
+          "link": "https://www.themoviedb.org/tv/1427-broadchurch/watch?locale=ES",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/tpwTT1FpWqLLhxUfAuDavIXDDfI.png",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 79
+            }
+          ]
+        },
+        "FI": {
+          "link": "https://www.themoviedb.org/tv/1427-broadchurch/watch?locale=FI",
+          "rent": [
+            {
+              "logo_path": "/fVuqy8kmzsULoJjc3ROOcurRH7S.png",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/cNOoXFJAxHhuvFzZD3ozinKYg6V.png",
+              "provider_id": 553,
+              "provider_name": "Telia Play",
+              "display_priority": 28
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/q8EUxAMcTw7qjdMKMcTPLl06gum.png",
+              "provider_id": 423,
+              "provider_name": "Blockbuster",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/fVuqy8kmzsULoJjc3ROOcurRH7S.png",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 14
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/c1J9PGGowXwW5AxAaZaGipeFu7U.png",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 33
+            }
+          ]
+        },
+        "GB": {
+          "link": "https://www.themoviedb.org/tv/1427-broadchurch/watch?locale=GB",
+          "ads": [
+            {
+              "logo_path": "/nIViE3wOPV5Jyv45T7hetHyG6iS.png",
+              "provider_id": 41,
+              "provider_name": "ITVX",
+              "display_priority": 24
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 10
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/eGUwOOIxcazwEBxqJpSN5sWEu6V.png",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 86
+            },
+            {
+              "logo_path": "/nIViE3wOPV5Jyv45T7hetHyG6iS.png",
+              "provider_id": 2300,
+              "provider_name": "ITVX Premium",
+              "display_priority": 113
+            }
+          ]
+        },
+        "GG": {
+          "link": "https://www.themoviedb.org/tv/1427-broadchurch/watch?locale=GG",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 82
+            }
+          ]
+        },
+        "GI": {
+          "link": "https://www.themoviedb.org/tv/1427-broadchurch/watch?locale=GI",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            }
+          ]
+        },
+        "GT": {
+          "link": "https://www.themoviedb.org/tv/1427-broadchurch/watch?locale=GT",
+          "ads": [
+            {
+              "logo_path": "/fN4czqaMQNLeF6sSSIjGbAWzvwK.png",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 23
+            }
+          ]
+        },
+        "HN": {
+          "link": "https://www.themoviedb.org/tv/1427-broadchurch/watch?locale=HN",
+          "ads": [
+            {
+              "logo_path": "/fN4czqaMQNLeF6sSSIjGbAWzvwK.png",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 22
+            }
+          ]
+        },
+        "IE": {
+          "link": "https://www.themoviedb.org/tv/1427-broadchurch/watch?locale=IE",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "IS": {
+          "link": "https://www.themoviedb.org/tv/1427-broadchurch/watch?locale=IS",
+          "flatrate": [
+            {
+              "logo_path": "/c1J9PGGowXwW5AxAaZaGipeFu7U.png",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 24
+            }
+          ]
+        },
+        "JP": {
+          "link": "https://www.themoviedb.org/tv/1427-broadchurch/watch?locale=JP",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/44uAnmSqvA4yBOdbPWN8YgQHjWm.png",
+              "provider_id": 15,
+              "provider_name": "Hulu",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/tCyI0pcXPcOGAvGwvh5DQZcN3V6.png",
+              "provider_id": 2493,
+              "provider_name": "Cinefil Wow Plus Amazon Channel",
+              "display_priority": 43
+            },
+            {
+              "logo_path": "/jjXnZFeUc848snG5PHRQpbV3MMm.png",
+              "provider_id": 2498,
+              "provider_name": "FOD Channel Amazon Channel",
+              "display_priority": 47
+            },
+            {
+              "logo_path": "/tpwTT1FpWqLLhxUfAuDavIXDDfI.png",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 70
+            },
+            {
+              "logo_path": "/m0tkTiV5TN7NWfazDEYc8NoVXSd.png",
+              "provider_id": 2683,
+              "provider_name": "FOD",
+              "display_priority": 79
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 8
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 8
+            }
+          ]
+        },
+        "KR": {
+          "link": "https://www.themoviedb.org/tv/1427-broadchurch/watch?locale=KR",
+          "flatrate": [
+            {
+              "logo_path": "/ppQIS7UMtBwJSspSoGqDR8wO1Gr.png",
+              "provider_id": 97,
+              "provider_name": "Watcha",
+              "display_priority": 7
+            }
+          ]
+        },
+        "MX": {
+          "link": "https://www.themoviedb.org/tv/1427-broadchurch/watch?locale=MX",
+          "ads": [
+            {
+              "logo_path": "/fN4czqaMQNLeF6sSSIjGbAWzvwK.png",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 34
+            }
+          ]
+        },
+        "NI": {
+          "link": "https://www.themoviedb.org/tv/1427-broadchurch/watch?locale=NI",
+          "ads": [
+            {
+              "logo_path": "/fN4czqaMQNLeF6sSSIjGbAWzvwK.png",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 7
+            }
+          ]
+        },
+        "NO": {
+          "link": "https://www.themoviedb.org/tv/1427-broadchurch/watch?locale=NO",
+          "buy": [
+            {
+              "logo_path": "/q8EUxAMcTw7qjdMKMcTPLl06gum.png",
+              "provider_id": 423,
+              "provider_name": "Blockbuster",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/fVuqy8kmzsULoJjc3ROOcurRH7S.png",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 16
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/c1J9PGGowXwW5AxAaZaGipeFu7U.png",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/m502wSLGwHL9WUK38NeAbwrBk6P.png",
+              "provider_id": 431,
+              "provider_name": "TV 2 Play",
+              "display_priority": 17
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/fVuqy8kmzsULoJjc3ROOcurRH7S.png",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 16
+            }
+          ]
+        },
+        "NZ": {
+          "link": "https://www.themoviedb.org/tv/1427-broadchurch/watch?locale=NZ",
+          "flatrate": [
+            {
+              "logo_path": "/68KYULhVkHI6TVrmPSE0LlPXB1U.png",
+              "provider_id": 273,
+              "provider_name": "Neon TV",
+              "display_priority": 5
+            }
+          ]
+        },
+        "PA": {
+          "link": "https://www.themoviedb.org/tv/1427-broadchurch/watch?locale=PA",
+          "ads": [
+            {
+              "logo_path": "/fN4czqaMQNLeF6sSSIjGbAWzvwK.png",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 22
+            }
+          ]
+        },
+        "PE": {
+          "link": "https://www.themoviedb.org/tv/1427-broadchurch/watch?locale=PE",
+          "ads": [
+            {
+              "logo_path": "/fN4czqaMQNLeF6sSSIjGbAWzvwK.png",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 24
+            }
+          ]
+        },
+        "PL": {
+          "link": "https://www.themoviedb.org/tv/1427-broadchurch/watch?locale=PL",
+          "flatrate": [
+            {
+              "logo_path": "/hpP4OGK0pqdD1Z0TVkevbKR2eIZ.png",
+              "provider_id": 681,
+              "provider_name": "Film Total Amazon Channel",
+              "display_priority": 28
+            },
+            {
+              "logo_path": "/19i0ihHvFzvK0GF5qQ6Wc4UnkOf.png",
+              "provider_id": 2214,
+              "provider_name": "CDA Premium",
+              "display_priority": 42
+            }
+          ]
+        },
+        "PY": {
+          "link": "https://www.themoviedb.org/tv/1427-broadchurch/watch?locale=PY",
+          "ads": [
+            {
+              "logo_path": "/fN4czqaMQNLeF6sSSIjGbAWzvwK.png",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 22
+            }
+          ]
+        },
+        "SE": {
+          "link": "https://www.themoviedb.org/tv/1427-broadchurch/watch?locale=SE",
+          "flatrate": [
+            {
+              "logo_path": "/c1J9PGGowXwW5AxAaZaGipeFu7U.png",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 8
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/fVuqy8kmzsULoJjc3ROOcurRH7S.png",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 16
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/q8EUxAMcTw7qjdMKMcTPLl06gum.png",
+              "provider_id": 423,
+              "provider_name": "Blockbuster",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/fVuqy8kmzsULoJjc3ROOcurRH7S.png",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 16
+            }
+          ]
+        },
+        "SV": {
+          "link": "https://www.themoviedb.org/tv/1427-broadchurch/watch?locale=SV",
+          "ads": [
+            {
+              "logo_path": "/fN4czqaMQNLeF6sSSIjGbAWzvwK.png",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 22
+            }
+          ]
+        },
+        "TC": {
+          "link": "https://www.themoviedb.org/tv/1427-broadchurch/watch?locale=TC",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/tv/1427-broadchurch/watch?locale=US",
+          "flatrate": [
+            {
+              "logo_path": "/a1UIdq5BrkcAxnxcUhFsNbXnxeu.png",
+              "provider_id": 386,
+              "provider_name": "Peacock Premium",
+              "display_priority": 20
+            },
+            {
+              "logo_path": "/kwKCUFjKjq1GlZeIjImBV62IypB.png",
+              "provider_id": 209,
+              "provider_name": "PBS",
+              "display_priority": 45
+            },
+            {
+              "logo_path": "/aZASQOdPFvGnXiJ015OVGVJ9vt7.png",
+              "provider_id": 294,
+              "provider_name": "PBS Masterpiece Amazon Channel",
+              "display_priority": 74
+            },
+            {
+              "logo_path": "/yrEwyMzEKdqAoGhaWUARtIxByol.png",
+              "provider_id": 387,
+              "provider_name": "Peacock Premium Plus",
+              "display_priority": 214
+            },
+            {
+              "logo_path": "/dQKjAyrGlA3HPbDs4hp8RyaXUiK.png",
+              "provider_id": 2622,
+              "provider_name": "Thirteen",
+              "display_priority": 349
+            },
+            {
+              "logo_path": "/fwzxYZXp5T57T2WaazFhzArAmYd.png",
+              "provider_id": 2657,
+              "provider_name": "WETA\u002B",
+              "display_priority": 351
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/aZRENwYILujqs0RVOZutTh0BVGV.png",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 24
+            },
+            {
+              "logo_path": "/wpOt6x0dRxTrIzuBosto4LGd7E9.png",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 41
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/b7uhrYJtAe7b1ieJGg705vTbwrX.png",
+              "provider_id": 207,
+              "provider_name": "The Roku Channel",
+              "display_priority": 33
+            },
+            {
+              "logo_path": "/fN4czqaMQNLeF6sSSIjGbAWzvwK.png",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 76
+            },
+            {
+              "logo_path": "/blAEhvx3XX8sV0fFVFk88FFjubs.png",
+              "provider_id": 538,
+              "provider_name": "Plex",
+              "display_priority": 127
+            },
+            {
+              "logo_path": "/n6E9OeoQicCDd43PnLsMpVIVYFK.png",
+              "provider_id": 1963,
+              "provider_name": "Xumo Play",
+              "display_priority": 168
+            },
+            {
+              "logo_path": "/9dEuvA8wg5TSeFBZlPxSVxFdimJ.png",
+              "provider_id": 73,
+              "provider_name": "Tubi TV",
+              "display_priority": 346
+            },
+            {
+              "logo_path": "/gq031DkuykfuuHVoLPx9BFNyfPU.png",
+              "provider_id": 2621,
+              "provider_name": "KQED",
+              "display_priority": 348
+            }
+          ],
+          "free": [
+            {
+              "logo_path": "/gtjNBzAoGgUtYzt0UKXmwG34WWL.png",
+              "provider_id": 212,
+              "provider_name": "Hoopla",
+              "display_priority": 40
+            }
+          ]
+        },
+        "UY": {
+          "link": "https://www.themoviedb.org/tv/1427-broadchurch/watch?locale=UY",
+          "ads": [
+            {
+              "logo_path": "/fN4czqaMQNLeF6sSSIjGbAWzvwK.png",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 24
+            }
+          ]
+        },
+        "VE": {
+          "link": "https://www.themoviedb.org/tv/1427-broadchurch/watch?locale=VE",
+          "ads": [
+            {
+              "logo_path": "/fN4czqaMQNLeF6sSSIjGbAWzvwK.png",
+              "provider_id": 300,
+              "provider_name": "Pluto TV",
+              "display_priority": 19
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty"
+    }
+  }
+}

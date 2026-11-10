@@ -1,7 +1,7 @@
 {
   "Guid": "f0b27373-abd6-fb4e-accf-ca7c4e5a3eb7",
-  "Title": "Proxy Mapping for GET /3/authentication/token/validate_with_login",
-  "Description": "Proxy Mapping for GET /3/authentication/token/validate_with_login",
+  "Title": "Proxy Mapping for POST /3/authentication/token/validate_with_login",
+  "Description": "Proxy Mapping for POST /3/authentication/token/validate_with_login",
   "Priority": -2000000,
   "Request": {
     "Path": {
@@ -19,17 +19,6 @@
     "HttpVersion": "1.1",
     "Headers": [
       {
-        "Name": "Accept-Encoding",
-        "Matchers": [
-          {
-            "Name": "WildcardMatcher",
-            "Pattern": "gzip, deflate, br",
-            "IgnoreCase": true
-          }
-        ],
-        "IgnoreCase": true
-      },
-      {
         "Name": "Content-Type",
         "Matchers": [
           {
@@ -40,19 +29,7 @@
         ],
         "IgnoreCase": true
       }
-    ],
-    "Params": [],
-    "Body": {
-      "Matcher": {
-        "Name": "JsonPartialMatcher",
-        "Pattern": {
-          "username": "bla",
-          "password": "bla"
-        },
-        "IgnoreCase": true,
-        "Regex": false
-      }
-    }
+    ]
   },
   "Response": {
     "StatusCode": 401,

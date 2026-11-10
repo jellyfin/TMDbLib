@@ -17,19 +17,6 @@
       "GET"
     ],
     "HttpVersion": "1.1",
-    "Headers": [
-      {
-        "Name": "Accept-Encoding",
-        "Matchers": [
-          {
-            "Name": "WildcardMatcher",
-            "Pattern": "gzip, deflate, br",
-            "IgnoreCase": true
-          }
-        ],
-        "IgnoreCase": true
-      }
-    ],
     "Params": [
       {
         "Name": "page",
@@ -48,6 +35,116 @@
     "BodyAsJson": {
       "page": 2,
       "results": [
+        {
+          "adult": false,
+          "backdrop_path": "/z3BkMbCy5ajZPMyKEUwsPHuz2cV.jpg",
+          "genre_ids": [
+            18
+          ],
+          "id": 250307,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "The Pitt",
+          "overview": "The staff of Pittsburgh\u0027s Trauma Medical Center work around the clock to save lives in an overcrowded and underfunded emergency department.",
+          "popularity": 0.0,
+          "poster_path": "/kvFSpESyBZMjaeOJDx7RS3P1jey.jpg",
+          "first_air_date": "2025-01-09",
+          "softcore": false,
+          "name": "The Pitt",
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/wgmikRStgBbrzjxFVe5rhFlpL2R.jpg",
+          "genre_ids": [
+            35
+          ],
+          "id": 64010,
+          "origin_country": [
+            "KR"
+          ],
+          "original_language": "ko",
+          "original_name": "\uC751\uB2F5\uD558\uB77C 1988",
+          "overview": "Take a nostalgic trip back to the late 1980s through the lives of five families and their five teenage kids living in a small neighbourhood in Seoul.",
+          "popularity": 0.0,
+          "poster_path": "/655MownSWwplhvVlXERRJ4OSOG2.jpg",
+          "first_air_date": "2015-11-06",
+          "softcore": false,
+          "name": "Reply 1988",
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/2UG177tWHy7xRmMKWJHB7nAUmKd.jpg",
+          "genre_ids": [
+            16,
+            10759,
+            10765,
+            18
+          ],
+          "id": 31911,
+          "origin_country": [
+            "JP"
+          ],
+          "original_language": "ja",
+          "original_name": "\u92FC\u306E\u932C\u91D1\u8853\u5E2B FULLMETAL ALCHEMIST",
+          "overview": "Disregard for alchemy\u2019s laws ripped half of Edward Elric\u2019s limbs from his body and left his brother Alphonse\u2019s soul clinging to a suit of armor. To restore what was lost, the brothers seek the Philosopher\u2019s Stone. Enemies and allies \u2013 the corrupt military, the Homunculi, and foreign alchemists \u2013 will alter the Elric brothers course, but their purpose will remain unchanged and their bond unbreakable.",
+          "popularity": 0.0,
+          "poster_path": "/5ZFUEOULaVml7pQuXxhpR2SmVUw.jpg",
+          "first_air_date": "2009-04-05",
+          "softcore": false,
+          "name": "Fullmetal Alchemist: Brotherhood",
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/rfxryDIv8huejujg4JueDJx8zCz.jpg",
+          "genre_ids": [
+            80,
+            18
+          ],
+          "id": 60059,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Better Call Saul",
+          "overview": "Six years before Saul Goodman meets Walter White. We meet him when the man who will become Saul Goodman is known as Jimmy McGill, a small-time lawyer searching for his destiny, and, more immediately, hustling to make ends meet. Working alongside, and, often, against Jimmy, is \u201Cfixer\u201D Mike Ehrmantraut. The series tracks Jimmy\u2019s transformation into Saul Goodman, the man who puts \u201Ccriminal\u201D in \u201Ccriminal lawyer\u0022.",
+          "popularity": 0.0,
+          "poster_path": "/fC2HDm5t0kHl7mTm7jxMR31b7by.jpg",
+          "first_air_date": "2015-02-08",
+          "softcore": false,
+          "name": "Better Call Saul",
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/dl3pdT1NZiqRM4aDBwsD2TtO8x9.jpg",
+          "genre_ids": [
+            16,
+            18
+          ],
+          "id": 271607,
+          "origin_country": [
+            "JP"
+          ],
+          "original_language": "ja",
+          "original_name": "\u85AB\u308B\u82B1\u306F\u51DB\u3068\u54B2\u304F",
+          "overview": "When the intimidating Rintaro meets the open-minded Kaoruko, the unlikely duo grows closer. The issue? Their neighboring high schools hate each other.",
+          "popularity": 0.0,
+          "poster_path": "/g1sYAQt0OeCxzyfagSEqxUlsLnt.jpg",
+          "first_air_date": "2025-07-06",
+          "softcore": false,
+          "name": "The Fragrant Flower Blooms with Dignity",
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
         {
           "adult": false,
           "backdrop_path": "/jIyEmnBrZtl6SEWyBoMO2hZnzMa.jpg",
@@ -73,70 +170,67 @@
         },
         {
           "adult": false,
-          "backdrop_path": "/lNpkvX2s8LGB0mjGODMT4o6Up7j.jpg",
+          "backdrop_path": "/3vuBfAuAltIR6UdANUQ1lLXOeia.jpg",
           "genre_ids": [
-            80,
             18
           ],
-          "id": 1398,
+          "id": 301507,
           "origin_country": [
-            "US"
+            "CA"
           ],
           "original_language": "en",
-          "original_name": "The Sopranos",
-          "overview": "The story of New Jersey-based Italian-American mobster Tony Soprano and the difficulties he faces as he tries to balance the conflicting requirements of his home life and the criminal organization he heads. Those difficulties are often highlighted through his ongoing professional relationship with psychiatrist Jennifer Melfi. The show features Tony\u0027s family members and Mafia associates in prominent roles and story arcs, most notably his wife Carmela and his cousin and prot\u00E9g\u00E9 Christopher Moltisanti.",
+          "original_name": "Heated Rivalry",
+          "overview": "Two of the biggest stars in Major League Hockey are bound by ambition, rivalry, and a magnetic pull neither of them fully understands. What begins as a secret fling between two fresh faced rookies evolves into a years-long journey of love, denial, and self-discovery. Over the next eight years, as they chase glory on the ice, they struggle to navigate their feelings for each other. Torn between the sport they live for and the love they can\u2019t ignore, they must decide if there\u2019s room in their fiercely competitive world for something as fragile \u2013 and powerful \u2013 as real love.",
           "popularity": 0.0,
-          "poster_path": "/rTc7ZXdroqjkKivFPvCPX0Ru7uw.jpg",
-          "first_air_date": "1999-01-10",
+          "poster_path": "/3YCKbtAkYWCMDLHvkUjGhG7eWoS.jpg",
+          "first_air_date": "2025-11-28",
           "softcore": false,
-          "name": "The Sopranos",
+          "name": "Heated Rivalry",
           "vote_average": 0.0,
           "vote_count": 0
         },
         {
           "adult": false,
-          "backdrop_path": "/bGqKaVROpz7pWUNuBxgU8hbcXYn.jpg",
+          "backdrop_path": "/cLTAda6fMRirkCY1xfO4pmcHVkk.jpg",
           "genre_ids": [
-            16,
             10759,
-            35,
-            10765,
-            10751
+            18
           ],
-          "id": 92685,
+          "id": 200709,
           "origin_country": [
-            "US"
+            "KR"
           ],
-          "original_language": "en",
-          "original_name": "The Owl House",
-          "overview": "Luz, a self-assured teenage human girl, accidentally stumbles upon a portal to a magical new world where she befriends a rebellious witch, Eda, and an adorably tiny warrior, King.",
+          "original_language": "ko",
+          "original_name": "\uC57D\uD55C\uC601\uC6C5",
+          "overview": "With the aid of unexpected friends, a gifted but introverted student confronts bullies and violent foes \u2014 unaware of how dangerous his world will become.",
           "popularity": 0.0,
-          "poster_path": "/rhzwpJBhi2WkfihXndS1xUdQlzB.jpg",
-          "first_air_date": "2020-01-10",
+          "poster_path": "/hS9VVF5ffTVWNoC9B48QNsZFGy9.jpg",
+          "first_air_date": "2022-11-18",
           "softcore": false,
-          "name": "The Owl House",
+          "name": "Weak Hero",
           "vote_average": 0.0,
           "vote_count": 0
         },
         {
           "adult": false,
-          "backdrop_path": "/dEANXnVRmFkSD8jcJlZ0oy8EnB1.jpg",
+          "backdrop_path": "/rqbCbjB19amtOtFQbb3K2lgm2zv.jpg",
           "genre_ids": [
             16,
-            35
+            10765,
+            10759
           ],
-          "id": 42573,
+          "id": 1429,
           "origin_country": [
             "JP"
           ],
           "original_language": "ja",
-          "original_name": "\u30B9\u30E9\u30E0\u30C0\u30F3\u30AF",
-          "overview": "Sakuragi Hanamichi is a junior high punk used to getting into fights and being rejected by girls but upon entering high school he meets the girl of his dreams, Haruko Akagi. He will do anything in order to win her heart including joining the school basketball team that is aiming to conquer the nation lead by Haruko\u0027s brother. The problem is that Sakuragi has never played basketball before and a freshman sensation is stealing the spotlight and Haruko\u0027s affection from him.",
+          "original_name": "\u9032\u6483\u306E\u5DE8\u4EBA",
+          "overview": "100 years ago, the last remnants of humanity were forced to retreat behind the towering walls of a fortified city to escape the massive, man-eating Titans that roamed the land outside their fortress. Only the members of the Scouting Legion dared to stray beyond the safety of the walls \u2013 but even those brave warriors seldom returned alive. Those within the city clung to the illusion of a peaceful existence until the day that dream was shattered, and their slim chance at survival was reduced to one horrifying choice: kill \u2013 or be devoured!",
           "popularity": 0.0,
-          "poster_path": "/nmmOKeydeeO4TKucpvyMA2o6gdD.jpg",
-          "first_air_date": "1993-10-16",
+          "poster_path": "/hTP1DtLGFamjfu8WqjnuQdP1n4i.jpg",
+          "first_air_date": "2013-04-07",
           "softcore": false,
-          "name": "Slam Dunk",
+          "name": "Attack on Titan",
           "vote_average": 0.0,
           "vote_count": 0
         },
@@ -165,138 +259,24 @@
         },
         {
           "adult": false,
-          "backdrop_path": "/bFKKyCI89Xq98Gul8cGox8K3sZa.jpg",
+          "backdrop_path": "/5NmmaK9dt38UXOwzPC2t9yR3HTv.jpg",
           "genre_ids": [
             16,
-            10759,
+            18,
             10765
           ],
-          "id": 46298,
+          "id": 196950,
           "origin_country": [
             "JP"
           ],
           "original_language": "ja",
-          "original_name": "HUNTER\u00D7HUNTER",
-          "overview": "Gon, a young boy who lives on Whale Island, dreams of becoming a Hunter like his father, who left when Gon was still young.",
+          "original_name": "\u3068\u3093\u304C\u308A\u5E3D\u5B50\u306E\u30A2\u30C8\u30EA\u30A8",
+          "overview": "In a world where only witches can cast magic, they must avoid being seen by ordinary people while casting. While Coco does her chores, she daydreams of becoming a witch. When a young witch named Qifrey visits her village, Coco uncovers the \u201Cabsolute secret,\u201D becomes Qifrey\u2019s apprentice, and begins her studies. This is the story of children who encounter despair, yet reach out toward hope.",
           "popularity": 0.0,
-          "poster_path": "/i2EEr2uBvRlAwJ8d8zTG2Y19mIa.jpg",
-          "first_air_date": "2011-10-02",
+          "poster_path": "/78m1Tv3suHmUryTI9VNPwKLKjHZ.jpg",
+          "first_air_date": "2026-04-06",
           "softcore": false,
-          "name": "Hunter x Hunter",
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/uvCkSZwCTKnBtBOvDpcOvQA6xBg.jpg",
-          "genre_ids": [
-            16,
-            35,
-            18,
-            10759
-          ],
-          "id": 42705,
-          "origin_country": [
-            "JP"
-          ],
-          "original_language": "ja",
-          "original_name": "\u306F\u3058\u3081\u306E\u4E00\u6B69",
-          "overview": "Makunouchi Ippo is an ordinary high school student in Japan. Since he spends most of his time away from school helping his mother run the family business, he doesn\u0027t get to enjoy his younger years like most teenagers. Always a target for bullying at school (the family fishing business grants him a distinct odor), Ippo\u0027s life is one of hardship. One of these after-school bullying sessions turns Ippo\u0027s life around for the better, as he is saved by a boxer named Takamura. He decides to follow in Takamura\u0027s footsteps and train to become a boxer, giving his life direction and purpose. Ippo\u0027s path to perfecting his pugilistic prowess is just beginning...",
-          "popularity": 0.0,
-          "poster_path": "/i3U3J2MWovIBZBnZYYiOLBXqNJZ.jpg",
-          "first_air_date": "2000-10-03",
-          "softcore": false,
-          "name": "Fighting Spirit",
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/tbHQDtoDZGJsfe7Kx6BEShcrZAa.jpg",
-          "genre_ids": [
-            10759,
-            16
-          ],
-          "id": 89456,
-          "origin_country": [
-            "US"
-          ],
-          "original_language": "en",
-          "original_name": "Primal",
-          "overview": "A caveman forms a bond with a dinosaur as they struggle to survive in a hostile world.",
-          "popularity": 0.0,
-          "poster_path": "/mf12pRakr3eYdJtv6klQtoznnbU.jpg",
-          "first_air_date": "2019-10-08",
-          "softcore": false,
-          "name": "Primal",
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/vRAM2el4bAygzUWfwXdt34E71Ee.jpg",
-          "genre_ids": [
-            16,
-            10759,
-            35,
-            10765
-          ],
-          "id": 131378,
-          "origin_country": [
-            "US"
-          ],
-          "original_language": "en",
-          "original_name": "Adventure Time: Fionna and Cake",
-          "overview": "Fionna and Cake \u2013 with the help of the former Ice King, Simon Petrikov - embark on a multiverse-hopping adventure and journey of self-discovery. All the while a powerful new antagonist determined to track them down and erase them from existence, lurks in the shadows.",
-          "popularity": 0.0,
-          "poster_path": "/fi1b6U1kp73xheECzqwzMn8u3mX.jpg",
-          "first_air_date": "2023-08-31",
-          "softcore": false,
-          "name": "Adventure Time: Fionna and Cake",
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/ywQtHG17LZhAFZyZtBflhtFMtJ7.jpg",
-          "genre_ids": [
-            18,
-            10751
-          ],
-          "id": 70785,
-          "origin_country": [
-            "CA"
-          ],
-          "original_language": "en",
-          "original_name": "Anne with an E",
-          "overview": "A coming-of-age story about an outsider who, against all odds and numerous challenges, fights for love and acceptance and for her place in the world. The series centers on a young orphaned girl in the late 1890s, who, after an abusive childhood spent in orphanages and the homes of strangers, is mistakenly sent to live with an elderly woman and her aging brother. Over time, 13-year-old Anne will transform their lives and eventually the small town in which they live with her unique spirit, fierce intellect and brilliant imagination.",
-          "popularity": 0.0,
-          "poster_path": "/6P6tXhjT5tK3qOXzxF9OMLlG7iz.jpg",
-          "first_air_date": "2017-03-19",
-          "softcore": false,
-          "name": "Anne with an E",
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/1DYpBOVdb7Mzc9DgMCdIBTN1JEC.jpg",
-          "genre_ids": [
-            99,
-            10751
-          ],
-          "id": 68595,
-          "origin_country": [
-            "GB"
-          ],
-          "original_language": "en",
-          "original_name": "Planet Earth II",
-          "overview": "David Attenborough presents a documentary series exploring how animals meet the challenges of surviving in the most iconic habitats on earth.",
-          "popularity": 0.0,
-          "poster_path": "/5maYKYzWpE68ycxGh1luu4P2LOS.jpg",
-          "first_air_date": "2016-11-06",
-          "softcore": false,
-          "name": "Planet Earth II",
+          "name": "Witch Hat Atelier",
           "vote_average": 0.0,
           "vote_count": 0
         },
@@ -326,6 +306,169 @@
         },
         {
           "adult": false,
+          "backdrop_path": "/bGqKaVROpz7pWUNuBxgU8hbcXYn.jpg",
+          "genre_ids": [
+            16,
+            10759,
+            35,
+            10765,
+            10751
+          ],
+          "id": 92685,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "The Owl House",
+          "overview": "Luz, a self-assured teenage human girl, accidentally stumbles upon a portal to a magical new world where she befriends a rebellious witch, Eda, and an adorably tiny warrior, King.",
+          "popularity": 0.0,
+          "poster_path": "/cZLxKTslrf9gzRomVy8BhaYjg7n.jpg",
+          "first_air_date": "2020-01-10",
+          "softcore": false,
+          "name": "The Owl House",
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/uvCkSZwCTKnBtBOvDpcOvQA6xBg.jpg",
+          "genre_ids": [
+            16,
+            35,
+            18,
+            10759
+          ],
+          "id": 42705,
+          "origin_country": [
+            "JP"
+          ],
+          "original_language": "ja",
+          "original_name": "\u306F\u3058\u3081\u306E\u4E00\u6B69",
+          "overview": "Makunouchi Ippo is an ordinary high school student in Japan. Since he spends most of his time away from school helping his mother run the family business, he doesn\u0027t get to enjoy his younger years like most teenagers. Always a target for bullying at school (the family fishing business grants him a distinct odor), Ippo\u0027s life is one of hardship. One of these after-school bullying sessions turns Ippo\u0027s life around for the better, as he is saved by a boxer named Takamura. He decides to follow in Takamura\u0027s footsteps and train to become a boxer, giving his life direction and purpose. Ippo\u0027s path to perfecting his pugilistic prowess is just beginning...",
+          "popularity": 0.0,
+          "poster_path": "/fEYVJu08En9A7n0e5TTpeoSjtIm.jpg",
+          "first_air_date": "2000-10-03",
+          "softcore": false,
+          "name": "Fighting Spirit",
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/iFOkrSrJRwE27PwbyQeYLlMJXzw.jpg",
+          "genre_ids": [
+            16,
+            35,
+            10765,
+            10759
+          ],
+          "id": 60625,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "Rick and Morty",
+          "overview": "Follows a sociopathic genius scientist who drags his inherently timid grandson on adventures across the universe.",
+          "popularity": 0.0,
+          "poster_path": "/owhkU6KRqdXoUQpjV8uyZGPtX58.jpg",
+          "first_air_date": "2013-12-02",
+          "softcore": false,
+          "name": "Rick and Morty",
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/lNpkvX2s8LGB0mjGODMT4o6Up7j.jpg",
+          "genre_ids": [
+            80,
+            18
+          ],
+          "id": 1398,
+          "origin_country": [
+            "US"
+          ],
+          "original_language": "en",
+          "original_name": "The Sopranos",
+          "overview": "The story of New Jersey-based Italian-American mobster Tony Soprano and the difficulties he faces as he tries to balance the conflicting requirements of his home life and the criminal organization he heads. Those difficulties are often highlighted through his ongoing professional relationship with psychiatrist Jennifer Melfi. The show features Tony\u0027s family members and Mafia associates in prominent roles and story arcs, most notably his wife Carmela and his cousin and prot\u00E9g\u00E9 Christopher Moltisanti.",
+          "popularity": 0.0,
+          "poster_path": "/rTc7ZXdroqjkKivFPvCPX0Ru7uw.jpg",
+          "first_air_date": "1999-01-10",
+          "softcore": false,
+          "name": "The Sopranos",
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/bFKKyCI89Xq98Gul8cGox8K3sZa.jpg",
+          "genre_ids": [
+            16,
+            10759,
+            10765
+          ],
+          "id": 46298,
+          "origin_country": [
+            "JP"
+          ],
+          "original_language": "ja",
+          "original_name": "HUNTER\u00D7HUNTER",
+          "overview": "Gon, a young boy who lives on Whale Island, dreams of becoming a Hunter like his father, who left when Gon was still young.",
+          "popularity": 0.0,
+          "poster_path": "/i2EEr2uBvRlAwJ8d8zTG2Y19mIa.jpg",
+          "first_air_date": "2011-10-02",
+          "softcore": false,
+          "name": "Hunter x Hunter",
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/gffVOVZ2Y9cmVIZ26Gt9ByMGCYH.jpg",
+          "genre_ids": [
+            16,
+            9648,
+            18
+          ],
+          "id": 220542,
+          "origin_country": [
+            "JP"
+          ],
+          "original_language": "ja",
+          "original_name": "\u85AC\u5C4B\u306E\u3072\u3068\u308A\u3054\u3068",
+          "overview": "Maomao lived a peaceful life with her apothecary father. Until one day, she\u0027s sold as a lowly servant to the emperor\u0027s palace. But she wasn\u0027t meant for a compliant life among royalty. So when imperial heirs fall ill, she decides to step in and find a cure! This catches the eye of Jinshi, a handsome palace official who promotes her. Now, she\u0027s making a name for herself solving medical mysteries!",
+          "popularity": 0.0,
+          "poster_path": "/sJZcy8QsOPuRPiCfoCWVB3r9Ohg.jpg",
+          "first_air_date": "2023-10-22",
+          "softcore": false,
+          "name": "The Apothecary Diaries",
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/eklM8HZeGKB5KMKRqkuff0yW0Oq.jpg",
+          "genre_ids": [
+            16,
+            35
+          ],
+          "id": 42573,
+          "origin_country": [
+            "JP"
+          ],
+          "original_language": "ja",
+          "original_name": "\u30B9\u30E9\u30E0\u30C0\u30F3\u30AF",
+          "overview": "Sakuragi Hanamichi is a junior high punk used to getting into fights and being rejected by girls but upon entering high school he meets the girl of his dreams, Haruko Akagi. He will do anything in order to win her heart including joining the school basketball team that is aiming to conquer the nation lead by Haruko\u0027s brother. The problem is that Sakuragi has never played basketball before and a freshman sensation is stealing the spotlight and Haruko\u0027s affection from him.",
+          "popularity": 0.0,
+          "poster_path": "/nmmOKeydeeO4TKucpvyMA2o6gdD.jpg",
+          "first_air_date": "1993-10-16",
+          "softcore": false,
+          "name": "Slam Dunk",
+          "vote_average": 0.0,
+          "vote_count": 0
+        },
+        {
+          "adult": false,
           "backdrop_path": "/hjJ5XDKP7XY2ADUuMdHM5NsC32s.jpg",
           "genre_ids": [
             99
@@ -344,168 +487,10 @@
           "name": "Cosmos: A Personal Voyage",
           "vote_average": 0.0,
           "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/3GQKYh6Trm8pxd2AypovoYQf4Ay.jpg",
-          "genre_ids": [
-            16,
-            10759,
-            10765
-          ],
-          "id": 85937,
-          "origin_country": [
-            "JP"
-          ],
-          "original_language": "ja",
-          "original_name": "\u9B3C\u6EC5\u306E\u5203",
-          "overview": "After a demon attack leaves his family slain and his sister cursed, Tanjiro embarks upon a perilous journey to find a cure and avenge those he\u0027s lost.",
-          "popularity": 0.0,
-          "poster_path": "/xUfRZu2mi8jH6SzQEJGP6tjBuYj.jpg",
-          "first_air_date": "2019-04-06",
-          "softcore": false,
-          "name": "Demon Slayer: Kimetsu no Yaiba",
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/9qrroces8C6R9aKr08hACNPVXdZ.jpg",
-          "genre_ids": [
-            16,
-            18,
-            10765,
-            10759
-          ],
-          "id": 95557,
-          "origin_country": [
-            "US"
-          ],
-          "original_language": "en",
-          "original_name": "INVINCIBLE",
-          "overview": "Mark Grayson is a normal teenager except for the fact that his father is the most powerful superhero on the planet. Shortly after his seventeenth birthday, Mark begins to develop powers of his own and enters into his father\u0027s tutelage.",
-          "popularity": 0.0,
-          "poster_path": "/4tblBrslcKSifMVZ3TmtT2ukMor.jpg",
-          "first_air_date": "2021-03-25",
-          "softcore": false,
-          "name": "INVINCIBLE",
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/layPSOJGckJv3PXZDIVluMq69mn.jpg",
-          "genre_ids": [
-            80,
-            18
-          ],
-          "id": 1438,
-          "origin_country": [
-            "US"
-          ],
-          "original_language": "en",
-          "original_name": "The Wire",
-          "overview": "Told from the points of view of both the Baltimore homicide and narcotics detectives and their targets, the series captures a universe in which the national war on drugs has become a permanent, self-sustaining bureaucracy, and distinctions between good and evil are routinely obliterated.",
-          "popularity": 0.0,
-          "poster_path": "/4lbclFySvugI51fwsyxBTOm4DqK.jpg",
-          "first_air_date": "2002-06-02",
-          "softcore": false,
-          "name": "The Wire",
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/c7t4tidzOw8E88puHlGsqizViOw.jpg",
-          "genre_ids": [
-            99,
-            10751
-          ],
-          "id": 74313,
-          "origin_country": [
-            "GB"
-          ],
-          "original_language": "en",
-          "original_name": "Blue Planet II",
-          "overview": "There is nowhere more powerful and unforgiving yet more beautiful and compelling than the ocean. Join us and explore the greatest yet least known parts of our planet.",
-          "popularity": 0.0,
-          "poster_path": "/j1NsoYYDYHnPkRr7Enqr8tlexgO.jpg",
-          "first_air_date": "2017-10-29",
-          "softcore": false,
-          "name": "Blue Planet II",
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/bhF63Jd90gRYyTHd4y5GCGA2vX6.jpg",
-          "genre_ids": [
-            16,
-            35,
-            10759,
-            10765
-          ],
-          "id": 31132,
-          "origin_country": [
-            "US"
-          ],
-          "original_language": "en",
-          "original_name": "Regular Show",
-          "overview": "The surreal misadventures of two best friends - a blue jay and a raccoon - as they seek to liven up their mundane jobs as groundskeepers at the local park.",
-          "popularity": 0.0,
-          "poster_path": "/mS5SLxMYcKfUxA0utBSR5MOAWWr.jpg",
-          "first_air_date": "2010-09-06",
-          "softcore": false,
-          "name": "Regular Show",
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/qmRUwosX4BsCj6QanpBYScLl3Sp.jpg",
-          "genre_ids": [
-            99
-          ],
-          "id": 1044,
-          "origin_country": [
-            "GB"
-          ],
-          "original_language": "en",
-          "original_name": "Planet Earth",
-          "overview": "David Attenborough celebrates the amazing variety of the natural world in this epic documentary series, filmed over four years across 64 different countries.",
-          "popularity": 0.0,
-          "poster_path": "/bNcNxUtZ520d5de5s78onoiSiwQ.jpg",
-          "first_air_date": "2006-03-05",
-          "softcore": false,
-          "name": "Planet Earth",
-          "vote_average": 0.0,
-          "vote_count": 0
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/AqxPqTbD77ioyBDdk39MEQq6vXL.jpg",
-          "genre_ids": [
-            18,
-            80
-          ],
-          "id": 234763,
-          "origin_country": [
-            "RU"
-          ],
-          "original_language": "ru",
-          "original_name": "\u0421\u043B\u043E\u0432\u043E \u043F\u0430\u0446\u0430\u043D\u0430. \u041A\u0440\u043E\u0432\u044C \u043D\u0430 \u0430\u0441\u0444\u0430\u043B\u044C\u0442\u0435",
-          "overview": "In the late 1980s, when \u201Cperestroika\u201D was taking place in the USSR and the era of the Soviet Union was about to collapse, life became unstable and very different. The 1980s brought not only freedom, but also waves of crime on the city streets. While some young people began to \u2018grow up\u2019 on the streets, others found it difficult to find their place in this unpredictable reality. Andrey, lives with his mother and five-year-old sister. He studies at a music school and often encounters street teenagers who harass him. To protect himself, Andrey makes friends with one of these teenagers, Marat, who introduces him to gang life. Youth groups fight for every piece of territory; they defend their right to live the life, even breaking laws and promises. The only thing that matters to them is the vows they make to their gang members-brothers, with whom they confront the violence and fears of the adult world.",
-          "popularity": 0.0,
-          "poster_path": "/fmJ2vVzaSAPvCqB79H70uMHSNr4.jpg",
-          "first_air_date": "2023-11-09",
-          "softcore": false,
-          "name": "The Boy\u0027s Word: Blood on the Asphalt",
-          "vote_average": 0.0,
-          "vote_count": 0
         }
       ],
-      "total_pages": 126,
-      "total_results": 2512
+      "total_pages": 131,
+      "total_results": 2618
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",

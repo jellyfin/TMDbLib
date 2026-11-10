@@ -16,20 +16,7 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1",
-    "Headers": [
-      {
-        "Name": "Accept-Encoding",
-        "Matchers": [
-          {
-            "Name": "WildcardMatcher",
-            "Pattern": "gzip, deflate, br",
-            "IgnoreCase": true
-          }
-        ],
-        "IgnoreCase": true
-      }
-    ]
+    "HttpVersion": "1.1"
   },
   "Response": {
     "StatusCode": 200,
@@ -141,12 +128,20 @@
           "id": 316362
         },
         {
+          "name": "celebratory",
+          "id": 325781
+        },
+        {
           "name": "violent",
           "id": 342828
         },
         {
           "name": "tortured genius",
           "id": 360934
+        },
+        {
+          "name": "\u043D\u0430\u0440\u043A\u043E\u0442\u0430",
+          "id": 388294
         }
       ]
     },

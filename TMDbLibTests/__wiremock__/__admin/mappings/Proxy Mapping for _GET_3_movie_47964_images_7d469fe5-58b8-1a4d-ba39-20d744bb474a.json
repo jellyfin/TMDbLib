@@ -17,19 +17,6 @@
       "GET"
     ],
     "HttpVersion": "1.1",
-    "Headers": [
-      {
-        "Name": "Accept-Encoding",
-        "Matchers": [
-          {
-            "Name": "WildcardMatcher",
-            "Pattern": "gzip, deflate, br",
-            "IgnoreCase": true
-          }
-        ],
-        "IgnoreCase": true
-      }
-    ],
     "Params": [
       {
         "Name": "language",
@@ -56,6 +43,7 @@
   "Response": {
     "StatusCode": 200,
     "BodyAsJson": {
+      "id": 47964,
       "backdrops": [
         {
           "aspect_ratio": 1.778,
@@ -98,7 +86,6 @@
           "width": 1920
         }
       ],
-      "id": 47964,
       "logos": [
         {
           "aspect_ratio": 2.732,
@@ -501,6 +488,16 @@
           "vote_average": 0.0,
           "vote_count": 0,
           "width": 2000
+        },
+        {
+          "aspect_ratio": 0.667,
+          "height": 2880,
+          "iso_3166_1": "US",
+          "iso_639_1": "en",
+          "file_path": "/5JvavCVtQ9rBwr8vm0nmtyrYgmM.jpg",
+          "vote_average": 0.0,
+          "vote_count": 0,
+          "width": 1920
         }
       ]
     },

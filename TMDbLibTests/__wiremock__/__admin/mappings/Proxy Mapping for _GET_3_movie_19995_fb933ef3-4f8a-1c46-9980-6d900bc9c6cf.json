@@ -17,19 +17,6 @@
       "GET"
     ],
     "HttpVersion": "1.1",
-    "Headers": [
-      {
-        "Name": "Accept-Encoding",
-        "Matchers": [
-          {
-            "Name": "WildcardMatcher",
-            "Pattern": "gzip, deflate, br",
-            "IgnoreCase": true
-          }
-        ],
-        "IgnoreCase": true
-      }
-    ],
     "Params": [
       {
         "Name": "language",
@@ -77,12 +64,12 @@
       "budget": 237000000,
       "genres": [
         {
-          "id": 28,
-          "name": "Action"
-        },
-        {
           "id": 878,
           "name": "Science Fiction"
+        },
+        {
+          "id": 28,
+          "name": "Action"
         },
         {
           "id": 12,
@@ -383,6 +370,16 @@
             "vote_average": 0.0,
             "vote_count": 0,
             "width": 2000
+          },
+          {
+            "aspect_ratio": 0.667,
+            "height": 1870,
+            "iso_3166_1": "DE",
+            "iso_639_1": "de",
+            "file_path": "/ssoJjfws9VJQWwVRpiAEJTwpkGU.jpg",
+            "vote_average": 0.0,
+            "vote_count": 0,
+            "width": 1247
           },
           {
             "aspect_ratio": 0.667,

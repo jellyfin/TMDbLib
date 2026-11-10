@@ -16,34 +16,101 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1",
-    "Headers": [
-      {
-        "Name": "Accept-Encoding",
-        "Matchers": [
-          {
-            "Name": "WildcardMatcher",
-            "Pattern": "gzip, deflate, br",
-            "IgnoreCase": true
-          }
-        ],
-        "IgnoreCase": true
-      }
-    ]
+    "HttpVersion": "1.1"
   },
   "Response": {
     "StatusCode": 200,
     "BodyAsJson": {
       "id": 1311031,
       "results": {
+        "AD": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=AD",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
         "AE": {
           "link": "https://www.themoviedb.org/movie/1311031/watch?locale=AE",
           "flatrate": [
             {
-              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/uFL3c4Cq8M6WoLymlC5Y8bmGytV.png",
               "provider_id": 283,
               "provider_name": "Crunchyroll",
-              "display_priority": 17
+              "display_priority": 16
+            }
+          ]
+        },
+        "AG": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=AG",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 12
+            }
+          ]
+        },
+        "AL": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=AL",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "AO": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=AO",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
             }
           ]
         },
@@ -51,16 +118,40 @@
           "link": "https://www.themoviedb.org/movie/1311031/watch?locale=AR",
           "flatrate": [
             {
-              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
-              "provider_id": 283,
-              "provider_name": "Crunchyroll",
-              "display_priority": 32
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
             },
             {
-              "logo_path": "/pgjz7bzfBq4nFDu8JJDLBoUVAX8.jpg",
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/uFL3c4Cq8M6WoLymlC5Y8bmGytV.png",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 31
+            },
+            {
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 35
+            },
+            {
+              "logo_path": "/qHLLmKo7udRgiSnIASVTwP2IxfJ.png",
               "provider_id": 1968,
               "provider_name": "Crunchyroll Amazon Channel",
-              "display_priority": 58
+              "display_priority": 57
             }
           ]
         },
@@ -68,10 +159,34 @@
           "link": "https://www.themoviedb.org/movie/1311031/watch?locale=AT",
           "flatrate": [
             {
-              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/uFL3c4Cq8M6WoLymlC5Y8bmGytV.png",
               "provider_id": 283,
               "provider_name": "Crunchyroll",
-              "display_priority": 55
+              "display_priority": 53
+            },
+            {
+              "logo_path": "/tpwTT1FpWqLLhxUfAuDavIXDDfI.png",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 61
+            },
+            {
+              "logo_path": "/qHLLmKo7udRgiSnIASVTwP2IxfJ.png",
+              "provider_id": 1968,
+              "provider_name": "Crunchyroll Amazon Channel",
+              "display_priority": 117
             }
           ]
         },
@@ -79,24 +194,101 @@
           "link": "https://www.themoviedb.org/movie/1311031/watch?locale=AU",
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 13
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 16
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 16
             }
           ],
           "flatrate": [
             {
-              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/uFL3c4Cq8M6WoLymlC5Y8bmGytV.png",
               "provider_id": 283,
               "provider_name": "Crunchyroll",
               "display_priority": 55
             },
             {
-              "logo_path": "/pgjz7bzfBq4nFDu8JJDLBoUVAX8.jpg",
+              "logo_path": "/qHLLmKo7udRgiSnIASVTwP2IxfJ.png",
               "provider_id": 1968,
               "provider_name": "Crunchyroll Amazon Channel",
               "display_priority": 80
+            },
+            {
+              "logo_path": "/tpwTT1FpWqLLhxUfAuDavIXDDfI.png",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 92
+            }
+          ]
+        },
+        "AZ": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=AZ",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            }
+          ]
+        },
+        "BA": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=BA",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "BB": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=BB",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 24
             }
           ]
         },
@@ -104,16 +296,119 @@
           "link": "https://www.themoviedb.org/movie/1311031/watch?locale=BE",
           "flatrate": [
             {
-              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
-              "provider_id": 283,
-              "provider_name": "Crunchyroll",
-              "display_priority": 33
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
             },
             {
-              "logo_path": "/pgjz7bzfBq4nFDu8JJDLBoUVAX8.jpg",
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/uFL3c4Cq8M6WoLymlC5Y8bmGytV.png",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 32
+            },
+            {
+              "logo_path": "/qHLLmKo7udRgiSnIASVTwP2IxfJ.png",
               "provider_id": 1968,
               "provider_name": "Crunchyroll Amazon Channel",
-              "display_priority": 41
+              "display_priority": 39
+            }
+          ]
+        },
+        "BF": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=BF",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "BG": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=BG",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "BH": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=BH",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "BM": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=BM",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "BO": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=BO",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 30
             }
           ]
         },
@@ -121,10 +416,121 @@
           "link": "https://www.themoviedb.org/movie/1311031/watch?locale=BR",
           "flatrate": [
             {
-              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/uFL3c4Cq8M6WoLymlC5Y8bmGytV.png",
               "provider_id": 283,
               "provider_name": "Crunchyroll",
-              "display_priority": 11
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/eGUwOOIxcazwEBxqJpSN5sWEu6V.png",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 41
+            },
+            {
+              "logo_path": "/64fLWeSyZ1KQZhIdvTdy4QHeWty.png",
+              "provider_id": 1825,
+              "provider_name": "HBO Max Amazon Channel",
+              "display_priority": 48
+            },
+            {
+              "logo_path": "/qHLLmKo7udRgiSnIASVTwP2IxfJ.png",
+              "provider_id": 1968,
+              "provider_name": "Crunchyroll Amazon Channel",
+              "display_priority": 68
+            },
+            {
+              "logo_path": "/tpwTT1FpWqLLhxUfAuDavIXDDfI.png",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 78
+            }
+          ]
+        },
+        "BS": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=BS",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 25
+            }
+          ]
+        },
+        "BY": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=BY",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "BZ": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=BZ",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 9
             }
           ]
         },
@@ -132,32 +538,105 @@
           "link": "https://www.themoviedb.org/movie/1311031/watch?locale=CA",
           "flatrate": [
             {
-              "logo_path": "/pgjz7bzfBq4nFDu8JJDLBoUVAX8.jpg",
-              "provider_id": 1968,
-              "provider_name": "Crunchyroll Amazon Channel",
-              "display_priority": 11
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
             },
             {
-              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/qHLLmKo7udRgiSnIASVTwP2IxfJ.png",
+              "provider_id": 1968,
+              "provider_name": "Crunchyroll Amazon Channel",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/uFL3c4Cq8M6WoLymlC5Y8bmGytV.png",
               "provider_id": 283,
               "provider_name": "Crunchyroll",
-              "display_priority": 39
+              "display_priority": 40
+            },
+            {
+              "logo_path": "/eGUwOOIxcazwEBxqJpSN5sWEu6V.png",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 92
+            },
+            {
+              "logo_path": "/tpwTT1FpWqLLhxUfAuDavIXDDfI.png",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 110
             }
           ],
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
               "display_priority": 7
             }
-          ],
-          "rent": [
+          ]
+        },
+        "CD": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=CD",
+          "flatrate": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 7
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "CH": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=CH",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/qHLLmKo7udRgiSnIASVTwP2IxfJ.png",
+              "provider_id": 1968,
+              "provider_name": "Crunchyroll Amazon Channel",
+              "display_priority": 76
+            }
+          ]
+        },
+        "CI": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=CI",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
             }
           ]
         },
@@ -165,16 +644,57 @@
           "link": "https://www.themoviedb.org/movie/1311031/watch?locale=CL",
           "flatrate": [
             {
-              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
-              "provider_id": 283,
-              "provider_name": "Crunchyroll",
-              "display_priority": 29
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
             },
             {
-              "logo_path": "/pgjz7bzfBq4nFDu8JJDLBoUVAX8.jpg",
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/uFL3c4Cq8M6WoLymlC5Y8bmGytV.png",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 28
+            },
+            {
+              "logo_path": "/qHLLmKo7udRgiSnIASVTwP2IxfJ.png",
               "provider_id": 1968,
               "provider_name": "Crunchyroll Amazon Channel",
-              "display_priority": 44
+              "display_priority": 43
+            }
+          ]
+        },
+        "CM": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=CM",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
             }
           ]
         },
@@ -182,16 +702,137 @@
           "link": "https://www.themoviedb.org/movie/1311031/watch?locale=CO",
           "flatrate": [
             {
-              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
-              "provider_id": 283,
-              "provider_name": "Crunchyroll",
-              "display_priority": 30
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
             },
             {
-              "logo_path": "/pgjz7bzfBq4nFDu8JJDLBoUVAX8.jpg",
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/uFL3c4Cq8M6WoLymlC5Y8bmGytV.png",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 29
+            },
+            {
+              "logo_path": "/qHLLmKo7udRgiSnIASVTwP2IxfJ.png",
               "provider_id": 1968,
               "provider_name": "Crunchyroll Amazon Channel",
-              "display_priority": 45
+              "display_priority": 44
+            },
+            {
+              "logo_path": "/64fLWeSyZ1KQZhIdvTdy4QHeWty.png",
+              "provider_id": 1825,
+              "provider_name": "HBO Max Amazon Channel",
+              "display_priority": 68
+            }
+          ]
+        },
+        "CR": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=CR",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 6
+            }
+          ]
+        },
+        "CU": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=CU",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "CV": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=CV",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "CY": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=CY",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "CZ": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=CZ",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/qHLLmKo7udRgiSnIASVTwP2IxfJ.png",
+              "provider_id": 1968,
+              "provider_name": "Crunchyroll Amazon Channel",
+              "display_priority": 44
             }
           ]
         },
@@ -199,16 +840,178 @@
           "link": "https://www.themoviedb.org/movie/1311031/watch?locale=DE",
           "flatrate": [
             {
-              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/uFL3c4Cq8M6WoLymlC5Y8bmGytV.png",
               "provider_id": 283,
               "provider_name": "Crunchyroll",
               "display_priority": 7
             },
             {
-              "logo_path": "/pgjz7bzfBq4nFDu8JJDLBoUVAX8.jpg",
+              "logo_path": "/tpwTT1FpWqLLhxUfAuDavIXDDfI.png",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 19
+            },
+            {
+              "logo_path": "/eGUwOOIxcazwEBxqJpSN5sWEu6V.png",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 85
+            },
+            {
+              "logo_path": "/qHLLmKo7udRgiSnIASVTwP2IxfJ.png",
               "provider_id": 1968,
               "provider_name": "Crunchyroll Amazon Channel",
-              "display_priority": 176
+              "display_priority": 175
+            }
+          ]
+        },
+        "DK": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=DK",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/qHLLmKo7udRgiSnIASVTwP2IxfJ.png",
+              "provider_id": 1968,
+              "provider_name": "Crunchyroll Amazon Channel",
+              "display_priority": 62
+            }
+          ]
+        },
+        "DO": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=DO",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 31
+            }
+          ]
+        },
+        "DZ": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=DZ",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "EC": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=EC",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 8
+            }
+          ]
+        },
+        "EE": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=EE",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "EG": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=EG",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
             }
           ]
         },
@@ -216,107 +1019,454 @@
           "link": "https://www.themoviedb.org/movie/1311031/watch?locale=ES",
           "flatrate": [
             {
-              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/eGUwOOIxcazwEBxqJpSN5sWEu6V.png",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 52
+            },
+            {
+              "logo_path": "/uFL3c4Cq8M6WoLymlC5Y8bmGytV.png",
               "provider_id": 283,
               "provider_name": "Crunchyroll",
               "display_priority": 55
             },
             {
-              "logo_path": "/pgjz7bzfBq4nFDu8JJDLBoUVAX8.jpg",
+              "logo_path": "/qHLLmKo7udRgiSnIASVTwP2IxfJ.png",
               "provider_id": 1968,
               "provider_name": "Crunchyroll Amazon Channel",
               "display_priority": 72
+            },
+            {
+              "logo_path": "/tpwTT1FpWqLLhxUfAuDavIXDDfI.png",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 79
+            }
+          ]
+        },
+        "FI": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=FI",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/qHLLmKo7udRgiSnIASVTwP2IxfJ.png",
+              "provider_id": 1968,
+              "provider_name": "Crunchyroll Amazon Channel",
+              "display_priority": 65
+            }
+          ]
+        },
+        "FJ": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=FJ",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
             }
           ]
         },
         "GB": {
           "link": "https://www.themoviedb.org/movie/1311031/watch?locale=GB",
+          "rent": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 10
+            }
+          ],
           "flatrate": [
             {
-              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/uFL3c4Cq8M6WoLymlC5Y8bmGytV.png",
               "provider_id": 283,
               "provider_name": "Crunchyroll",
-              "display_priority": 7
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/qHLLmKo7udRgiSnIASVTwP2IxfJ.png",
+              "provider_id": 1968,
+              "provider_name": "Crunchyroll Amazon Channel",
+              "display_priority": 17
+            },
+            {
+              "logo_path": "/eGUwOOIxcazwEBxqJpSN5sWEu6V.png",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 86
+            },
+            {
+              "logo_path": "/tpwTT1FpWqLLhxUfAuDavIXDDfI.png",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 98
             }
           ],
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 5
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 10
+            }
+          ]
+        },
+        "GF": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=GF",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "GG": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=GG",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 82
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 82
+            }
+          ]
+        },
+        "GH": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=GH",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "GI": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=GI",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "GQ": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=GQ",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "GR": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=GR",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/qHLLmKo7udRgiSnIASVTwP2IxfJ.png",
+              "provider_id": 1968,
+              "provider_name": "Crunchyroll Amazon Channel",
+              "display_priority": 37
+            }
+          ]
+        },
+        "GT": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=GT",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 6
+            }
+          ]
+        },
+        "GY": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=GY",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 3
             }
           ]
         },
         "HK": {
           "link": "https://www.themoviedb.org/movie/1311031/watch?locale=HK",
-          "buy": [
+          "rent": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 8
+              "display_priority": 9
             }
           ],
           "flatrate": [
             {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
             },
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 4
             }
           ],
-          "rent": [
+          "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 8
+              "display_priority": 9
+            }
+          ]
+        },
+        "HN": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=HN",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 30
+            }
+          ]
+        },
+        "HR": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=HR",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/qHLLmKo7udRgiSnIASVTwP2IxfJ.png",
+              "provider_id": 1968,
+              "provider_name": "Crunchyroll Amazon Channel",
+              "display_priority": 46
+            }
+          ]
+        },
+        "HU": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=HU",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/qHLLmKo7udRgiSnIASVTwP2IxfJ.png",
+              "provider_id": 1968,
+              "provider_name": "Crunchyroll Amazon Channel",
+              "display_priority": 42
             }
           ]
         },
         "ID": {
           "link": "https://www.themoviedb.org/movie/1311031/watch?locale=ID",
-          "rent": [
+          "flatrate": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 7
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
             },
             {
-              "logo_path": "/9qSVItdgkVHH3Rrl9db2yRWsgBq.jpg",
+              "logo_path": "/bonc3GQiIbZVG9WyNYEYAI9mqFy.png",
               "provider_id": 159,
               "provider_name": "Catchplay",
-              "display_priority": 8
+              "display_priority": 9
             }
           ],
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 7
+              "display_priority": 8
             }
           ],
-          "flatrate": [
+          "rent": [
             {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
-              "provider_id": 8,
-              "provider_name": "Netflix",
-              "display_priority": 0
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 8
             },
             {
-              "logo_path": "/9qSVItdgkVHH3Rrl9db2yRWsgBq.jpg",
+              "logo_path": "/bonc3GQiIbZVG9WyNYEYAI9mqFy.png",
               "provider_id": 159,
               "provider_name": "Catchplay",
-              "display_priority": 8
+              "display_priority": 9
             }
           ]
         },
@@ -324,10 +1474,45 @@
           "link": "https://www.themoviedb.org/movie/1311031/watch?locale=IE",
           "flatrate": [
             {
-              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/uFL3c4Cq8M6WoLymlC5Y8bmGytV.png",
               "provider_id": 283,
               "provider_name": "Crunchyroll",
               "display_priority": 38
+            },
+            {
+              "logo_path": "/qHLLmKo7udRgiSnIASVTwP2IxfJ.png",
+              "provider_id": 1968,
+              "provider_name": "Crunchyroll Amazon Channel",
+              "display_priority": 70
+            }
+          ]
+        },
+        "IL": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=IL",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
             }
           ]
         },
@@ -335,16 +1520,68 @@
           "link": "https://www.themoviedb.org/movie/1311031/watch?locale=IN",
           "flatrate": [
             {
-              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
-              "provider_id": 283,
-              "provider_name": "Crunchyroll",
-              "display_priority": 6
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
             },
             {
-              "logo_path": "/pgjz7bzfBq4nFDu8JJDLBoUVAX8.jpg",
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/uFL3c4Cq8M6WoLymlC5Y8bmGytV.png",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/coM4QWbmIOa0xJ5cGR9BRmoV25B.png",
+              "provider_id": 237,
+              "provider_name": "Sony Liv",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/qHLLmKo7udRgiSnIASVTwP2IxfJ.png",
               "provider_id": 1968,
               "provider_name": "Crunchyroll Amazon Channel",
-              "display_priority": 50
+              "display_priority": 49
+            },
+            {
+              "logo_path": "/tpwTT1FpWqLLhxUfAuDavIXDDfI.png",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 70
+            }
+          ]
+        },
+        "IQ": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=IQ",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "IS": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=IS",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
             }
           ]
         },
@@ -352,10 +1589,103 @@
           "link": "https://www.themoviedb.org/movie/1311031/watch?locale=IT",
           "flatrate": [
             {
-              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/uFL3c4Cq8M6WoLymlC5Y8bmGytV.png",
               "provider_id": 283,
               "provider_name": "Crunchyroll",
               "display_priority": 55
+            },
+            {
+              "logo_path": "/qHLLmKo7udRgiSnIASVTwP2IxfJ.png",
+              "provider_id": 1968,
+              "provider_name": "Crunchyroll Amazon Channel",
+              "display_priority": 74
+            },
+            {
+              "logo_path": "/tpwTT1FpWqLLhxUfAuDavIXDDfI.png",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 87
+            }
+          ]
+        },
+        "JM": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=JM",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 24
+            }
+          ]
+        },
+        "JO": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=JO",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "KE": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=KE",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
             }
           ]
         },
@@ -363,22 +1693,204 @@
           "link": "https://www.themoviedb.org/movie/1311031/watch?locale=KR",
           "flatrate": [
             {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/eGUwOOIxcazwEBxqJpSN5sWEu6V.png",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 26
+            },
+            {
+              "logo_path": "/w4ov8Zx73eu2TjHsDs5EmiuYKA4.png",
+              "provider_id": 1883,
+              "provider_name": "TVING",
+              "display_priority": 29
+            }
+          ]
+        },
+        "KW": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=KW",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "LB": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=LB",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "LC": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=LC",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 12
+            }
+          ]
+        },
+        "LI": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=LI",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
             },
             {
-              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
-              "provider_id": 1796,
-              "provider_name": "Netflix Standard with Ads",
-              "display_priority": 27
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "LT": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=LT",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
             },
             {
-              "logo_path": "/qHThQdkJuROK0k5QTCrknaNukWe.jpg",
-              "provider_id": 1883,
-              "provider_name": "TVING",
-              "display_priority": 29
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "LU": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=LU",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "LV": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=LV",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "LY": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=LY",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "MA": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=MA",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "MC": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=MC",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
             }
           ]
         },
@@ -386,10 +1898,117 @@
           "link": "https://www.themoviedb.org/movie/1311031/watch?locale=MD",
           "flatrate": [
             {
-              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/uFL3c4Cq8M6WoLymlC5Y8bmGytV.png",
               "provider_id": 283,
               "provider_name": "Crunchyroll",
               "display_priority": 24
+            }
+          ]
+        },
+        "ME": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=ME",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "MG": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=MG",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "MK": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=MK",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "ML": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=ML",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "MT": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=MT",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "MU": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=MU",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            }
+          ]
+        },
+        "MW": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=MW",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 0
             }
           ]
         },
@@ -397,43 +2016,165 @@
           "link": "https://www.themoviedb.org/movie/1311031/watch?locale=MX",
           "flatrate": [
             {
-              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
-              "provider_id": 283,
-              "provider_name": "Crunchyroll",
-              "display_priority": 6
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
             },
             {
-              "logo_path": "/pgjz7bzfBq4nFDu8JJDLBoUVAX8.jpg",
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/uFL3c4Cq8M6WoLymlC5Y8bmGytV.png",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/64fLWeSyZ1KQZhIdvTdy4QHeWty.png",
+              "provider_id": 1825,
+              "provider_name": "HBO Max Amazon Channel",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/eGUwOOIxcazwEBxqJpSN5sWEu6V.png",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 40
+            },
+            {
+              "logo_path": "/qHLLmKo7udRgiSnIASVTwP2IxfJ.png",
               "provider_id": 1968,
               "provider_name": "Crunchyroll Amazon Channel",
               "display_priority": 61
+            },
+            {
+              "logo_path": "/tpwTT1FpWqLLhxUfAuDavIXDDfI.png",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 70
             }
           ]
         },
         "MY": {
           "link": "https://www.themoviedb.org/movie/1311031/watch?locale=MY",
-          "buy": [
+          "flatrate": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 7
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
             }
           ],
           "rent": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 7
+              "display_priority": 8
             }
           ],
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 8
+            }
+          ]
+        },
+        "MZ": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=MZ",
           "flatrate": [
             {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "NE": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=NE",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "NG": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=NG",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "NI": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=NI",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 13
             }
           ]
         },
@@ -441,13 +2182,48 @@
           "link": "https://www.themoviedb.org/movie/1311031/watch?locale=NL",
           "flatrate": [
             {
-              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/uFL3c4Cq8M6WoLymlC5Y8bmGytV.png",
               "provider_id": 283,
               "provider_name": "Crunchyroll",
               "display_priority": 44
             },
             {
-              "logo_path": "/pgjz7bzfBq4nFDu8JJDLBoUVAX8.jpg",
+              "logo_path": "/qHLLmKo7udRgiSnIASVTwP2IxfJ.png",
+              "provider_id": 1968,
+              "provider_name": "Crunchyroll Amazon Channel",
+              "display_priority": 54
+            }
+          ]
+        },
+        "NO": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=NO",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/qHLLmKo7udRgiSnIASVTwP2IxfJ.png",
               "provider_id": 1968,
               "provider_name": "Crunchyroll Amazon Channel",
               "display_priority": 55
@@ -456,20 +2232,78 @@
         },
         "NZ": {
           "link": "https://www.themoviedb.org/movie/1311031/watch?locale=NZ",
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 7
-            }
-          ],
           "flatrate": [
             {
-              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/uFL3c4Cq8M6WoLymlC5Y8bmGytV.png",
               "provider_id": 283,
               "provider_name": "Crunchyroll",
               "display_priority": 34
+            },
+            {
+              "logo_path": "/qHLLmKo7udRgiSnIASVTwP2IxfJ.png",
+              "provider_id": 1968,
+              "provider_name": "Crunchyroll Amazon Channel",
+              "display_priority": 51
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            }
+          ]
+        },
+        "OM": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=OM",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "PA": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=PA",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 31
             }
           ]
         },
@@ -477,10 +2311,51 @@
           "link": "https://www.themoviedb.org/movie/1311031/watch?locale=PE",
           "flatrate": [
             {
-              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/uFL3c4Cq8M6WoLymlC5Y8bmGytV.png",
               "provider_id": 283,
               "provider_name": "Crunchyroll",
               "display_priority": 30
+            }
+          ]
+        },
+        "PF": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=PF",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
             }
           ]
         },
@@ -488,26 +2363,26 @@
           "link": "https://www.themoviedb.org/movie/1311031/watch?locale=PH",
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 7
+              "display_priority": 8
             }
           ],
           "rent": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 7
+              "display_priority": 8
             }
           ],
           "flatrate": [
             {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 0
+              "display_priority": 1
             }
           ]
         },
@@ -515,10 +2390,16 @@
           "link": "https://www.themoviedb.org/movie/1311031/watch?locale=PK",
           "flatrate": [
             {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
             }
           ]
         },
@@ -526,10 +2407,39 @@
           "link": "https://www.themoviedb.org/movie/1311031/watch?locale=PL",
           "flatrate": [
             {
-              "logo_path": "/pgjz7bzfBq4nFDu8JJDLBoUVAX8.jpg",
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/qHLLmKo7udRgiSnIASVTwP2IxfJ.png",
               "provider_id": 1968,
               "provider_name": "Crunchyroll Amazon Channel",
               "display_priority": 44
+            }
+          ]
+        },
+        "PS": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=PS",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
             }
           ]
         },
@@ -537,10 +2447,142 @@
           "link": "https://www.themoviedb.org/movie/1311031/watch?locale=PT",
           "flatrate": [
             {
-              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/uFL3c4Cq8M6WoLymlC5Y8bmGytV.png",
               "provider_id": 283,
               "provider_name": "Crunchyroll",
-              "display_priority": 30
+              "display_priority": 29
+            },
+            {
+              "logo_path": "/qHLLmKo7udRgiSnIASVTwP2IxfJ.png",
+              "provider_id": 1968,
+              "provider_name": "Crunchyroll Amazon Channel",
+              "display_priority": 52
+            }
+          ]
+        },
+        "PY": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=PY",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 29
+            }
+          ]
+        },
+        "QA": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=QA",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "RO": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=RO",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/qHLLmKo7udRgiSnIASVTwP2IxfJ.png",
+              "provider_id": 1968,
+              "provider_name": "Crunchyroll Amazon Channel",
+              "display_priority": 38
+            }
+          ]
+        },
+        "RS": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=RS",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "SA": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=SA",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "SC": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=SC",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
             }
           ]
         },
@@ -548,102 +2590,340 @@
           "link": "https://www.themoviedb.org/movie/1311031/watch?locale=SE",
           "flatrate": [
             {
-              "logo_path": "/pgjz7bzfBq4nFDu8JJDLBoUVAX8.jpg",
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/qHLLmKo7udRgiSnIASVTwP2IxfJ.png",
               "provider_id": 1968,
               "provider_name": "Crunchyroll Amazon Channel",
               "display_priority": 12
             },
             {
-              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "logo_path": "/uFL3c4Cq8M6WoLymlC5Y8bmGytV.png",
               "provider_id": 283,
               "provider_name": "Crunchyroll",
-              "display_priority": 38
+              "display_priority": 37
             }
           ]
         },
         "SG": {
           "link": "https://www.themoviedb.org/movie/1311031/watch?locale=SG",
-          "rent": [
+          "buy": [
             {
-              "logo_path": "/9qSVItdgkVHH3Rrl9db2yRWsgBq.jpg",
-              "provider_id": 159,
-              "provider_name": "Catchplay",
-              "display_priority": 6
-            },
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 8
+              "display_priority": 9
             }
           ],
           "flatrate": [
             {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/bonc3GQiIbZVG9WyNYEYAI9mqFy.png",
+              "provider_id": 159,
+              "provider_name": "Catchplay",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/aj4EXUQKE0xT5F3JxblWDm0UemY.png",
+              "provider_id": 2686,
+              "provider_name": "Mewatch",
+              "display_priority": 42
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/bonc3GQiIbZVG9WyNYEYAI9mqFy.png",
+              "provider_id": 159,
+              "provider_name": "Catchplay",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 9
+            }
+          ]
+        },
+        "SI": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=SI",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "SK": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=SK",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
             },
             {
-              "logo_path": "/9qSVItdgkVHH3Rrl9db2yRWsgBq.jpg",
-              "provider_id": 159,
-              "provider_name": "Catchplay",
-              "display_priority": 6
-            }
-          ],
-          "buy": [
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 8
+              "logo_path": "/qHLLmKo7udRgiSnIASVTwP2IxfJ.png",
+              "provider_id": 1968,
+              "provider_name": "Crunchyroll Amazon Channel",
+              "display_priority": 50
+            }
+          ]
+        },
+        "SM": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=SM",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "SN": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=SN",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "SV": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=SV",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 31
+            }
+          ]
+        },
+        "TC": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=TC",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 11
+            }
+          ]
+        },
+        "TD": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=TD",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
             }
           ]
         },
         "TH": {
           "link": "https://www.themoviedb.org/movie/1311031/watch?locale=TH",
-          "rent": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 6
-            }
-          ],
           "flatrate": [
             {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 0
+              "display_priority": 1
             }
           ],
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 6
+              "display_priority": 7
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 7
+            }
+          ]
+        },
+        "TN": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=TN",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "TR": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=TR",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "TT": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=TT",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 13
             }
           ]
         },
         "TW": {
           "link": "https://www.themoviedb.org/movie/1311031/watch?locale=TW",
+          "rent": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 8
+            }
+          ],
           "flatrate": [
             {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
             },
             {
-              "logo_path": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
               "provider_id": 337,
               "provider_name": "Disney Plus",
-              "display_priority": 3
+              "display_priority": 4
             },
             {
-              "logo_path": "/9qSVItdgkVHH3Rrl9db2yRWsgBq.jpg",
+              "logo_path": "/bonc3GQiIbZVG9WyNYEYAI9mqFy.png",
               "provider_id": 159,
               "provider_name": "Catchplay",
               "display_priority": 15
@@ -651,81 +2931,220 @@
           ],
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
               "display_priority": 8
             }
-          ],
-          "rent": [
+          ]
+        },
+        "TZ": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=TZ",
+          "flatrate": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 8
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
             },
             {
-              "logo_path": "/9qSVItdgkVHH3Rrl9db2yRWsgBq.jpg",
-              "provider_id": 159,
-              "provider_name": "Catchplay",
-              "display_priority": 15
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "UA": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=UA",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            }
+          ]
+        },
+        "UG": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=UG",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
             }
           ]
         },
         "US": {
           "link": "https://www.themoviedb.org/movie/1311031/watch?locale=US",
-          "rent": [
+          "flatrate": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 9
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/44uAnmSqvA4yBOdbPWN8YgQHjWm.png",
+              "provider_id": 15,
+              "provider_name": "Hulu",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/uFL3c4Cq8M6WoLymlC5Y8bmGytV.png",
+              "provider_id": 283,
+              "provider_name": "Crunchyroll",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/qHLLmKo7udRgiSnIASVTwP2IxfJ.png",
+              "provider_id": 1968,
+              "provider_name": "Crunchyroll Amazon Channel",
+              "display_priority": 26
+            },
+            {
+              "logo_path": "/eGUwOOIxcazwEBxqJpSN5sWEu6V.png",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 152
+            },
+            {
+              "logo_path": "/tpwTT1FpWqLLhxUfAuDavIXDDfI.png",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 202
             }
           ],
           "buy": [
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 8
+              "display_priority": 10
             },
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 9
+              "display_priority": 11
             },
             {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "logo_path": "/aZRENwYILujqs0RVOZutTh0BVGV.png",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 20
+              "display_priority": 24
             },
             {
-              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "logo_path": "/5Maob4o5w8oZnNeYpCDyVFD3M7X.png",
               "provider_id": 192,
               "provider_name": "YouTube",
-              "display_priority": 21
+              "display_priority": 25
             },
             {
-              "logo_path": "/oIXE9vJdkilIxCLAtlbtiqewgvn.jpg",
+              "logo_path": "/wpOt6x0dRxTrIzuBosto4LGd7E9.png",
               "provider_id": 7,
               "provider_name": "Fandango At Home",
-              "display_priority": 37
+              "display_priority": 41
             }
-          ],
+          ]
+        },
+        "UY": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=UY",
           "flatrate": [
             {
-              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
-              "provider_id": 283,
-              "provider_name": "Crunchyroll",
-              "display_priority": 12
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
             },
             {
-              "logo_path": "/pgjz7bzfBq4nFDu8JJDLBoUVAX8.jpg",
-              "provider_id": 1968,
-              "provider_name": "Crunchyroll Amazon Channel",
-              "display_priority": 22
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 6
+            }
+          ]
+        },
+        "VA": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=VA",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 0
+            }
+          ]
+        },
+        "VE": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=VE",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 27
+            }
+          ]
+        },
+        "YE": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=YE",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
             }
           ]
         },
@@ -733,15 +3152,7 @@
           "link": "https://www.themoviedb.org/movie/1311031/watch?locale=ZA",
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 3
-            }
-          ],
-          "rent": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
               "display_priority": 3
@@ -749,10 +3160,56 @@
           ],
           "flatrate": [
             {
-              "logo_path": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/uFL3c4Cq8M6WoLymlC5Y8bmGytV.png",
               "provider_id": 283,
               "provider_name": "Crunchyroll",
-              "display_priority": 24
+              "display_priority": 22
+            }
+          ]
+        },
+        "ZM": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=ZM",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "ZW": {
+          "link": "https://www.themoviedb.org/movie/1311031/watch?locale=ZW",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
             }
           ]
         }

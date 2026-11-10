@@ -1,0 +1,998 @@
+{
+  "Guid": "b2ea80ce-b1f5-4941-9d37-a3e60b5d487a",
+  "Title": "Proxy Mapping for GET /3/tv/1100/watch/providers",
+  "Description": "Proxy Mapping for GET /3/tv/1100/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/1100/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 1100,
+      "results": {
+        "AE": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=AE",
+          "flatrate": [
+            {
+              "logo_path": "/vnpp3n6DAIh2sKXfMbehKZAWJMC.png",
+              "provider_id": 630,
+              "provider_name": "STARZPLAY",
+              "display_priority": 8
+            }
+          ]
+        },
+        "AR": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=AR",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "AT": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=AT",
+          "ads": [
+            {
+              "logo_path": "/fXtgvU410LTT6NjQ4ERdUzoUHQC.png",
+              "provider_id": 304,
+              "provider_name": "Joyn",
+              "display_priority": 68
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/mjB4eyswPoC0XeJPUd1W1oitOlh.png",
+              "provider_id": 20,
+              "provider_name": "maxdome Store",
+              "display_priority": 15
+            }
+          ]
+        },
+        "AU": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=AU",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 16
+            }
+          ]
+        },
+        "BE": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=BE",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "BG": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=BG",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "BO": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=BO",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "BR": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=BR",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "BZ": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=BZ",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "CA": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=CA",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 57
+            }
+          ]
+        },
+        "CH": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=CH",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "CL": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=CL",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "CO": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=CO",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "CR": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=CR",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "CU": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=CU",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "CZ": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=CZ",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/gzlCSbeTdiLJNxdZuMKNhW8X7cy.png",
+              "provider_id": 1939,
+              "provider_name": "Lepsi TV",
+              "display_priority": 26
+            }
+          ]
+        },
+        "DE": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=DE",
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/f1uWfExJA6DSAvuTL0YJ9Kyftfg.png",
+              "provider_id": 178,
+              "provider_name": "MagentaTV",
+              "display_priority": 17
+            },
+            {
+              "logo_path": "/mjB4eyswPoC0XeJPUd1W1oitOlh.png",
+              "provider_id": 20,
+              "provider_name": "maxdome Store",
+              "display_priority": 20
+            },
+            {
+              "logo_path": "/kWgg0b4wHDr4pwSyOXVK8nAsNKB.png",
+              "provider_id": 1993,
+              "provider_name": "Videoload",
+              "display_priority": 105
+            },
+            {
+              "logo_path": "/iUGee0WhY5ZSBZZuCunNt0K7au2.png",
+              "provider_id": 2209,
+              "provider_name": "Freenet meinVOD",
+              "display_priority": 127
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/fXtgvU410LTT6NjQ4ERdUzoUHQC.png",
+              "provider_id": 304,
+              "provider_name": "Joyn",
+              "display_priority": 13
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "DK": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=DK",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "DO": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=DO",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "DZ": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=DZ",
+          "flatrate": [
+            {
+              "logo_path": "/vnpp3n6DAIh2sKXfMbehKZAWJMC.png",
+              "provider_id": 630,
+              "provider_name": "STARZPLAY",
+              "display_priority": 35
+            }
+          ]
+        },
+        "EC": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=EC",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "EG": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=EG",
+          "flatrate": [
+            {
+              "logo_path": "/vnpp3n6DAIh2sKXfMbehKZAWJMC.png",
+              "provider_id": 630,
+              "provider_name": "STARZPLAY",
+              "display_priority": 22
+            }
+          ]
+        },
+        "ES": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=ES",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "FI": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=FI",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "FR": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=FR",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 5
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 34
+            }
+          ]
+        },
+        "GB": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=GB",
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 10
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/nIViE3wOPV5Jyv45T7hetHyG6iS.png",
+              "provider_id": 2300,
+              "provider_name": "ITVX Premium",
+              "display_priority": 113
+            }
+          ]
+        },
+        "GG": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=GG",
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 82
+            }
+          ]
+        },
+        "GR": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=GR",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "GT": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=GT",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "HK": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=HK",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "HN": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=HN",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "HR": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=HR",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "HU": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=HU",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "ID": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=ID",
+          "flatrate": [
+            {
+              "logo_path": "/ruMrSFMJBMUpzjUL3dHD647qyEF.png",
+              "provider_id": 122,
+              "provider_name": "Disney\u002B",
+              "display_priority": 4
+            }
+          ]
+        },
+        "IE": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=IE",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "IN": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=IN",
+          "flatrate": [
+            {
+              "logo_path": "/9SVVjJ89csOM0xoeVVK8BryUf9a.png",
+              "provider_id": 614,
+              "provider_name": "VI movies and tv",
+              "display_priority": 36
+            }
+          ]
+        },
+        "IT": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=IT",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "JM": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=JM",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "JP": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=JP",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "KR": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=KR",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "LC": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=LC",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "LI": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=LI",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "LU": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=LU",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "MA": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=MA",
+          "flatrate": [
+            {
+              "logo_path": "/vnpp3n6DAIh2sKXfMbehKZAWJMC.png",
+              "provider_id": 630,
+              "provider_name": "STARZPLAY",
+              "display_priority": 35
+            }
+          ]
+        },
+        "MX": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=MX",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "MY": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=MY",
+          "flatrate": [
+            {
+              "logo_path": "/ruMrSFMJBMUpzjUL3dHD647qyEF.png",
+              "provider_id": 122,
+              "provider_name": "Disney\u002B",
+              "display_priority": 4
+            }
+          ]
+        },
+        "NI": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=NI",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "NL": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=NL",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 5
+            }
+          ]
+        },
+        "NO": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=NO",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "NZ": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=NZ",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "PA": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=PA",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "PE": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=PE",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 5
+            }
+          ]
+        },
+        "PL": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=PL",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "PT": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=PT",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "PY": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=PY",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "RO": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=RO",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "RU": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=RU",
+          "buy": [
+            {
+              "logo_path": "/oroIyNGCu4ltli1lI4m7em1IYE5.png",
+              "provider_id": 117,
+              "provider_name": "Kinopoisk",
+              "display_priority": 21
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/oroIyNGCu4ltli1lI4m7em1IYE5.png",
+              "provider_id": 117,
+              "provider_name": "Kinopoisk",
+              "display_priority": 21
+            }
+          ]
+        },
+        "SA": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=SA",
+          "flatrate": [
+            {
+              "logo_path": "/vnpp3n6DAIh2sKXfMbehKZAWJMC.png",
+              "provider_id": 630,
+              "provider_name": "STARZPLAY",
+              "display_priority": 22
+            }
+          ]
+        },
+        "SE": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=SE",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            },
+            {
+              "logo_path": "/tP54PxI3PdGTGpuY3CNr0rOVDjd.png",
+              "provider_id": 497,
+              "provider_name": "Tele2 Play",
+              "display_priority": 20
+            }
+          ]
+        },
+        "SG": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=SG",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "SK": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=SK",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "SM": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=SM",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "SV": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=SV",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "TH": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=TH",
+          "flatrate": [
+            {
+              "logo_path": "/ruMrSFMJBMUpzjUL3dHD647qyEF.png",
+              "provider_id": 122,
+              "provider_name": "Disney\u002B",
+              "display_priority": 4
+            }
+          ]
+        },
+        "TN": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=TN",
+          "flatrate": [
+            {
+              "logo_path": "/vnpp3n6DAIh2sKXfMbehKZAWJMC.png",
+              "provider_id": 630,
+              "provider_name": "STARZPLAY",
+              "display_priority": 36
+            }
+          ]
+        },
+        "TR": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=TR",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "TT": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=TT",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "TW": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=TW",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=US",
+          "flatrate": [
+            {
+              "logo_path": "/44uAnmSqvA4yBOdbPWN8YgQHjWm.png",
+              "provider_id": 15,
+              "provider_name": "Hulu",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/48bVXEIyCLSL9pZUQ7gB9ToyWto.png",
+              "provider_id": 2528,
+              "provider_name": "YouTube TV",
+              "display_priority": 42
+            },
+            {
+              "logo_path": "/7Z4egOqWISqraA0SS5CldDzRyh3.png",
+              "provider_id": 322,
+              "provider_name": "USA Network",
+              "display_priority": 97
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/aZRENwYILujqs0RVOZutTh0BVGV.png",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 24
+            },
+            {
+              "logo_path": "/wpOt6x0dRxTrIzuBosto4LGd7E9.png",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 41
+            }
+          ]
+        },
+        "UY": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=UY",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 3
+            }
+          ]
+        },
+        "VE": {
+          "link": "https://www.themoviedb.org/tv/1100-how-i-met-your-mother/watch?locale=VE",
+          "flatrate": [
+            {
+              "logo_path": "/5eZ872CghnHFLB1j8grszbrx0dx.png",
+              "provider_id": 337,
+              "provider_name": "Disney Plus",
+              "display_priority": 4
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty"
+    }
+  }
+}

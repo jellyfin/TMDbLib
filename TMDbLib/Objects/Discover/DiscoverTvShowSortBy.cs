@@ -1,4 +1,3 @@
-using System;
 using TMDbLib.Utilities;
 
 namespace TMDbLib.Objects.Discover;

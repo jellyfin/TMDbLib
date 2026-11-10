@@ -93,7 +93,11 @@ public partial class TMDbClient : IDisposable
 
             return _config!;
         }
-        private set => _config = value;
+
+        private set
+        {
+            _config = value;
+        }
     }
 
     /// <summary>

@@ -17,19 +17,6 @@
       "GET"
     ],
     "HttpVersion": "1.1",
-    "Headers": [
-      {
-        "Name": "Accept-Encoding",
-        "Matchers": [
-          {
-            "Name": "WildcardMatcher",
-            "Pattern": "gzip, deflate, br",
-            "IgnoreCase": true
-          }
-        ],
-        "IgnoreCase": true
-      }
-    ],
     "Params": [
       {
         "Name": "append_to_response",
@@ -73,11 +60,11 @@
             "type": ""
           },
           {
-            "name": "20세기 폭스",
+            "name": "20\uC138\uAE30 \uD3ED\uC2A4",
             "type": "Korean"
           },
           {
-            "name": "二十世纪福克斯",
+            "name": "\u4E8C\u5341\u4E16\u7EAA\u798F\u514B\u65AF",
             "type": "Chinese"
           }
         ]

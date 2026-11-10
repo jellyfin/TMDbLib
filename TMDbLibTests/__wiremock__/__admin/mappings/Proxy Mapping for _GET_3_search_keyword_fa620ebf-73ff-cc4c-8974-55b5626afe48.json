@@ -17,19 +17,6 @@
       "GET"
     ],
     "HttpVersion": "1.1",
-    "Headers": [
-      {
-        "Name": "Accept-Encoding",
-        "Matchers": [
-          {
-            "Name": "WildcardMatcher",
-            "Pattern": "gzip, deflate, br",
-            "IgnoreCase": true
-          }
-        ],
-        "IgnoreCase": true
-      }
-    ],
     "Params": [
       {
         "Name": "query",
@@ -87,6 +74,10 @@
           "name": "female centered plot"
         },
         {
+          "id": 384322,
+          "name": "plot against wife"
+        },
+        {
           "id": 3203,
           "name": "pilot"
         },
@@ -99,6 +90,10 @@
           "name": "plow"
         },
         {
+          "id": 385624,
+          "name": "best plot - hitchcock fest"
+        },
+        {
           "id": 171401,
           "name": "pot"
         },
@@ -109,6 +104,10 @@
         {
           "id": 354657,
           "name": "lot"
+        },
+        {
+          "id": 388355,
+          "name": "funny with an alternative plot"
         },
         {
           "id": 235053,
@@ -125,14 +124,10 @@
         {
           "id": 354990,
           "name": "well-plotted"
-        },
-        {
-          "id": 361839,
-          "name": "sport plots"
         }
       ],
-      "total_pages": 2,
-      "total_results": 38
+      "total_pages": 3,
+      "total_results": 43
     },
     "Headers": {
       "Content-Type": "application/json; charset=utf-8",

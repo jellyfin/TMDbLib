@@ -26,7 +26,11 @@ public class SimpleNamedValueCollection : IEnumerable<KeyValuePair<string, strin
     /// <returns>The value associated with the specified key.</returns>
     public string? this[string index]
     {
-        get => Get(index);
+        get
+        {
+            return Get(index);
+        }
+
         set
         {
             if (value is not null)

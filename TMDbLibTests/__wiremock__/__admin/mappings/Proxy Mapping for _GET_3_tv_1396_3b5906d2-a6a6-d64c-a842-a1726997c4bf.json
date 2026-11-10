@@ -17,19 +17,6 @@
       "GET"
     ],
     "HttpVersion": "1.1",
-    "Headers": [
-      {
-        "Name": "Accept-Encoding",
-        "Matchers": [
-          {
-            "Name": "WildcardMatcher",
-            "Pattern": "gzip, deflate, br",
-            "IgnoreCase": true
-          }
-        ],
-        "IgnoreCase": true
-      }
-    ],
     "Params": [
       {
         "Name": "include_image_language",
@@ -290,6 +277,16 @@
             "vote_average": 0.0,
             "vote_count": 0,
             "width": 1024
+          },
+          {
+            "aspect_ratio": 0.667,
+            "height": 1500,
+            "iso_3166_1": "BR",
+            "iso_639_1": "pt",
+            "file_path": "/1ek6d3fIhm9f3QjBDDBP8E1WM9q.jpg",
+            "vote_average": 0.0,
+            "vote_count": 0,
+            "width": 1000
           }
         ]
       }

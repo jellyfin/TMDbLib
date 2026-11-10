@@ -17,19 +17,6 @@
       "GET"
     ],
     "HttpVersion": "1.1",
-    "Headers": [
-      {
-        "Name": "Accept-Encoding",
-        "Matchers": [
-          {
-            "Name": "WildcardMatcher",
-            "Pattern": "gzip, deflate, br",
-            "IgnoreCase": true
-          }
-        ],
-        "IgnoreCase": true
-      }
-    ],
     "Params": [
       {
         "Name": "end_date",
@@ -529,8 +516,8 @@
         },
         {
           "id": 306210,
-          "adult": false,
-          "softcore": false
+          "adult": null,
+          "softcore": null
         },
         {
           "id": 223876,

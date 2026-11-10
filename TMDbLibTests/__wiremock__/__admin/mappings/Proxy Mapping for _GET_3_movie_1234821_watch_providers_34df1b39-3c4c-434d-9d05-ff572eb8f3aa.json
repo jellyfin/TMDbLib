@@ -16,20 +16,7 @@
     "Methods": [
       "GET"
     ],
-    "HttpVersion": "1.1",
-    "Headers": [
-      {
-        "Name": "Accept-Encoding",
-        "Matchers": [
-          {
-            "Name": "WildcardMatcher",
-            "Pattern": "gzip, deflate, br",
-            "IgnoreCase": true
-          }
-        ],
-        "IgnoreCase": true
-      }
-    ]
+    "HttpVersion": "1.1"
   },
   "Response": {
     "StatusCode": 200,
@@ -40,10 +27,16 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=AD",
           "flatrate": [
             {
-              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/ube1pVpP3FklRkeyQjlDkkC3tL2.png",
               "provider_id": 1773,
               "provider_name": "SkyShowtime",
-              "display_priority": 23
+              "display_priority": 24
             }
           ]
         },
@@ -51,7 +44,7 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=AG",
           "flatrate": [
             {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
               "provider_id": 1899,
               "provider_name": "HBO Max",
               "display_priority": 12
@@ -62,7 +55,7 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=AL",
           "flatrate": [
             {
-              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "logo_path": "/ube1pVpP3FklRkeyQjlDkkC3tL2.png",
               "provider_id": 1773,
               "provider_name": "SkyShowtime",
               "display_priority": 25
@@ -71,134 +64,138 @@
         },
         "AR": {
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=AR",
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 5
-            }
-          ],
-          "rent": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 5
-            }
-          ],
           "flatrate": [
             {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 36
+              "display_priority": 35
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 48
             }
           ]
         },
         "AT": {
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=AT",
-          "flatrate": [
-            {
-              "logo_path": "/vDdk3LyjWkYlfCtkrhkjFKFK1Hg.jpg",
-              "provider_id": 29,
-              "provider_name": "Sky Go",
-              "display_priority": 9
-            },
-            {
-              "logo_path": "/67FAj8KvIiV5iZMJuPUdMrqMftw.jpg",
-              "provider_id": 321,
-              "provider_name": "Sky X",
-              "display_priority": 18
-            }
-          ],
           "buy": [
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 5
             },
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
               "display_priority": 6
             },
             {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
               "provider_id": 35,
               "provider_name": "Rakuten TV",
               "display_priority": 10
             },
             {
-              "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
+              "logo_path": "/mjB4eyswPoC0XeJPUd1W1oitOlh.png",
               "provider_id": 20,
               "provider_name": "maxdome Store",
-              "display_priority": 14
+              "display_priority": 15
             },
             {
-              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "logo_path": "/nNkZ1JKe6vNhzti14KiKEUWHE6H.png",
               "provider_id": 130,
               "provider_name": "Sky Store",
               "display_priority": 19
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/1Yvl9eP3pmktqChitnFhHJHcBtX.png",
+              "provider_id": 29,
+              "provider_name": "Sky Go",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/2o26YwA7tXQ7I6CSrMvO9Rj4oNi.png",
+              "provider_id": 30,
+              "provider_name": "WOW",
+              "display_priority": 184
             }
           ]
         },
         "AU": {
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=AU",
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 13
-            },
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 14
-            }
-          ],
           "rent": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 13
+              "display_priority": 15
             },
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 14
+              "display_priority": 16
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 16
             }
           ],
           "flatrate": [
             {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 1
+              "display_priority": 0
             },
             {
-              "logo_path": "/7QX5OdsQZrXGNBKq9SPzoPV9OYQ.jpg",
+              "logo_path": "/1Hzele1xJnA7xfQyWKNQnTnWAio.png",
               "provider_id": 385,
               "provider_name": "BINGE",
               "display_priority": 6
             },
             {
-              "logo_path": "/fejdSG7TwNQ5E0p6u7A6LVs280R.jpg",
+              "logo_path": "/qRZkZY5kgqXaLr4QFp7ON0wG5rB.png",
               "provider_id": 134,
               "provider_name": "Foxtel Now",
-              "display_priority": 10
+              "display_priority": 11
             },
             {
-              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "logo_path": "/eGUwOOIxcazwEBxqJpSN5sWEu6V.png",
               "provider_id": 1796,
               "provider_name": "Netflix Standard with Ads",
               "display_priority": 50
+            },
+            {
+              "logo_path": "/ugQHaBlSt4vnebuw7PVAvlh7mId.png",
+              "provider_id": 2804,
+              "provider_name": "Binge Amazon Channel",
+              "display_priority": 110
             }
           ]
         },
@@ -206,10 +203,10 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=BA",
           "flatrate": [
             {
-              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "logo_path": "/ube1pVpP3FklRkeyQjlDkkC3tL2.png",
               "provider_id": 1773,
               "provider_name": "SkyShowtime",
-              "display_priority": 25
+              "display_priority": 26
             }
           ]
         },
@@ -217,7 +214,7 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=BB",
           "flatrate": [
             {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
               "provider_id": 1899,
               "provider_name": "HBO Max",
               "display_priority": 24
@@ -226,9 +223,29 @@
         },
         "BE": {
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=BE",
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
+            }
+          ],
           "flatrate": [
             {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
@@ -236,133 +253,105 @@
           ],
           "rent": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 8
+              "display_priority": 9
             },
             {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
-              "provider_id": 35,
-              "provider_name": "Rakuten TV",
-              "display_priority": 11
-            },
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 34
-            }
-          ],
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 8
-            },
-            {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
-              "provider_id": 35,
-              "provider_name": "Rakuten TV",
-              "display_priority": 11
-            },
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 34
+              "display_priority": 33
             }
           ]
         },
         "BG": {
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=BG",
-          "flatrate": [
-            {
-              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
-              "provider_id": 1773,
-              "provider_name": "SkyShowtime",
-              "display_priority": 19
-            }
-          ],
           "buy": [
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 30
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/ube1pVpP3FklRkeyQjlDkkC3tL2.png",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 19
             }
           ]
         },
         "BO": {
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=BO",
-          "rent": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 5
-            }
-          ],
           "flatrate": [
             {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 31
+              "display_priority": 30
             }
           ],
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 5
+              "display_priority": 6
             }
           ]
         },
         "BR": {
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=BR",
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 9
-            },
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 13
-            }
-          ],
           "rent": [
             {
-              "logo_path": "/21M5CpiOYGOhHj2sVPXqwt6yeTO.jpg",
+              "logo_path": "/zTJg0WVErBkcJv4S9FkQRUyXjnq.png",
               "provider_id": 167,
               "provider_name": "Claro video",
-              "display_priority": 5
+              "display_priority": 6
             },
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 9
+              "display_priority": 10
             }
           ],
           "flatrate": [
             {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
-              "display_priority": 1
+              "display_priority": 2
             },
             {
-              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
+              "logo_path": "/tpwTT1FpWqLLhxUfAuDavIXDDfI.png",
               "provider_id": 2100,
               "provider_name": "Amazon Prime Video with Ads",
-              "display_priority": 80
+              "display_priority": 78
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 14
             }
           ]
         },
@@ -370,7 +359,7 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=BS",
           "flatrate": [
             {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
               "provider_id": 1899,
               "provider_name": "HBO Max",
               "display_priority": 25
@@ -381,80 +370,86 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=BZ",
           "flatrate": [
             {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 10
-            }
-          ],
-          "rent": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 5
+              "display_priority": 9
             }
           ],
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 5
+              "display_priority": 6
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
             }
           ]
         },
         "CA": {
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=CA",
-          "buy": [
+          "flatrate": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/tpwTT1FpWqLLhxUfAuDavIXDDfI.png",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 110
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
               "display_priority": 7
             },
             {
-              "logo_path": "/4bIKO5tqPgko0135wL9GhMsb1wv.jpg",
+              "logo_path": "/fyUUKmDdzpJjSwsXPN4Rpi7jTu5.png",
               "provider_id": 140,
               "provider_name": "CosmoGo",
-              "display_priority": 19
+              "display_priority": 14
             },
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/hkw2s2Su8EyifB9EbbQP64Fj1xA.png",
+              "provider_id": 331,
+              "provider_name": "FlixFling",
+              "display_priority": 31
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 57
             }
           ],
-          "flatrate": [
+          "buy": [
             {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 119,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 1
-            },
-            {
-              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
-              "provider_id": 2100,
-              "provider_name": "Amazon Prime Video with Ads",
-              "display_priority": 112
-            }
-          ],
-          "rent": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
               "display_priority": 7
             },
             {
-              "logo_path": "/4bIKO5tqPgko0135wL9GhMsb1wv.jpg",
+              "logo_path": "/fyUUKmDdzpJjSwsXPN4Rpi7jTu5.png",
               "provider_id": 140,
               "provider_name": "CosmoGo",
-              "display_priority": 19
+              "display_priority": 14
             },
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 57
@@ -463,183 +458,169 @@
         },
         "CH": {
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=CH",
-          "flatrate": [
-            {
-              "logo_path": "/47klot430ytIqldQUUx2avN45Sr.jpg",
-              "provider_id": 150,
-              "provider_name": "blue TV",
-              "display_priority": 5
-            },
-            {
-              "logo_path": "/geOzgeKZWpZC3lymAVEHVIk3X0q.jpg",
-              "provider_id": 381,
-              "provider_name": "Canal\u002B",
-              "display_priority": 37
-            }
-          ],
           "rent": [
             {
-              "logo_path": "/47klot430ytIqldQUUx2avN45Sr.jpg",
+              "logo_path": "/omviag2i66PzB1VqDc48pbwTC8Z.png",
               "provider_id": 150,
               "provider_name": "blue TV",
               "display_priority": 5
             },
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
               "display_priority": 6
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
             },
             {
-              "logo_path": "/l5SFTF3l9l1KSgZJM7foAppUenz.jpg",
-              "provider_id": 622,
-              "provider_name": "UPC TV",
-              "display_priority": 32
+              "logo_path": "/omviag2i66PzB1VqDc48pbwTC8Z.png",
+              "provider_id": 150,
+              "provider_name": "blue TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/9DoQOfCz9S9j4cif3Cqx3ebk3FP.png",
+              "provider_id": 210,
+              "provider_name": "Sky",
+              "display_priority": 7
             }
           ],
           "buy": [
             {
-              "logo_path": "/47klot430ytIqldQUUx2avN45Sr.jpg",
+              "logo_path": "/omviag2i66PzB1VqDc48pbwTC8Z.png",
               "provider_id": 150,
               "provider_name": "blue TV",
               "display_priority": 5
             },
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
               "display_priority": 6
             },
             {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
               "provider_id": 35,
               "provider_name": "Rakuten TV",
-              "display_priority": 10
+              "display_priority": 9
             },
             {
-              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "logo_path": "/nNkZ1JKe6vNhzti14KiKEUWHE6H.png",
               "provider_id": 130,
               "provider_name": "Sky Store",
-              "display_priority": 15
+              "display_priority": 14
             },
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 74
+              "display_priority": 71
             }
           ]
         },
         "CL": {
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=CL",
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 5
-            },
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 56
-            }
-          ],
           "flatrate": [
             {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
               "provider_id": 1899,
               "provider_name": "HBO Max",
               "display_priority": 8
             }
           ],
-          "rent": [
+          "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 5
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 55
             }
           ]
         },
         "CO": {
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=CO",
-          "buy": [
+          "rent": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 6
-            },
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 57
+              "logo_path": "/zTJg0WVErBkcJv4S9FkQRUyXjnq.png",
+              "provider_id": 167,
+              "provider_name": "Claro video",
+              "display_priority": 10
             }
           ],
           "flatrate": [
             {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
               "provider_id": 1899,
               "provider_name": "HBO Max",
               "display_priority": 7
             },
             {
-              "logo_path": "/embS4GPK7c8pjbuY2O2irV5rYch.jpg",
+              "logo_path": "/64fLWeSyZ1KQZhIdvTdy4QHeWty.png",
               "provider_id": 1825,
               "provider_name": "HBO Max Amazon Channel",
-              "display_priority": 69
+              "display_priority": 68
             }
           ],
-          "rent": [
+          "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
               "display_priority": 6
             },
             {
-              "logo_path": "/21M5CpiOYGOhHj2sVPXqwt6yeTO.jpg",
-              "provider_id": 167,
-              "provider_name": "Claro video",
-              "display_priority": 10
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 56
             }
           ]
         },
         "CR": {
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=CR",
-          "flatrate": [
-            {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
-              "provider_id": 1899,
-              "provider_name": "HBO Max",
-              "display_priority": 5
-            }
-          ],
-          "rent": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 6
-            }
-          ],
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
+              "display_priority": 7
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
               "display_priority": 6
             }
           ]
         },
         "CV": {
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=CV",
+          "rent": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 11
+            }
+          ],
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
               "display_priority": 11
@@ -650,30 +631,36 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=CZ",
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 5
+              "display_priority": 6
             },
             {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
               "provider_id": 35,
               "provider_name": "Rakuten TV",
-              "display_priority": 29
+              "display_priority": 28
             },
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 42
+              "display_priority": 40
             }
           ],
           "flatrate": [
             {
-              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "logo_path": "/ube1pVpP3FklRkeyQjlDkkC3tL2.png",
               "provider_id": 1773,
               "provider_name": "SkyShowtime",
-              "display_priority": 23
+              "display_priority": 22
+            },
+            {
+              "logo_path": "/mMqTPUzGxa6vyi36qcwDH6LKslT.png",
+              "provider_id": 2801,
+              "provider_name": "Sky Showtime Amazon Channel",
+              "display_priority": 49
             }
           ]
         },
@@ -681,147 +668,153 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=DE",
           "flatrate": [
             {
-              "logo_path": "/9r5zFWuYnwjzO1JrNjSbLQwUc3P.jpg",
+              "logo_path": "/2o26YwA7tXQ7I6CSrMvO9Rj4oNi.png",
               "provider_id": 30,
               "provider_name": "WOW",
               "display_priority": 14
             },
             {
-              "logo_path": "/vDdk3LyjWkYlfCtkrhkjFKFK1Hg.jpg",
+              "logo_path": "/1Yvl9eP3pmktqChitnFhHJHcBtX.png",
               "provider_id": 29,
               "provider_name": "Sky Go",
               "display_priority": 15
             },
             {
-              "logo_path": "/35XbldCPO3ztCREajGbfhf7827w.jpg",
+              "logo_path": "/mIR4wc2DLEIbn9TbtemvoX4zb26.png",
               "provider_id": 2660,
               "provider_name": "Wow Fiction Amazon Channel",
-              "display_priority": 217
+              "display_priority": 215
             }
           ],
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 5
+              "display_priority": 6
             },
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 8
             },
             {
-              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
-              "provider_id": 130,
-              "provider_name": "Sky Store",
-              "display_priority": 16
-            },
-            {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
-              "provider_id": 35,
-              "provider_name": "Rakuten TV",
+              "logo_path": "/f1uWfExJA6DSAvuTL0YJ9Kyftfg.png",
+              "provider_id": 178,
+              "provider_name": "MagentaTV",
               "display_priority": 17
             },
             {
-              "logo_path": "/cBN4jd4wPq6on0kESiTlevqvlnL.jpg",
+              "logo_path": "/mjB4eyswPoC0XeJPUd1W1oitOlh.png",
               "provider_id": 20,
               "provider_name": "maxdome Store",
-              "display_priority": 18
+              "display_priority": 20
             },
             {
-              "logo_path": "/nCsFBTEmlCMc5NA4fwPuluTz6AO.jpg",
-              "provider_id": 178,
-              "provider_name": "MagentaTV",
-              "display_priority": 23
+              "logo_path": "/nNkZ1JKe6vNhzti14KiKEUWHE6H.png",
+              "provider_id": 130,
+              "provider_name": "Sky Store",
+              "display_priority": 22
             },
             {
-              "logo_path": "/dKh2TJ9lTWV0UIcDQGMnMyQ8AIN.jpg",
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 24
+            },
+            {
+              "logo_path": "/kWgg0b4wHDr4pwSyOXVK8nAsNKB.png",
               "provider_id": 1993,
               "provider_name": "Videoload",
-              "display_priority": 104
+              "display_priority": 105
             },
             {
-              "logo_path": "/xo4zowa5gbKT4z65ZathH6H4Cdg.jpg",
+              "logo_path": "/iUGee0WhY5ZSBZZuCunNt0K7au2.png",
               "provider_id": 2209,
               "provider_name": "Freenet meinVOD",
-              "display_priority": 128
+              "display_priority": 127
             }
           ]
         },
         "DK": {
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=DK",
-          "rent": [
+          "buy": [
             {
-              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
+              "logo_path": "/c1J9PGGowXwW5AxAaZaGipeFu7U.png",
               "provider_id": 76,
               "provider_name": "Viaplay",
-              "display_priority": 6
+              "display_priority": 7
             },
             {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/fVuqy8kmzsULoJjc3ROOcurRH7S.png",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 46
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/c1J9PGGowXwW5AxAaZaGipeFu7U.png",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
               "provider_id": 35,
               "provider_name": "Rakuten TV",
               "display_priority": 13
             },
             {
-              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "logo_path": "/fVuqy8kmzsULoJjc3ROOcurRH7S.png",
               "provider_id": 426,
               "provider_name": "SF Anytime",
               "display_priority": 16
             },
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 48
-            }
-          ],
-          "buy": [
-            {
-              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
-              "provider_id": 76,
-              "provider_name": "Viaplay",
-              "display_priority": 6
-            },
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 7
-            },
-            {
-              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
-              "provider_id": 426,
-              "provider_name": "SF Anytime",
-              "display_priority": 16
-            },
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 48
+              "display_priority": 46
             }
           ],
           "flatrate": [
             {
-              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "logo_path": "/ube1pVpP3FklRkeyQjlDkkC3tL2.png",
               "provider_id": 1773,
               "provider_name": "SkyShowtime",
-              "display_priority": 34
+              "display_priority": 33
             },
             {
-              "logo_path": "/a6z85DKGuPOyTg03TlJ6ShzzFO6.jpg",
+              "logo_path": "/hPIVVR7yvR0PrTe7eHR2I5nAFis.png",
               "provider_id": 1961,
               "provider_name": "Allente",
-              "display_priority": 38
+              "display_priority": 37
             },
             {
-              "logo_path": "/s38BRDYN1fP3Ll9bptNaE5JXFkL.jpg",
+              "logo_path": "/n1DGZz9QsSJfIcRGyXAIR0TzQWQ.png",
               "provider_id": 2624,
               "provider_name": "TV2 Skyshowtime",
-              "display_priority": 51
+              "display_priority": 49
+            },
+            {
+              "logo_path": "/mMqTPUzGxa6vyi36qcwDH6LKslT.png",
+              "provider_id": 2801,
+              "provider_name": "Sky Showtime Amazon Channel",
+              "display_priority": 69
             }
           ]
         },
@@ -829,7 +822,7 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=DO",
           "flatrate": [
             {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
               "provider_id": 1899,
               "provider_name": "HBO Max",
               "display_priority": 31
@@ -838,51 +831,53 @@
         },
         "EC": {
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=EC",
-          "buy": [
+          "rent": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 8
+              "logo_path": "/zTJg0WVErBkcJv4S9FkQRUyXjnq.png",
+              "provider_id": 167,
+              "provider_name": "Claro video",
+              "display_priority": 10
             }
           ],
           "flatrate": [
             {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 7
+              "display_priority": 8
             }
           ],
-          "rent": [
+          "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 8
-            },
-            {
-              "logo_path": "/21M5CpiOYGOhHj2sVPXqwt6yeTO.jpg",
-              "provider_id": 167,
-              "provider_name": "Claro video",
               "display_priority": 9
             }
           ]
         },
         "EE": {
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=EE",
+          "rent": [
+            {
+              "logo_path": "/bWrdc66M5z0FJgznkdRdPueU2S.png",
+              "provider_id": 373,
+              "provider_name": "Go3",
+              "display_priority": 9
+            }
+          ],
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 5
+              "display_priority": 6
             },
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 34
+              "display_priority": 33
             }
           ]
         },
@@ -890,10 +885,10 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=EG",
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 5
+              "display_priority": 6
             }
           ]
         },
@@ -901,248 +896,240 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=ES",
           "flatrate": [
             {
-              "logo_path": "/f6TRLB3H4jDpFEZ0z2KWSSvu1SB.jpg",
+              "logo_path": "/7OEtlOKTmjTXh40eHUES11Oc1i7.png",
               "provider_id": 149,
               "provider_name": "Movistar Plus\u002B Ficci\u00F3n Total ",
               "display_priority": 7
             },
             {
-              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "logo_path": "/ube1pVpP3FklRkeyQjlDkkC3tL2.png",
               "provider_id": 1773,
               "provider_name": "SkyShowtime",
-              "display_priority": 11
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/mMqTPUzGxa6vyi36qcwDH6LKslT.png",
+              "provider_id": 2801,
+              "provider_name": "Sky Showtime Amazon Channel",
+              "display_priority": 102
             }
           ],
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
               "display_priority": 6
             },
             {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
               "provider_id": 35,
               "provider_name": "Rakuten TV",
-              "display_priority": 9
+              "display_priority": 10
             },
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 33
-            }
-          ],
-          "rent": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 6
-            },
-            {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
-              "provider_id": 35,
-              "provider_name": "Rakuten TV",
-              "display_priority": 9
-            },
-            {
-              "logo_path": "/ozZU2vSlyL11rFGEkq1HE0yxIJq.jpg",
-              "provider_id": 64,
-              "provider_name": "Filmin Plus",
-              "display_priority": 12
+              "display_priority": 34
             }
           ]
         },
         "FI": {
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=FI",
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 9
-            },
-            {
-              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
-              "provider_id": 426,
-              "provider_name": "SF Anytime",
-              "display_priority": 14
-            },
-            {
-              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
-              "provider_id": 76,
-              "provider_name": "Viaplay",
-              "display_priority": 34
-            },
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 53
-            }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
-              "provider_id": 1773,
-              "provider_name": "SkyShowtime",
-              "display_priority": 33
-            }
-          ],
           "rent": [
             {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
               "provider_id": 35,
               "provider_name": "Rakuten TV",
               "display_priority": 12
             },
             {
-              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "logo_path": "/fVuqy8kmzsULoJjc3ROOcurRH7S.png",
               "provider_id": 426,
               "provider_name": "SF Anytime",
               "display_priority": 14
             },
             {
-              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
+              "logo_path": "/c1J9PGGowXwW5AxAaZaGipeFu7U.png",
               "provider_id": 76,
               "provider_name": "Viaplay",
-              "display_priority": 34
+              "display_priority": 33
             },
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 53
+              "display_priority": 52
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/fVuqy8kmzsULoJjc3ROOcurRH7S.png",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 14
+            },
+            {
+              "logo_path": "/c1J9PGGowXwW5AxAaZaGipeFu7U.png",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 33
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 52
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/ube1pVpP3FklRkeyQjlDkkC3tL2.png",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 32
+            },
+            {
+              "logo_path": "/mMqTPUzGxa6vyi36qcwDH6LKslT.png",
+              "provider_id": 2801,
+              "provider_name": "Sky Showtime Amazon Channel",
+              "display_priority": 69
             }
           ]
         },
         "FR": {
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=FR",
-          "flatrate": [
-            {
-              "logo_path": "/geOzgeKZWpZC3lymAVEHVIk3X0q.jpg",
-              "provider_id": 381,
-              "provider_name": "Canal\u002B",
-              "display_priority": 8
-            }
-          ],
           "rent": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
               "display_priority": 6
             },
             {
-              "logo_path": "/cAUTwxqoI7zc9XtYr1SMtWZEsXg.jpg",
+              "logo_path": "/51fX3l4yElitnfui0IkbMUmfmgF.png",
               "provider_id": 58,
               "provider_name": "Canal VOD",
-              "display_priority": 11
+              "display_priority": 16
             },
             {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
-              "provider_id": 35,
-              "provider_name": "Rakuten TV",
-              "display_priority": 18
-            },
-            {
-              "logo_path": "/brt7T1qjJhyKaazaHP2N9r31TRS.jpg",
+              "logo_path": "/a9ZXOebUSXGUFxTi3N36sA8wSSh.png",
               "provider_id": 389,
               "provider_name": "Sooner",
-              "display_priority": 22
+              "display_priority": 20
             },
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 36
+              "display_priority": 34
             },
             {
-              "logo_path": "/blrBF9R2ONYu04ifGkYEb3k779N.jpg",
+              "logo_path": "/j5w5U61YwOM6Adiaa5zuEVqrpP8.png",
               "provider_id": 1754,
               "provider_name": "TF1\u002B",
-              "display_priority": 49
+              "display_priority": 46
             },
             {
-              "logo_path": "/f0AbfwtuitfNzrnENo1CWcPQiN6.jpg",
+              "logo_path": "/zbXVTncv6m6ojLjPQJeW7u0SYKp.png",
               "provider_id": 2601,
               "provider_name": "Path\u00E9 Home",
-              "display_priority": 54
+              "display_priority": 51
             },
             {
-              "logo_path": "/PAaj5bekwbeeoRC1evWg4KJW8p.jpg",
+              "logo_path": "/uzTONLCUH92RRMSzs206OYtWVml.png",
               "provider_id": 2286,
               "provider_name": "VIVA by videofutur",
-              "display_priority": 79
+              "display_priority": 74
             },
             {
-              "logo_path": "/rdMFjYYE0uZ55rBdlX149gRF1XQ.jpg",
+              "logo_path": "/yERf5EH3GjWMB0ZSWPaov1kCKrR.png",
               "provider_id": 2307,
               "provider_name": "Premiere Max",
-              "display_priority": 81
+              "display_priority": 76
             },
             {
-              "logo_path": "/1gtidYfh89iLkGcbhPtr1lvx47W.jpg",
+              "logo_path": "/z32NGSc2wYxQzcOc24iXK8q35A1.png",
               "provider_id": 2671,
-              "provider_name": "ARTE Boutique",
-              "display_priority": 103
+              "provider_name": "ARTE VOD",
+              "display_priority": 97
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/eGUwOOIxcazwEBxqJpSN5sWEu6V.png",
+              "provider_id": 1796,
+              "provider_name": "Netflix Standard with Ads",
+              "display_priority": 49
             }
           ],
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
               "display_priority": 6
             },
             {
-              "logo_path": "/cAUTwxqoI7zc9XtYr1SMtWZEsXg.jpg",
-              "provider_id": 58,
-              "provider_name": "Canal VOD",
-              "display_priority": 11
-            },
-            {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
               "provider_id": 35,
               "provider_name": "Rakuten TV",
-              "display_priority": 18
+              "display_priority": 15
             },
             {
-              "logo_path": "/brt7T1qjJhyKaazaHP2N9r31TRS.jpg",
+              "logo_path": "/51fX3l4yElitnfui0IkbMUmfmgF.png",
+              "provider_id": 58,
+              "provider_name": "Canal VOD",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/a9ZXOebUSXGUFxTi3N36sA8wSSh.png",
               "provider_id": 389,
               "provider_name": "Sooner",
-              "display_priority": 22
+              "display_priority": 20
             },
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 36
+              "display_priority": 34
             },
             {
-              "logo_path": "/f0AbfwtuitfNzrnENo1CWcPQiN6.jpg",
+              "logo_path": "/zbXVTncv6m6ojLjPQJeW7u0SYKp.png",
               "provider_id": 2601,
               "provider_name": "Path\u00E9 Home",
-              "display_priority": 54
+              "display_priority": 51
             },
             {
-              "logo_path": "/PAaj5bekwbeeoRC1evWg4KJW8p.jpg",
+              "logo_path": "/uzTONLCUH92RRMSzs206OYtWVml.png",
               "provider_id": 2286,
               "provider_name": "VIVA by videofutur",
-              "display_priority": 79
+              "display_priority": 74
             },
             {
-              "logo_path": "/rdMFjYYE0uZ55rBdlX149gRF1XQ.jpg",
+              "logo_path": "/yERf5EH3GjWMB0ZSWPaov1kCKrR.png",
               "provider_id": 2307,
               "provider_name": "Premiere Max",
-              "display_priority": 81
+              "display_priority": 76
             },
             {
-              "logo_path": "/1gtidYfh89iLkGcbhPtr1lvx47W.jpg",
+              "logo_path": "/z32NGSc2wYxQzcOc24iXK8q35A1.png",
               "provider_id": 2671,
-              "provider_name": "ARTE Boutique",
-              "display_priority": 103
+              "provider_name": "ARTE VOD",
+              "display_priority": 97
             }
           ]
         },
@@ -1150,42 +1137,53 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=GB",
           "flatrate": [
             {
-              "logo_path": "/vDdk3LyjWkYlfCtkrhkjFKFK1Hg.jpg",
+              "logo_path": "/1Yvl9eP3pmktqChitnFhHJHcBtX.png",
               "provider_id": 29,
               "provider_name": "Sky Go",
-              "display_priority": 13
+              "display_priority": 16
             },
             {
-              "logo_path": "/6sJLsWk4TZHz1EffmTRSkaDehkh.jpg",
+              "logo_path": "/hlfGtOZsbFw8jwVwDaFPUbaKgrq.png",
               "provider_id": 591,
               "provider_name": "Now TV Cinema",
-              "display_priority": 57
+              "display_priority": 59
             }
           ],
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 5
-            },
-            {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
-              "provider_id": 35,
-              "provider_name": "Rakuten TV",
               "display_priority": 6
             },
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 8
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 7
             },
             {
-              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/nNkZ1JKe6vNhzti14KiKEUWHE6H.png",
               "provider_id": 130,
               "provider_name": "Sky Store",
-              "display_priority": 18
+              "display_priority": 20
+            }
+          ]
+        },
+        "GF": {
+          "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=GF",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
             }
           ]
         },
@@ -1193,10 +1191,10 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=GG",
           "buy": [
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 83
+              "display_priority": 82
             }
           ]
         },
@@ -1204,7 +1202,15 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=GH",
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 13
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
               "display_priority": 13
@@ -1215,16 +1221,16 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=GR",
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 5
+              "display_priority": 6
             },
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 34
+              "display_priority": 33
             }
           ]
         },
@@ -1232,26 +1238,18 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=GT",
           "flatrate": [
             {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 5
+              "display_priority": 6
             }
           ],
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 7
-            }
-          ],
-          "rent": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 7
+              "display_priority": 8
             }
           ]
         },
@@ -1259,7 +1257,7 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=GY",
           "flatrate": [
             {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
               "provider_id": 1899,
               "provider_name": "HBO Max",
               "display_priority": 3
@@ -1268,105 +1266,109 @@
         },
         "HK": {
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=HK",
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 8
-            }
-          ],
           "flatrate": [
             {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 37
+              "display_priority": 36
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 9
             }
           ],
           "rent": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 8
+              "display_priority": 9
             }
           ]
         },
         "HN": {
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=HN",
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 6
-            }
-          ],
-          "rent": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 6
-            }
-          ],
           "flatrate": [
             {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 31
+              "display_priority": 30
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 7
             }
           ]
         },
         "HR": {
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=HR",
-          "flatrate": [
-            {
-              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
-              "provider_id": 1773,
-              "provider_name": "SkyShowtime",
-              "display_priority": 31
-            }
-          ],
           "buy": [
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 43
+              "display_priority": 42
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/ube1pVpP3FklRkeyQjlDkkC3tL2.png",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 30
+            },
+            {
+              "logo_path": "/mMqTPUzGxa6vyi36qcwDH6LKslT.png",
+              "provider_id": 2801,
+              "provider_name": "Sky Showtime Amazon Channel",
+              "display_priority": 50
             }
           ]
         },
         "HU": {
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=HU",
-          "buy": [
+          "flatrate": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 5
+              "logo_path": "/ube1pVpP3FklRkeyQjlDkkC3tL2.png",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 23
             },
             {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "logo_path": "/mMqTPUzGxa6vyi36qcwDH6LKslT.png",
+              "provider_id": 2801,
+              "provider_name": "Sky Showtime Amazon Channel",
+              "display_priority": 47
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
               "provider_id": 35,
               "provider_name": "Rakuten TV",
               "display_priority": 26
             },
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 37
-            }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
-              "provider_id": 1773,
-              "provider_name": "SkyShowtime",
-              "display_priority": 23
             }
           ]
         },
@@ -1374,26 +1376,26 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=ID",
           "rent": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 7
+              "display_priority": 8
             }
           ],
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 7
+              "display_priority": 8
             }
           ],
           "flatrate": [
             {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 38
+              "display_priority": 37
             }
           ]
         },
@@ -1401,13 +1403,13 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=IE",
           "flatrate": [
             {
-              "logo_path": "/vDdk3LyjWkYlfCtkrhkjFKFK1Hg.jpg",
+              "logo_path": "/1Yvl9eP3pmktqChitnFhHJHcBtX.png",
               "provider_id": 29,
               "provider_name": "Sky Go",
               "display_priority": 9
             },
             {
-              "logo_path": "/6sJLsWk4TZHz1EffmTRSkaDehkh.jpg",
+              "logo_path": "/hlfGtOZsbFw8jwVwDaFPUbaKgrq.png",
               "provider_id": 591,
               "provider_name": "Now TV Cinema",
               "display_priority": 44
@@ -1415,25 +1417,25 @@
           ],
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
               "display_priority": 6
             },
             {
-              "logo_path": "/59TxOAYcoFaufd6CWm465oPchD.jpg",
+              "logo_path": "/nNkZ1JKe6vNhzti14KiKEUWHE6H.png",
               "provider_id": 130,
               "provider_name": "Sky Store",
               "display_priority": 10
             },
             {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
               "provider_id": 35,
               "provider_name": "Rakuten TV",
-              "display_priority": 12
+              "display_priority": 13
             },
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 43
@@ -1444,68 +1446,88 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=IL",
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 24
+              "display_priority": 25
             }
           ],
           "rent": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 24
+              "display_priority": 25
             }
           ]
         },
         "IN": {
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=IN",
-          "buy": [
+          "flatrate": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
+            },
+            {
+              "logo_path": "/ledoS6EgdjTNq8F1e6wubUQer18.png",
+              "provider_id": 2336,
+              "provider_name": "JioHotstar",
               "display_priority": 5
             }
           ],
           "rent": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 5
+              "display_priority": 7
             },
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/uQvhdtB8skccsGHmvKi3y5bqBsX.png",
+              "provider_id": 232,
+              "provider_name": "Zee5",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 39
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 7
             }
           ]
         },
         "IS": {
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=IS",
-          "rent": [
-            {
-              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
-              "provider_id": 76,
-              "provider_name": "Viaplay",
-              "display_priority": 24
-            }
-          ],
           "buy": [
             {
-              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
+              "logo_path": "/c1J9PGGowXwW5AxAaZaGipeFu7U.png",
               "provider_id": 76,
               "provider_name": "Viaplay",
               "display_priority": 24
             },
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 39
+              "display_priority": 38
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/c1J9PGGowXwW5AxAaZaGipeFu7U.png",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 24
             }
           ]
         },
@@ -1513,68 +1535,68 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=IT",
           "flatrate": [
             {
-              "logo_path": "/vDdk3LyjWkYlfCtkrhkjFKFK1Hg.jpg",
+              "logo_path": "/1Yvl9eP3pmktqChitnFhHJHcBtX.png",
               "provider_id": 29,
               "provider_name": "Sky Go",
               "display_priority": 6
             },
             {
-              "logo_path": "/g0E9h3JAeIwmdvxlT73jiEuxdNj.jpg",
+              "logo_path": "/oFAnvlaEW2KT6J7XM0DXjlWqKu9.png",
               "provider_id": 39,
               "provider_name": "Now TV",
-              "display_priority": 10
+              "display_priority": 11
             }
           ],
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
               "display_priority": 5
             },
             {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
               "provider_id": 35,
               "provider_name": "Rakuten TV",
-              "display_priority": 11
+              "display_priority": 12
             },
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 34
+              "display_priority": 35
             },
             {
-              "logo_path": "/cNqhhi5UYjAvJv2M69t5cwSn0So.jpg",
+              "logo_path": "/xfDy4aGaOqbUqKPVQobjoJ9ZsSs.png",
               "provider_id": 40,
               "provider_name": "CHILI",
-              "display_priority": 37
+              "display_priority": 38
             }
           ],
           "rent": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
               "display_priority": 5
             },
             {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
               "provider_id": 35,
               "provider_name": "Rakuten TV",
-              "display_priority": 11
+              "display_priority": 12
             },
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 34
+              "display_priority": 35
             },
             {
-              "logo_path": "/cNqhhi5UYjAvJv2M69t5cwSn0So.jpg",
+              "logo_path": "/xfDy4aGaOqbUqKPVQobjoJ9ZsSs.png",
               "provider_id": 40,
               "provider_name": "CHILI",
-              "display_priority": 37
+              "display_priority": 38
             }
           ]
         },
@@ -1582,7 +1604,7 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=JM",
           "flatrate": [
             {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
               "provider_id": 1899,
               "provider_name": "HBO Max",
               "display_priority": 24
@@ -1593,56 +1615,56 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=JP",
           "buy": [
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 7
+              "display_priority": 8
             },
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 8
-            }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
-              "provider_id": 9,
-              "provider_name": "Amazon Prime Video",
-              "display_priority": 1
-            },
-            {
-              "logo_path": "/8aBqoNeGGr0oSA85iopgNZUOTOc.jpg",
-              "provider_id": 2100,
-              "provider_name": "Amazon Prime Video with Ads",
-              "display_priority": 71
+              "display_priority": 9
             }
           ],
           "rent": [
             {
-              "logo_path": "/a5T7vNaGvoeckYO6rQkHolvyYf4.jpg",
+              "logo_path": "/3DGpCh83CR9lDzyKbNWlmUBexBF.png",
               "provider_id": 84,
               "provider_name": "U-NEXT",
-              "display_priority": 6
-            },
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
               "display_priority": 7
             },
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
               "display_priority": 8
             },
             {
-              "logo_path": "/9EWAEok40O0HVhV0MYJmlE4LhGy.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/m0tkTiV5TN7NWfazDEYc8NoVXSd.png",
               "provider_id": 2683,
               "provider_name": "FOD",
-              "display_priority": 80
+              "display_priority": 79
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/tpwTT1FpWqLLhxUfAuDavIXDDfI.png",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 70
             }
           ]
         },
@@ -1650,7 +1672,7 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=LC",
           "flatrate": [
             {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
               "provider_id": 1899,
               "provider_name": "HBO Max",
               "display_priority": 12
@@ -1659,57 +1681,51 @@
         },
         "LT": {
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=LT",
-          "flatrate": [
-            {
-              "logo_path": "/1y6ds7KDN5Q33Jb0ZxnroEJ58Gd.jpg",
-              "provider_id": 373,
-              "provider_name": "Go3",
-              "display_priority": 9
-            }
-          ],
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 5
+              "display_priority": 6
             },
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 35
+              "display_priority": 34
             }
           ]
         },
         "LU": {
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=LU",
-          "buy": [
+          "rent": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 5
+              "display_priority": 6
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
             },
             {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
               "provider_id": 35,
               "provider_name": "Rakuten TV",
               "display_priority": 7
             }
           ],
-          "rent": [
+          "flatrate": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 5
-            },
-            {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
-              "provider_id": 35,
-              "provider_name": "Rakuten TV",
-              "display_priority": 7
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
             }
           ]
         },
@@ -1717,16 +1733,27 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=LV",
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 5
+              "display_priority": 6
             },
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 34
+              "display_priority": 33
+            }
+          ]
+        },
+        "MC": {
+          "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=MC",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 1
             }
           ]
         },
@@ -1734,7 +1761,7 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=MK",
           "flatrate": [
             {
-              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "logo_path": "/ube1pVpP3FklRkeyQjlDkkC3tL2.png",
               "provider_id": 1773,
               "provider_name": "SkyShowtime",
               "display_priority": 24
@@ -1745,7 +1772,15 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=MU",
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 12
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
               "display_priority": 12
@@ -1754,87 +1789,89 @@
         },
         "MX": {
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=MX",
-          "buy": [
+          "flatrate": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 5
-            },
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
               "display_priority": 8
             },
             {
-              "logo_path": "/21M5CpiOYGOhHj2sVPXqwt6yeTO.jpg",
-              "provider_id": 167,
-              "provider_name": "Claro video",
-              "display_priority": 21
+              "logo_path": "/64fLWeSyZ1KQZhIdvTdy4QHeWty.png",
+              "provider_id": 1825,
+              "provider_name": "HBO Max Amazon Channel",
+              "display_priority": 16
             }
           ],
           "rent": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 5
-            },
-            {
-              "logo_path": "/21M5CpiOYGOhHj2sVPXqwt6yeTO.jpg",
+              "logo_path": "/zTJg0WVErBkcJv4S9FkQRUyXjnq.png",
               "provider_id": 167,
               "provider_name": "Claro video",
               "display_priority": 21
             }
           ],
-          "flatrate": [
+          "buy": [
             {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
-              "provider_id": 1899,
-              "provider_name": "HBO Max",
-              "display_priority": 7
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
             },
             {
-              "logo_path": "/embS4GPK7c8pjbuY2O2irV5rYch.jpg",
-              "provider_id": 1825,
-              "provider_name": "HBO Max Amazon Channel",
-              "display_priority": 16
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/zTJg0WVErBkcJv4S9FkQRUyXjnq.png",
+              "provider_id": 167,
+              "provider_name": "Claro video",
+              "display_priority": 21
             }
           ]
         },
         "MY": {
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=MY",
-          "flatrate": [
+          "rent": [
             {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
-              "provider_id": 1899,
-              "provider_name": "HBO Max",
-              "display_priority": 31
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 8
             }
           ],
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 7
+              "display_priority": 8
             }
           ],
-          "rent": [
+          "flatrate": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 7
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 30
             }
           ]
         },
         "MZ": {
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=MZ",
+          "rent": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 13
+            }
+          ],
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
               "display_priority": 13
@@ -1843,28 +1880,28 @@
         },
         "NI": {
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=NI",
-          "flatrate": [
-            {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
-              "provider_id": 1899,
-              "provider_name": "HBO Max",
-              "display_priority": 14
-            }
-          ],
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 5
+              "display_priority": 6
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 13
             }
           ],
           "rent": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 5
+              "display_priority": 6
             }
           ]
         },
@@ -1872,137 +1909,161 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=NL",
           "rent": [
             {
-              "logo_path": "/lnOkJKyFl87mzqNebAbE8ADdHoB.jpg",
+              "logo_path": "/oB7QrPnusUtIpKr8k0YQ12INLeP.png",
               "provider_id": 71,
               "provider_name": "Path\u00E9 Thuis",
-              "display_priority": 9
+              "display_priority": 11
             },
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 35
-            },
-            {
-              "logo_path": "/651I5dLHpxDUePZcNkYTDcARTeE.jpg",
-              "provider_id": 697,
-              "provider_name": "meJane",
-              "display_priority": 40
-            }
-          ],
-          "buy": [
-            {
-              "logo_path": "/lnOkJKyFl87mzqNebAbE8ADdHoB.jpg",
-              "provider_id": 71,
-              "provider_name": "Path\u00E9 Thuis",
-              "display_priority": 9
-            },
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 10
+              "display_priority": 12
             },
             {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
-              "provider_id": 35,
-              "provider_name": "Rakuten TV",
-              "display_priority": 15
-            },
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 35
+              "display_priority": 36
             },
             {
-              "logo_path": "/651I5dLHpxDUePZcNkYTDcARTeE.jpg",
+              "logo_path": "/sLa7ctMpAoKdxIS72mHl7xuhONL.png",
               "provider_id": 697,
               "provider_name": "meJane",
-              "display_priority": 40
+              "display_priority": 41
             }
           ],
           "flatrate": [
             {
-              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "logo_path": "/ube1pVpP3FklRkeyQjlDkkC3tL2.png",
               "provider_id": 1773,
               "provider_name": "SkyShowtime",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/mMqTPUzGxa6vyi36qcwDH6LKslT.png",
+              "provider_id": 2801,
+              "provider_name": "Sky Showtime Amazon Channel",
+              "display_priority": 82
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/oB7QrPnusUtIpKr8k0YQ12INLeP.png",
+              "provider_id": 71,
+              "provider_name": "Path\u00E9 Thuis",
               "display_priority": 11
             },
             {
-              "logo_path": "/nzjqsR28PVVp5GJAlHtbBArNKqN.jpg",
-              "provider_id": 563,
-              "provider_name": "KPN",
-              "display_priority": 30
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 12
+            },
+            {
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
+              "provider_id": 35,
+              "provider_name": "Rakuten TV",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 36
+            },
+            {
+              "logo_path": "/sLa7ctMpAoKdxIS72mHl7xuhONL.png",
+              "provider_id": 697,
+              "provider_name": "meJane",
+              "display_priority": 41
             }
           ]
         },
         "NO": {
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=NO",
-          "buy": [
+          "rent": [
             {
-              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
+              "logo_path": "/c1J9PGGowXwW5AxAaZaGipeFu7U.png",
               "provider_id": 76,
               "provider_name": "Viaplay",
-              "display_priority": 6
-            },
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
               "display_priority": 7
             },
             {
-              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
-              "provider_id": 426,
-              "provider_name": "SF Anytime",
-              "display_priority": 16
-            },
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 49
-            }
-          ],
-          "rent": [
-            {
-              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
-              "provider_id": 76,
-              "provider_name": "Viaplay",
-              "display_priority": 6
-            },
-            {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
               "provider_id": 35,
               "provider_name": "Rakuten TV",
               "display_priority": 13
             },
             {
-              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "logo_path": "/fVuqy8kmzsULoJjc3ROOcurRH7S.png",
               "provider_id": 426,
               "provider_name": "SF Anytime",
               "display_priority": 16
             },
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/m502wSLGwHL9WUK38NeAbwrBk6P.png",
+              "provider_id": 431,
+              "provider_name": "TV 2 Play",
+              "display_priority": 17
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 49
+              "display_priority": 48
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/c1J9PGGowXwW5AxAaZaGipeFu7U.png",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/fVuqy8kmzsULoJjc3ROOcurRH7S.png",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/m502wSLGwHL9WUK38NeAbwrBk6P.png",
+              "provider_id": 431,
+              "provider_name": "TV 2 Play",
+              "display_priority": 17
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 48
             }
           ],
           "flatrate": [
             {
-              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "logo_path": "/ube1pVpP3FklRkeyQjlDkkC3tL2.png",
               "provider_id": 1773,
               "provider_name": "SkyShowtime",
-              "display_priority": 8
+              "display_priority": 9
             },
             {
-              "logo_path": "/3ZigBD8WTEPcEHAvMWiJGUsv5u4.jpg",
+              "logo_path": "/mlNPljPGzSDqNK2Fjr4SS0gTITj.png",
               "provider_id": 578,
               "provider_name": "Strim",
               "display_priority": 28
+            },
+            {
+              "logo_path": "/mMqTPUzGxa6vyi36qcwDH6LKslT.png",
+              "provider_id": 2801,
+              "provider_name": "Sky Showtime Amazon Channel",
+              "display_priority": 62
             }
           ]
         },
@@ -2010,13 +2071,33 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=NZ",
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 7
+              "display_priority": 6
             },
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 57
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/68KYULhVkHI6TVrmPSE0LlPXB1U.png",
+              "provider_id": 273,
+              "provider_name": "Neon TV",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 57
@@ -2024,36 +2105,16 @@
           ],
           "flatrate": [
             {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
               "provider_id": 8,
               "provider_name": "Netflix",
               "display_priority": 0
             },
             {
-              "logo_path": "/2eyS8KsZF9Or7z4248Ktq36Pr8v.jpg",
+              "logo_path": "/7j9bf0UmdxxmZtPsLggYLnGqrqS.png",
               "provider_id": 296,
               "provider_name": "Hayu Amazon Channel",
               "display_priority": 47
-            }
-          ],
-          "rent": [
-            {
-              "logo_path": "/iscLKFDwQlr0BAgVDBcuRapLiwC.jpg",
-              "provider_id": 273,
-              "provider_name": "Neon TV",
-              "display_priority": 6
-            },
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 7
-            },
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 57
             }
           ]
         },
@@ -2061,7 +2122,7 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=PA",
           "flatrate": [
             {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
               "provider_id": 1899,
               "provider_name": "HBO Max",
               "display_priority": 31
@@ -2070,34 +2131,45 @@
         },
         "PE": {
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=PE",
-          "rent": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 5
-            },
-            {
-              "logo_path": "/21M5CpiOYGOhHj2sVPXqwt6yeTO.jpg",
-              "provider_id": 167,
-              "provider_name": "Claro video",
-              "display_priority": 10
-            }
-          ],
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 5
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 42
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/zTJg0WVErBkcJv4S9FkQRUyXjnq.png",
+              "provider_id": 167,
+              "provider_name": "Claro video",
+              "display_priority": 11
             }
           ],
           "flatrate": [
             {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 8
+              "display_priority": 9
+            }
+          ]
+        },
+        "PF": {
+          "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=PF",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
             }
           ]
         },
@@ -2105,37 +2177,48 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=PG",
           "flatrate": [
             {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 14
+              "display_priority": 13
             }
           ]
         },
         "PH": {
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=PH",
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 7
-            }
-          ],
           "flatrate": [
             {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 32
+              "display_priority": 31
             }
           ],
           "rent": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 7
+              "display_priority": 8
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 8
+            }
+          ]
+        },
+        "PK": {
+          "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=PK",
+          "flatrate": [
+            {
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+              "provider_id": 8,
+              "provider_name": "Netflix",
+              "display_priority": 0
             }
           ]
         },
@@ -2143,146 +2226,144 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=PL",
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 5
+              "display_priority": 6
             },
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
               "display_priority": 27
             },
             {
-              "logo_path": "/cNqhhi5UYjAvJv2M69t5cwSn0So.jpg",
+              "logo_path": "/xfDy4aGaOqbUqKPVQobjoJ9ZsSs.png",
               "provider_id": 40,
               "provider_name": "CHILI",
               "display_priority": 32
             },
             {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
               "provider_id": 35,
               "provider_name": "Rakuten TV",
               "display_priority": 35
             },
             {
-              "logo_path": "/4OlZobihZLTpizChDitPeH3PmND.jpg",
+              "logo_path": "/1VxmGpd4KF1m74zYo4CXQEqk3Q2.png",
               "provider_id": 2669,
               "provider_name": "Pilot WP",
               "display_priority": 63
             }
           ],
-          "rent": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 5
-            },
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 27
-            },
-            {
-              "logo_path": "/mBliLuM0AbkRPGDoVa7IGxwC59b.jpg",
-              "provider_id": 2102,
-              "provider_name": "Premiery Canal\u002B",
-              "display_priority": 34
-            }
-          ],
           "flatrate": [
             {
-              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "logo_path": "/ube1pVpP3FklRkeyQjlDkkC3tL2.png",
               "provider_id": 1773,
               "provider_name": "SkyShowtime",
               "display_priority": 7
             },
             {
-              "logo_path": "/jhMNVBV2UocEGepRkr9oFPD7Gpb.jpg",
+              "logo_path": "/mMqTPUzGxa6vyi36qcwDH6LKslT.png",
+              "provider_id": 2801,
+              "provider_name": "Sky Showtime Amazon Channel",
+              "display_priority": 73
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/8mtdz2Y3NW5NfiSZiBFhngFSy3S.png",
               "provider_id": 505,
               "provider_name": "Player",
               "display_priority": 11
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 27
+            },
+            {
+              "logo_path": "/kxOtmlmiegOd6Mp766dYdp2Ois3.png",
+              "provider_id": 2102,
+              "provider_name": "Premiery Canal\u002B",
+              "display_priority": 34
             }
           ]
         },
         "PT": {
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=PT",
-          "rent": [
+          "flatrate": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 6
+              "logo_path": "/ube1pVpP3FklRkeyQjlDkkC3tL2.png",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 27
             },
             {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
-              "provider_id": 35,
-              "provider_name": "Rakuten TV",
-              "display_priority": 10
-            },
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 44
+              "logo_path": "/mMqTPUzGxa6vyi36qcwDH6LKslT.png",
+              "provider_id": 2801,
+              "provider_name": "Sky Showtime Amazon Channel",
+              "display_priority": 56
             }
           ],
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 6
+              "display_priority": 7
             },
             {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
               "provider_id": 35,
               "provider_name": "Rakuten TV",
               "display_priority": 10
             },
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 44
+              "display_priority": 43
             }
           ],
-          "flatrate": [
+          "rent": [
             {
-              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
-              "provider_id": 1773,
-              "provider_name": "SkyShowtime",
-              "display_priority": 28
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 43
             }
           ]
         },
         "PY": {
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=PY",
-          "rent": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 6
-            }
-          ],
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 6
+              "display_priority": 7
             }
           ],
           "flatrate": [
             {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 30
+              "display_priority": 29
             }
           ]
         },
@@ -2290,24 +2371,30 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=RO",
           "buy": [
             {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
               "provider_id": 35,
               "provider_name": "Rakuten TV",
-              "display_priority": 22
+              "display_priority": 23
             },
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 34
+              "display_priority": 35
             }
           ],
           "flatrate": [
             {
-              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "logo_path": "/ube1pVpP3FklRkeyQjlDkkC3tL2.png",
               "provider_id": 1773,
               "provider_name": "SkyShowtime",
-              "display_priority": 19
+              "display_priority": 20
+            },
+            {
+              "logo_path": "/mMqTPUzGxa6vyi36qcwDH6LKslT.png",
+              "provider_id": 2801,
+              "provider_name": "Sky Showtime Amazon Channel",
+              "display_priority": 43
             }
           ]
         },
@@ -2315,7 +2402,7 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=RS",
           "flatrate": [
             {
-              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "logo_path": "/ube1pVpP3FklRkeyQjlDkkC3tL2.png",
               "provider_id": 1773,
               "provider_name": "SkyShowtime",
               "display_priority": 26
@@ -2324,64 +2411,76 @@
         },
         "SE": {
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=SE",
-          "rent": [
+          "buy": [
             {
-              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
-              "provider_id": 76,
-              "provider_name": "Viaplay",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
               "display_priority": 7
             },
             {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "logo_path": "/c1J9PGGowXwW5AxAaZaGipeFu7U.png",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/fVuqy8kmzsULoJjc3ROOcurRH7S.png",
+              "provider_id": 426,
+              "provider_name": "SF Anytime",
+              "display_priority": 16
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 38
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/c1J9PGGowXwW5AxAaZaGipeFu7U.png",
+              "provider_id": 76,
+              "provider_name": "Viaplay",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
               "provider_id": 35,
               "provider_name": "Rakuten TV",
               "display_priority": 14
             },
             {
-              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
+              "logo_path": "/fVuqy8kmzsULoJjc3ROOcurRH7S.png",
               "provider_id": 426,
               "provider_name": "SF Anytime",
               "display_priority": 16
             },
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 39
+              "display_priority": 38
             }
           ],
           "flatrate": [
             {
-              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "logo_path": "/ube1pVpP3FklRkeyQjlDkkC3tL2.png",
               "provider_id": 1773,
               "provider_name": "SkyShowtime",
-              "display_priority": 8
-            }
-          ],
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 6
+              "display_priority": 9
             },
             {
-              "logo_path": "/bnoTnLzz2MAhK3Yc6P9KXe5drIz.jpg",
-              "provider_id": 76,
-              "provider_name": "Viaplay",
-              "display_priority": 7
+              "logo_path": "/tP54PxI3PdGTGpuY3CNr0rOVDjd.png",
+              "provider_id": 497,
+              "provider_name": "Tele2 Play",
+              "display_priority": 20
             },
             {
-              "logo_path": "/sNmIwrniZZORvNJOmEuWGhwBJNf.jpg",
-              "provider_id": 426,
-              "provider_name": "SF Anytime",
-              "display_priority": 16
-            },
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 39
+              "logo_path": "/mMqTPUzGxa6vyi36qcwDH6LKslT.png",
+              "provider_id": 2801,
+              "provider_name": "Sky Showtime Amazon Channel",
+              "display_priority": 73
             }
           ]
         },
@@ -2389,45 +2488,45 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=SG",
           "rent": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 8
+              "display_priority": 9
             }
           ],
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 8
+              "display_priority": 9
             }
           ],
           "flatrate": [
             {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 31
+              "display_priority": 30
             }
           ]
         },
         "SI": {
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=SI",
-          "buy": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 24
-            }
-          ],
           "flatrate": [
             {
-              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "logo_path": "/ube1pVpP3FklRkeyQjlDkkC3tL2.png",
               "provider_id": 1773,
               "provider_name": "SkyShowtime",
-              "display_priority": 26
+              "display_priority": 27
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 25
             }
           ]
         },
@@ -2435,24 +2534,36 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=SK",
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 6
+              "display_priority": 7
             },
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 47
+              "display_priority": 46
             }
           ],
           "flatrate": [
             {
-              "logo_path": "/h0ZYcYHicKQ4Ixm5nOjqvwni5NG.jpg",
+              "logo_path": "/ube1pVpP3FklRkeyQjlDkkC3tL2.png",
               "provider_id": 1773,
               "provider_name": "SkyShowtime",
-              "display_priority": 33
+              "display_priority": 32
+            },
+            {
+              "logo_path": "/hUAWB2ZSN9uJ7wVBppH3f3lCfFd.png",
+              "provider_id": 2781,
+              "provider_name": "Sweet.tv",
+              "display_priority": 51
+            },
+            {
+              "logo_path": "/mMqTPUzGxa6vyi36qcwDH6LKslT.png",
+              "provider_id": 2801,
+              "provider_name": "Sky Showtime Amazon Channel",
+              "display_priority": 56
             }
           ]
         },
@@ -2460,7 +2571,7 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=SV",
           "flatrate": [
             {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
               "provider_id": 1899,
               "provider_name": "HBO Max",
               "display_priority": 31
@@ -2471,7 +2582,7 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=TC",
           "flatrate": [
             {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
               "provider_id": 1899,
               "provider_name": "HBO Max",
               "display_priority": 11
@@ -2482,53 +2593,65 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=TH",
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 6
-            }
-          ],
-          "flatrate": [
-            {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
-              "provider_id": 1899,
-              "provider_name": "HBO Max",
-              "display_priority": 30
+              "display_priority": 7
             }
           ],
           "rent": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 6
+              "display_priority": 7
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 29
             }
           ]
         },
         "TR": {
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=TR",
-          "buy": [
+          "rent": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
               "display_priority": 7
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 36
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 36
             }
           ],
           "flatrate": [
             {
-              "logo_path": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
               "provider_id": 119,
               "provider_name": "Amazon Prime Video",
-              "display_priority": 1
-            }
-          ],
-          "rent": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 7
+              "display_priority": 2
             }
           ]
         },
@@ -2536,7 +2659,7 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=TT",
           "flatrate": [
             {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
               "provider_id": 1899,
               "provider_name": "HBO Max",
               "display_priority": 13
@@ -2545,25 +2668,25 @@
         },
         "TW": {
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=TW",
-          "flatrate": [
+          "buy": [
             {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
-              "provider_id": 1899,
-              "provider_name": "HBO Max",
-              "display_priority": 37
-            }
-          ],
-          "rent": [
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
               "display_priority": 8
             }
           ],
-          "buy": [
+          "flatrate": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
+              "provider_id": 1899,
+              "provider_name": "HBO Max",
+              "display_priority": 36
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
               "display_priority": 8
@@ -2574,7 +2697,7 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=UA",
           "buy": [
             {
-              "logo_path": "/bZvc9dXrXNly7cA0V4D9pR8yJwm.jpg",
+              "logo_path": "/872dfVu1biZISJ8rO143CZZutPR.png",
               "provider_id": 35,
               "provider_name": "Rakuten TV",
               "display_priority": 5
@@ -2583,9 +2706,17 @@
         },
         "UG": {
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=UG",
+          "rent": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 13
+            }
+          ],
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
               "display_priority": 13
@@ -2596,80 +2727,86 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=US",
           "flatrate": [
             {
-              "logo_path": "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg",
+              "logo_path": "/rK1KljqmbvO9HQa1PBFLILWah72.png",
               "provider_id": 8,
               "provider_name": "Netflix",
-              "display_priority": 2
+              "display_priority": 4
             },
             {
-              "logo_path": "/dpR8r13zWDeUR0QkzWidrdMxa56.jpg",
+              "logo_path": "/eGUwOOIxcazwEBxqJpSN5sWEu6V.png",
               "provider_id": 1796,
               "provider_name": "Netflix Standard with Ads",
-              "display_priority": 151
-            }
-          ],
-          "rent": [
-            {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
-              "provider_id": 10,
-              "provider_name": "Amazon Video",
-              "display_priority": 8
-            },
-            {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
-              "provider_id": 2,
-              "provider_name": "Apple TV Store",
-              "display_priority": 9
-            },
-            {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
-              "provider_id": 3,
-              "provider_name": "Google Play Movies",
-              "display_priority": 20
-            },
-            {
-              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
-              "provider_id": 192,
-              "provider_name": "YouTube",
-              "display_priority": 21
-            },
-            {
-              "logo_path": "/oIXE9vJdkilIxCLAtlbtiqewgvn.jpg",
-              "provider_id": 7,
-              "provider_name": "Fandango At Home",
-              "display_priority": 37
+              "display_priority": 152
             }
           ],
           "buy": [
             {
-              "logo_path": "/qR6FKvnPBx2O37FDg8PNM7efwF3.jpg",
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
               "provider_id": 10,
               "provider_name": "Amazon Video",
-              "display_priority": 8
+              "display_priority": 10
             },
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
-              "display_priority": 9
+              "display_priority": 11
             },
             {
-              "logo_path": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
+              "logo_path": "/aZRENwYILujqs0RVOZutTh0BVGV.png",
               "provider_id": 3,
               "provider_name": "Google Play Movies",
-              "display_priority": 20
+              "display_priority": 24
             },
             {
-              "logo_path": "/pTnn5JwWr4p3pG8H6VrpiQo7Vs0.jpg",
+              "logo_path": "/5Maob4o5w8oZnNeYpCDyVFD3M7X.png",
               "provider_id": 192,
               "provider_name": "YouTube",
-              "display_priority": 21
+              "display_priority": 25
             },
             {
-              "logo_path": "/oIXE9vJdkilIxCLAtlbtiqewgvn.jpg",
+              "logo_path": "/wpOt6x0dRxTrIzuBosto4LGd7E9.png",
               "provider_id": 7,
               "provider_name": "Fandango At Home",
-              "display_priority": 37
+              "display_priority": 41
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/aZRENwYILujqs0RVOZutTh0BVGV.png",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 24
+            },
+            {
+              "logo_path": "/5Maob4o5w8oZnNeYpCDyVFD3M7X.png",
+              "provider_id": 192,
+              "provider_name": "YouTube",
+              "display_priority": 25
+            },
+            {
+              "logo_path": "/wpOt6x0dRxTrIzuBosto4LGd7E9.png",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 41
+            },
+            {
+              "logo_path": "/hkw2s2Su8EyifB9EbbQP64Fj1xA.png",
+              "provider_id": 331,
+              "provider_name": "FlixFling",
+              "display_priority": 98
             }
           ]
         },
@@ -2677,21 +2814,29 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=UY",
           "flatrate": [
             {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 5
+              "display_priority": 6
             }
           ]
         },
         "VE": {
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=VE",
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            }
+          ],
           "flatrate": [
             {
-              "logo_path": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
+              "logo_path": "/skypuy7SXuugIQeYg0IglmzoKaS.png",
               "provider_id": 1899,
               "provider_name": "HBO Max",
-              "display_priority": 28
+              "display_priority": 27
             }
           ]
         },
@@ -2699,7 +2844,15 @@
           "link": "https://www.themoviedb.org/movie/1234821-jurassic-world-rebirth/watch?locale=ZA",
           "buy": [
             {
-              "logo_path": "/SPnB1qiCkYfirS2it3hZORwGVn.jpg",
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 3
+            }
+          ],
+          "rent": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
               "provider_id": 2,
               "provider_name": "Apple TV Store",
               "display_priority": 3

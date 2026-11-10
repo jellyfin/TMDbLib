@@ -1,0 +1,1166 @@
+{
+  "Guid": "a96e16c8-0340-e649-a2f0-5ad7d4f4c84c",
+  "Title": "Proxy Mapping for GET /3/tv/873/watch/providers",
+  "Description": "Proxy Mapping for GET /3/tv/873/watch/providers",
+  "Priority": -2000000,
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/3/tv/873/watch/providers",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "HttpVersion": "1.1"
+  },
+  "Response": {
+    "StatusCode": 200,
+    "BodyAsJson": {
+      "id": 873,
+      "results": {
+        "AD": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=AD",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/ube1pVpP3FklRkeyQjlDkkC3tL2.png",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 24
+            }
+          ]
+        },
+        "AL": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=AL",
+          "flatrate": [
+            {
+              "logo_path": "/ube1pVpP3FklRkeyQjlDkkC3tL2.png",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 25
+            }
+          ]
+        },
+        "AT": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=AT",
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 5
+            }
+          ]
+        },
+        "AU": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=AU",
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 15
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 16
+            }
+          ]
+        },
+        "BA": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=BA",
+          "flatrate": [
+            {
+              "logo_path": "/ube1pVpP3FklRkeyQjlDkkC3tL2.png",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 26
+            }
+          ]
+        },
+        "BE": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=BE",
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "BF": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=BF",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "BG": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=BG",
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 30
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/ube1pVpP3FklRkeyQjlDkkC3tL2.png",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 19
+            }
+          ]
+        },
+        "CA": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=CA",
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 57
+            }
+          ]
+        },
+        "CD": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=CD",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "CI": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=CI",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "CM": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=CM",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "CV": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=CV",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "CZ": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=CZ",
+          "flatrate": [
+            {
+              "logo_path": "/ube1pVpP3FklRkeyQjlDkkC3tL2.png",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 22
+            },
+            {
+              "logo_path": "/mMqTPUzGxa6vyi36qcwDH6LKslT.png",
+              "provider_id": 2801,
+              "provider_name": "Sky Showtime Amazon Channel",
+              "display_priority": 49
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 40
+            }
+          ]
+        },
+        "DE": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=DE",
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 8
+            }
+          ]
+        },
+        "DK": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=DK",
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 46
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/ube1pVpP3FklRkeyQjlDkkC3tL2.png",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 33
+            },
+            {
+              "logo_path": "/hPIVVR7yvR0PrTe7eHR2I5nAFis.png",
+              "provider_id": 1961,
+              "provider_name": "Allente",
+              "display_priority": 37
+            },
+            {
+              "logo_path": "/mMqTPUzGxa6vyi36qcwDH6LKslT.png",
+              "provider_id": 2801,
+              "provider_name": "Sky Showtime Amazon Channel",
+              "display_priority": 69
+            }
+          ]
+        },
+        "EE": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=EE",
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
+            }
+          ]
+        },
+        "ES": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=ES",
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 34
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/7OEtlOKTmjTXh40eHUES11Oc1i7.png",
+              "provider_id": 149,
+              "provider_name": "Movistar Plus\u002B Ficci\u00F3n Total ",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/ube1pVpP3FklRkeyQjlDkkC3tL2.png",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/tpwTT1FpWqLLhxUfAuDavIXDDfI.png",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 79
+            },
+            {
+              "logo_path": "/mMqTPUzGxa6vyi36qcwDH6LKslT.png",
+              "provider_id": 2801,
+              "provider_name": "Sky Showtime Amazon Channel",
+              "display_priority": 102
+            }
+          ]
+        },
+        "FI": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=FI",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/MY2vJySdvDiDQrIYUQgxJK1Sen.png",
+              "provider_id": 338,
+              "provider_name": "Ruutu",
+              "display_priority": 8
+            },
+            {
+              "logo_path": "/ube1pVpP3FklRkeyQjlDkkC3tL2.png",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 32
+            },
+            {
+              "logo_path": "/mMqTPUzGxa6vyi36qcwDH6LKslT.png",
+              "provider_id": 2801,
+              "provider_name": "Sky Showtime Amazon Channel",
+              "display_priority": 69
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 52
+            }
+          ]
+        },
+        "FR": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=FR",
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 34
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/9yt7CjnySiiOtRFknNWCz3gSyXz.png",
+              "provider_id": 193,
+              "provider_name": "SFR Play",
+              "display_priority": 52
+            },
+            {
+              "logo_path": "/tpwTT1FpWqLLhxUfAuDavIXDDfI.png",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 82
+            }
+          ]
+        },
+        "GB": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=GB",
+          "buy": [
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 6
+            },
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 10
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/1Yvl9eP3pmktqChitnFhHJHcBtX.png",
+              "provider_id": 29,
+              "provider_name": "Sky Go",
+              "display_priority": 16
+            }
+          ]
+        },
+        "GF": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=GF",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "GG": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=GG",
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 82
+            }
+          ]
+        },
+        "GH": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=GH",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "GQ": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=GQ",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "GR": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=GR",
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
+            }
+          ]
+        },
+        "HR": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=HR",
+          "flatrate": [
+            {
+              "logo_path": "/ube1pVpP3FklRkeyQjlDkkC3tL2.png",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 30
+            },
+            {
+              "logo_path": "/mMqTPUzGxa6vyi36qcwDH6LKslT.png",
+              "provider_id": 2801,
+              "provider_name": "Sky Showtime Amazon Channel",
+              "display_priority": 50
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 42
+            }
+          ]
+        },
+        "HU": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=HU",
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 37
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/ube1pVpP3FklRkeyQjlDkkC3tL2.png",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 23
+            },
+            {
+              "logo_path": "/mMqTPUzGxa6vyi36qcwDH6LKslT.png",
+              "provider_id": 2801,
+              "provider_name": "Sky Showtime Amazon Channel",
+              "display_priority": 47
+            }
+          ]
+        },
+        "IE": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=IE",
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 43
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/1Yvl9eP3pmktqChitnFhHJHcBtX.png",
+              "provider_id": 29,
+              "provider_name": "Sky Go",
+              "display_priority": 9
+            }
+          ]
+        },
+        "IS": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=IS",
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 38
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "IT": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=IT",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            },
+            {
+              "logo_path": "/tpwTT1FpWqLLhxUfAuDavIXDDfI.png",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 87
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 35
+            }
+          ]
+        },
+        "JP": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=JP",
+          "flatrate": [
+            {
+              "logo_path": "/44uAnmSqvA4yBOdbPWN8YgQHjWm.png",
+              "provider_id": 15,
+              "provider_name": "Hulu",
+              "display_priority": 6
+            }
+          ]
+        },
+        "KE": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=KE",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "LT": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=LT",
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 34
+            }
+          ]
+        },
+        "LU": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=LU",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "LV": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=LV",
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 33
+            }
+          ]
+        },
+        "MC": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=MC",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "MG": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=MG",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "MK": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=MK",
+          "flatrate": [
+            {
+              "logo_path": "/ube1pVpP3FklRkeyQjlDkkC3tL2.png",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 24
+            }
+          ]
+        },
+        "ML": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=ML",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "MW": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=MW",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 0
+            }
+          ]
+        },
+        "MZ": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=MZ",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "NE": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=NE",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "NG": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=NG",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "NL": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=NL",
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 36
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 3
+            },
+            {
+              "logo_path": "/ube1pVpP3FklRkeyQjlDkkC3tL2.png",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 13
+            },
+            {
+              "logo_path": "/mMqTPUzGxa6vyi36qcwDH6LKslT.png",
+              "provider_id": 2801,
+              "provider_name": "Sky Showtime Amazon Channel",
+              "display_priority": 82
+            }
+          ]
+        },
+        "NO": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=NO",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/ube1pVpP3FklRkeyQjlDkkC3tL2.png",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/mlNPljPGzSDqNK2Fjr4SS0gTITj.png",
+              "provider_id": 578,
+              "provider_name": "Strim",
+              "display_priority": 28
+            },
+            {
+              "logo_path": "/mMqTPUzGxa6vyi36qcwDH6LKslT.png",
+              "provider_id": 2801,
+              "provider_name": "Sky Showtime Amazon Channel",
+              "display_priority": 62
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 48
+            }
+          ]
+        },
+        "NZ": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=NZ",
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 57
+            }
+          ]
+        },
+        "PF": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=PF",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "PL": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=PL",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/ube1pVpP3FklRkeyQjlDkkC3tL2.png",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 7
+            },
+            {
+              "logo_path": "/mMqTPUzGxa6vyi36qcwDH6LKslT.png",
+              "provider_id": 2801,
+              "provider_name": "Sky Showtime Amazon Channel",
+              "display_priority": 73
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 27
+            }
+          ]
+        },
+        "PT": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=PT",
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 43
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/ube1pVpP3FklRkeyQjlDkkC3tL2.png",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 27
+            },
+            {
+              "logo_path": "/mMqTPUzGxa6vyi36qcwDH6LKslT.png",
+              "provider_id": 2801,
+              "provider_name": "Sky Showtime Amazon Channel",
+              "display_priority": 56
+            }
+          ]
+        },
+        "RO": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=RO",
+          "flatrate": [
+            {
+              "logo_path": "/ube1pVpP3FklRkeyQjlDkkC3tL2.png",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 20
+            },
+            {
+              "logo_path": "/mMqTPUzGxa6vyi36qcwDH6LKslT.png",
+              "provider_id": 2801,
+              "provider_name": "Sky Showtime Amazon Channel",
+              "display_priority": 43
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 35
+            }
+          ]
+        },
+        "RS": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=RS",
+          "flatrate": [
+            {
+              "logo_path": "/ube1pVpP3FklRkeyQjlDkkC3tL2.png",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 26
+            }
+          ]
+        },
+        "SC": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=SC",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "SE": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=SE",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            },
+            {
+              "logo_path": "/ube1pVpP3FklRkeyQjlDkkC3tL2.png",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 9
+            },
+            {
+              "logo_path": "/mMqTPUzGxa6vyi36qcwDH6LKslT.png",
+              "provider_id": 2801,
+              "provider_name": "Sky Showtime Amazon Channel",
+              "display_priority": 73
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 38
+            }
+          ]
+        },
+        "SI": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=SI",
+          "flatrate": [
+            {
+              "logo_path": "/ube1pVpP3FklRkeyQjlDkkC3tL2.png",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 27
+            }
+          ]
+        },
+        "SK": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=SK",
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 46
+            }
+          ],
+          "flatrate": [
+            {
+              "logo_path": "/ube1pVpP3FklRkeyQjlDkkC3tL2.png",
+              "provider_id": 1773,
+              "provider_name": "SkyShowtime",
+              "display_priority": 32
+            },
+            {
+              "logo_path": "/mMqTPUzGxa6vyi36qcwDH6LKslT.png",
+              "provider_id": 2801,
+              "provider_name": "Sky Showtime Amazon Channel",
+              "display_priority": 56
+            }
+          ]
+        },
+        "SM": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=SM",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "SN": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=SN",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "TZ": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=TZ",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "UG": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=UG",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "US": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=US",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 9,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 5
+            },
+            {
+              "logo_path": "/a1UIdq5BrkcAxnxcUhFsNbXnxeu.png",
+              "provider_id": 386,
+              "provider_name": "Peacock Premium",
+              "display_priority": 20
+            },
+            {
+              "logo_path": "/tpwTT1FpWqLLhxUfAuDavIXDDfI.png",
+              "provider_id": 2100,
+              "provider_name": "Amazon Prime Video with Ads",
+              "display_priority": 202
+            },
+            {
+              "logo_path": "/yrEwyMzEKdqAoGhaWUARtIxByol.png",
+              "provider_id": 387,
+              "provider_name": "Peacock Premium Plus",
+              "display_priority": 214
+            }
+          ],
+          "buy": [
+            {
+              "logo_path": "/jn6TLbtaTZntTRX9UYucHJvpQx1.png",
+              "provider_id": 10,
+              "provider_name": "Amazon Video",
+              "display_priority": 10
+            },
+            {
+              "logo_path": "/qdEGArH3lKfFnAtYXMkSYk5wxuG.png",
+              "provider_id": 2,
+              "provider_name": "Apple TV Store",
+              "display_priority": 11
+            },
+            {
+              "logo_path": "/aZRENwYILujqs0RVOZutTh0BVGV.png",
+              "provider_id": 3,
+              "provider_name": "Google Play Movies",
+              "display_priority": 24
+            },
+            {
+              "logo_path": "/wpOt6x0dRxTrIzuBosto4LGd7E9.png",
+              "provider_id": 7,
+              "provider_name": "Fandango At Home",
+              "display_priority": 41
+            }
+          ],
+          "ads": [
+            {
+              "logo_path": "/wpOt6x0dRxTrIzuBosto4LGd7E9.png",
+              "provider_id": 332,
+              "provider_name": "Fandango at Home Free",
+              "display_priority": 43
+            },
+            {
+              "logo_path": "/9dEuvA8wg5TSeFBZlPxSVxFdimJ.png",
+              "provider_id": 73,
+              "provider_name": "Tubi TV",
+              "display_priority": 346
+            }
+          ]
+        },
+        "VA": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=VA",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 0
+            }
+          ]
+        },
+        "ZA": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=ZA",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 1
+            }
+          ]
+        },
+        "ZM": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=ZM",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        },
+        "ZW": {
+          "link": "https://www.themoviedb.org/tv/873-columbo/watch?locale=ZW",
+          "flatrate": [
+            {
+              "logo_path": "/gMZdpavHmxFNnLpMHwVxfqeux2g.png",
+              "provider_id": 119,
+              "provider_name": "Amazon Prime Video",
+              "display_priority": 2
+            }
+          ]
+        }
+      }
+    },
+    "Headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "Server": "openresty"
+    }
+  }
+}

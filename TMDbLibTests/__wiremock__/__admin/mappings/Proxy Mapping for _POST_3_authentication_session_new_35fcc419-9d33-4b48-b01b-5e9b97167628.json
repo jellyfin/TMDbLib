@@ -1,7 +1,7 @@
 {
   "Guid": "35fcc419-9d33-4b48-b01b-5e9b97167628",
-  "Title": "Proxy Mapping for GET /3/authentication/session/new",
-  "Description": "Proxy Mapping for GET /3/authentication/session/new",
+  "Title": "Proxy Mapping for POST /3/authentication/session/new",
+  "Description": "Proxy Mapping for POST /3/authentication/session/new",
   "Priority": -2000000,
   "Request": {
     "Path": {
@@ -19,17 +19,6 @@
     "HttpVersion": "1.1",
     "Headers": [
       {
-        "Name": "Accept-Encoding",
-        "Matchers": [
-          {
-            "Name": "WildcardMatcher",
-            "Pattern": "gzip, deflate, br",
-            "IgnoreCase": true
-          }
-        ],
-        "IgnoreCase": true
-      },
-      {
         "Name": "Content-Type",
         "Matchers": [
           {
@@ -40,8 +29,7 @@
         ],
         "IgnoreCase": true
       }
-    ],
-    "Params": []
+    ]
   },
   "Response": {
     "StatusCode": 401,
